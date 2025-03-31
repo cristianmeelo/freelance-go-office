@@ -1,0 +1,45 @@
+@import url("./header.css");
+
+:root {
+  /* palette colors */
+  --primary: #8fc703;
+  --neutral-dark: #505050;
+  --white: #ffFFFFFFffff;
+}
+
+@font-face {
+  font-family: "Proxima Nova Bold";
+  src: url("../fonts/ProximaNovaBold.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "Proxima Nova Regular";
+  src: url("../fonts/ProximaNovaRegular.otf") format("opentype");
+}
+
+body {
+  font-family: "Proxima Nova Regular", Arial, sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  background-color: var(--white);
+  color: var(--neutral-dark);
+}
+
+body::-webkit-scrollbar {
+  width: 10px;
+  border-radius: 5px;
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: var(--primary);
+  border-radius: 5px;
+}
+
+body::-webkit-scrollbar-track {
+  background-color: rgba(80, 80, 80, 0.5);
+  border-radius: 5px;
+}
+
+h1 {
+  font-family: "Proxima Nova Bold", Arial, sans-serif;
+}
