@@ -6,9 +6,10 @@
   padding: 3rem 1.875rem;
   margin-top: 2.5rem;
   background-color: var(--neutral-dark);
-  img {
-    width: 9.6875rem;
-  }
+}
+
+.footer img {
+  width: 9.6875rem;
 }
 
 .footer__logo {
@@ -53,9 +54,10 @@
     padding: 3rem 256px;
     margin-top: 2.5rem;
     background-color: var(--neutral-dark);
-    img {
-      width: 180px;
-    }
+  }
+  
+  .footer img {
+    width: 180px;
   }
 
   .footer__group {
