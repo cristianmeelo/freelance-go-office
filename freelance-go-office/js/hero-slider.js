@@ -1,4 +1,4 @@
-const slider = document.querySelector(".slider");
+const slider = document.getElementById("slider");
 let index = 0;
 
 export function moveSlider() {
