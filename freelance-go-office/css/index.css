@@ -1,11 +1,12 @@
 @import url("./header.css");
 @import url("./hero.css");
+@import url("./footer.css");
 
 :root {
   /* palette colors */
   --primary: #8fc703;
   --neutral-dark: #505050;
-  --white: #ffFFFFFFffff;
+  --white: #ffffff;
 }
 
 @font-face {
