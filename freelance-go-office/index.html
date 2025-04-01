@@ -48,6 +48,70 @@
       </div>
     </section>
 
+    <section class="content">
+      <div class="carousel">
+        <button class="carousel__arrow carousel__arrow--left">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#505050" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="15 18 9 12 15 6"></polyline>
+          </svg>
+        </button>
+        <div class="carousel__track-container">
+          <div class="carousel__track">
+            <div class="carousel__item">
+              <img src="./img/product-1.png" alt="cola branca" width="115px" height="115px" />
+            </div>
+            <div class="carousel__item">
+              <img src="./img/product-2.png" alt="papel de impressa" width="115px" height="115px" />
+            </div>
+            <div class="carousel__item">
+              <img src="./img/product-3.png" alt="marcador de quadro branco" width="115px" height="115px" />
+            </div>
+            <div class="carousel__item">
+              <img src="./img/product-1.png" alt="cola branca" width="115px" height="115px" />
+            </div>
+            <div class="carousel__item">
+              <img src="./img/product-2.png" alt="papel de impressa" width="115px" height="115px" />
+            </div>
+            <div class="carousel__item">
+              <img src="./img/product-3.png" alt="marcador de quadro branco" width="115px" height="115px" />
+            </div>
+          </div>
+        </div>
+        <button class="carousel__arrow carousel__arrow--right">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#505050" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="9 18 15 12 9 6"></polyline>
+          </svg>
+        </button>
+      </div>
+
+      <section class="content__text">
+        <h1 class="content__text-cta">A linha GoOﬃce oferece uma solução completa de itens essenciais para o dia a dia das empresas.</h1>
+        <div class="content__text-description">
+          <p>Com um portfólio diversiﬁcado, os produtos são ideais para suprir demandas de escritórios, sejam pequenas rotinas ou grandes operações corporativas</p>
+          <p>Desenvolvida para atender contratos de fornecimento contínuo, a linha GoOﬃce é amplamente utilizada em grandes empresas, garantindo qualidade, eﬁciência e otimização de custos.</p>
+          <p>Com produtos que vão desde itens básicos de papelaria até materiais indispensáveis para o ambiente de trabalho, a linha GoOﬃce entrega o que sua empresa precisa para manter a produtividade e organização.</p>
+          <p>Conte com a GoOﬃce e tenha a segurança de um fornecimento conﬁável e estratégico!</p>
+        </div>
+        <h2 class="content__text-title">como adquirir nossos produtos</h2>
+        <div class="content__text-container">
+          <button class="button button-primary">comprar agora</button>
+        </div>
+        <p class="content__text-paragraph">
+          Compre agora através do e-commerce Oceano B2B é rápido, prático e seguro! Nosso e- commerce foi desenvolvido para atender as necessidades do seu negócio, fornecendo materiais que você consome com recorrência de forma simples e eﬁciente.
+        </p>
+        <div class="content__text-container">
+          <button class="button button-secondary">fazer cotação</button>
+        </div>
+        <p class="content__text-paragraph">
+          Faça uma Cotação Online de forma simples e ágil. Com apenas alguns cliques, você pode solicitar uma cotação personalizada diretamente em nossa plataforma e garantir o melhor custo-benefício para o seu negócio.
+        </p>
+        <div class="content__text-container">
+          <button class="button button-tertiary">revender</button>
+        </div>
+        <p class="content__text-paragraph">Seja nosso revendedor e aumente suas vendas! Conheça a linha completa de produtos para ampliar sua margem de lucro e oferecer mais valor ao seu cliente.</p>
+      </section>
+    </section>
+
     <footer class="footer">
       <img src="./img/logo-gray.png" alt="Imagem da marca GOoffice, que oferece uma solução completa em materiais de escritório para atender todas as suas necessidades. Ideal para empresas e profissionais." width="155px" height="auto" />
       <div class="footer__email">
@@ -58,7 +122,10 @@
 
     <script type="module">
       import { moveSlider } from "./js/hero-slider.js";
+      import { moveToSlide } from "./js/products-carousel.js";
+
       moveSlider();
+      moveToSlide(0);
     </script>
   </body>
 </html>

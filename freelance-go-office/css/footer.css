@@ -3,7 +3,8 @@
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: flex-end;
-  padding: 48px 16px;
+  padding: 48px 1.875rem;
+  margin-top: 2.5rem;
   background-color: var(--neutral-dark);
 }
 
@@ -16,8 +17,9 @@
   background: url("../assets/email.svg");
   width: 16px;
   height: 16px;
-  margin-right: 8px;
+  /* margin-right: 8px; */
 }
+
 .footer__email-info {
   font-size: 0.875em;
   color: var(--white);

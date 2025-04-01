@@ -1,12 +1,16 @@
 @import url("./header.css");
 @import url("./hero.css");
+@import url("./hero-content.css");
 @import url("./footer.css");
+@import url("./buttons.css");
 
 :root {
   /* palette colors */
   --primary: #8fc703;
   --neutral-dark: #505050;
   --white: #ffffff;
+  --indigo: #4bc0c0;
+  --ambar: #ff7300;
 }
 
 @font-face {
@@ -22,24 +26,9 @@
 body {
   font-family: "Proxima Nova Regular", Arial, sans-serif;
   font-size: 16px;
-  font-weight: 400;
+  font-weight: normal;
   background-color: var(--white);
   color: var(--neutral-dark);
-}
-
-body::-webkit-scrollbar {
-  width: 10px;
-  border-radius: 5px;
-}
-
-body::-webkit-scrollbar-thumb {
-  background-color: var(--primary);
-  border-radius: 5px;
-}
-
-body::-webkit-scrollbar-track {
-  background-color: rgba(80, 80, 80, 0.5);
-  border-radius: 5px;
 }
 
 h1 {
