@@ -6,7 +6,6 @@
 @import url("./buttons.css");
 
 :root {
-  /* palette colors */
   --primary: #8fc703;
   --neutral-dark: #505050;
   --white: #ffffff;
@@ -34,4 +33,19 @@ body {
 
 h1 {
   font-family: "Proxima Nova Bold", Arial, sans-serif;
+}
+
+*::-webkit-scrollbar {
+  -webkit-appearance: none;
+  width: 12px;
+  height: 12px;
+}
+
+*::-webkit-scrollbar-track {
+  background-color: rgba(80, 80, 80, 0.2);
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: var(--primary);
+  border-radius: 10px;
 }
