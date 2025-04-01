@@ -20,6 +20,11 @@
   transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
 
+.carousel__item img {
+  width: 115px;
+  height: 115px;
+}
+
 .carousel__arrow {
   background-color: transparent;
   border: none;
@@ -38,4 +43,27 @@
 .carousel__arrow--right {
   right: 0px;
   fill: var(--neutral-dark);
+}
+
+@media screen and (min-width: 1024px) {
+  .carousel {
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    position: relative;
+    padding: 0px 256px;
+  }
+  .carousel__arrow--left {
+    left: 0px;
+    fill: var(--neutral-dark);
+  }
+
+  .carousel__arrow--right {
+    right: 0px;
+    fill: var(--neutral-dark);
+  }
+  .carousel__item img {
+    width: 230px;
+    height: 230px;
+  }
 }
