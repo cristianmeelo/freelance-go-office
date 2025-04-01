@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="css/reset.css" />
     <link rel="stylesheet" href="css/index.css" />
+    <script src="./js/menu.js"></script>
 
     <title>Go Office</title>
   </head>
@@ -19,7 +20,7 @@
           <svg class="left-arrow" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M10 7L15 12L10 17" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
           </svg>
-          <label for="">Menu Principal </label>
+          <label id="menu-principal">Menu Principal </label>
         </li>
 
         <li class="list-menu__title">
@@ -30,15 +31,13 @@
               <path d="M10 7L15 12L10 17" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
             </svg>
           </label>
-          <ul class="submenu">
-            <li><a href="./pages/sub-produto1.html">Subproduto 1</a></li>
-            <li><a href="./pages/sub-produto2.html">Subproduto 2</a></li>
-            <li><a href="./pages/sub-produto3.html">Subproduto 3</a></li>
-          </ul>
+
+          <!-- Submenu será preenchido dinamicamente -->
+          <ul id="categories-menu"></ul>
         </li>
-        <li class="list-menu__title"><a href="./pages/brand.html" class="list-menu__link">Marca</a></li>
-        <li class="list-menu__title"><a href="./pages/sales-channel.html" class="list-menu__link">Canais de Venda</a></li>
-        <li class="list-menu__title"><a href="./pages/catalog.html" class="list-menu__link">Acesse o Catálogo</a></li>
+        <li class="list-menu__title__another"><a href="./pages/brand.html" class="list-menu__link">Marca</a></li>
+        <li class="list-menu__title__another"><a href="./pages/sales-channel.html" class="list-menu__link">Canais de Venda</a></li>
+        <li class="list-menu__title__another"><a href="./pages/catalog.html" class="list-menu__link">Acesse o Catálogo</a></li>
       </ul>
       <img src="./img/logo-green.png" alt="Logotipo da GOoffice em um fundo verde, destacando a modernidade e a inovação em ambientes de trabalho colaborativos e flexíveis." width="160px" height="30px" />
     </header>
@@ -139,9 +138,11 @@
     <script type="module">
       import { moveSlider } from "./js/hero-slider.js";
       import { moveToSlide } from "./js/products-carousel.js";
+      import { renderCategories } from "./js/render-header-products.js";
 
       moveSlider();
       moveToSlide(0);
+      renderCategories();
     </script>
   </body>
 </html>
