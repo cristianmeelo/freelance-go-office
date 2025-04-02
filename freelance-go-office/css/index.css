@@ -15,12 +15,12 @@
 
 @font-face {
   font-family: "Proxima Nova Bold";
-  src: url("../fonts/ProximaNovaBold.otf") format("opentype");
+  src: url("../fonts/ProximaNova-Bold.ttf");
 }
 
 @font-face {
   font-family: "Proxima Nova Regular";
-  src: url("../fonts/ProximaNovaRegular.otf") format("opentype");
+  src: url("../fonts/ProximaNova-Regular.ttf");
 }
 
 body {
