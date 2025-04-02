@@ -28,6 +28,26 @@ const products = [
     image: "../img/mock.png",
     description: "Produto 7 - Descrição completa aqui.",
   },
+  {
+    image: "../img/mock.png",
+    description: "Produto 8 - Descrição completa aqui.",
+  },
+  {
+    image: "../img/mock.png",
+    description: "Produto 9 - Descrição completa aqui.",
+  },
+  {
+    image: "../img/mock.png",
+    description: "Produto 10 - Descrição completa aqui.",
+  },
+  {
+    image: "../img/mock.png",
+    description: "Produto 11 - Descrição completa aqui.",
+  },
+  {
+    image: "../img/mock.png",
+    description: "Produto 12 - Descrição completa aqui.",
+  },
 ];
 
 function renderProducts() {

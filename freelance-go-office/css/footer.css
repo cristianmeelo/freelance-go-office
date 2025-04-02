@@ -55,8 +55,7 @@
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: flex-end;
-    padding: 3rem 5.75rem;
-    margin-top: 2.5rem;
+    padding: 6rem 24rem;
     background-color: var(--neutral-dark);
   }
 

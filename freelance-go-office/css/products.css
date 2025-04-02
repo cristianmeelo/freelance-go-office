@@ -9,7 +9,6 @@
 .products__list__breadcrumb {
   text-align: center;
   font-size: var(--font-extra-small);
-  background-color: red;
   width: 100%;
 }
 
@@ -46,4 +45,30 @@
   overflow: hidden;
   text-overflow: ellipsis;
   max-width: 300px;
+}
+
+.footer__desktop {
+  display: none;
+}
+
+@media screen and (min-width: 1024px) {
+  .products__list__content {
+    grid-template-columns: repeat(6, 250px); /* 6 itens por linha */
+    max-width: 100vw;
+    gap: 16px; /* Espaçamento maior entre os itens no desktop */
+    padding: 2rem; /* Mantém o padding no desktop */
+  }
+
+  .product-item img {
+    width: 250px; /* Ajusta largura da imagem para 250px */
+    height: auto; /* Mantém proporção da imagem */
+  }
+
+  .product-item p {
+    max-width: 250px; /* Garante que o texto fique dentro da largura da imagem */
+  }
+
+  .footer__desktop {
+    display: block;
+  }
 }
