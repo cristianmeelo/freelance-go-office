@@ -3,6 +3,8 @@
 @import url("./content.css");
 @import url("./footer.css");
 @import url("./carousel.css");
+
+/* elements */
 @import url("./buttons.css");
 
 :root {
@@ -11,6 +13,17 @@
   --white: #ffffff;
   --indigo: #4bc0c0;
   --ambar: #ff7300;
+
+  --font-extra-small: 14px;
+  --font-small: 15px;
+  --font-normal: 16px;
+  --font-large: 18px;
+  --font-extra-large: 20px;
+  --font-2xl: 22px;
+  --font-3xl: 25px;
+  --font-4xl: 30px;
+
+  --line-height: 1.25em;
 }
 
 @font-face {
@@ -25,14 +38,10 @@
 
 body {
   font-family: "Proxima Nova Regular", Arial, sans-serif;
-  font-size: 16px;
+  font-size: var(--font-normal);
   font-weight: normal;
   background-color: var(--white);
   color: var(--neutral-dark);
-}
-
-h1 {
-  font-family: "Proxima Nova Bold", Arial, sans-serif;
 }
 
 *::-webkit-scrollbar {

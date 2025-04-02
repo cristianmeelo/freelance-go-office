@@ -1,25 +1,31 @@
 .content {
-  padding-top: 2.5rem;
-  padding-left: 1.875rem;
-  padding-right: 1.875rem;
+  padding: 2.5rem 2rem 0 2rem;
+}
+
+.content p {
+  font-size: var(--font-normal);
+  line-height: var(--line-height);
+}
+
+.content h1 {
+  font-size: var(--font-extra-large);
+  font-family: "Proxima Nova Bold", Arial, sans-serif;
+}
+
+.content h2 {
+  font-size: var(--font-4xl);
+  font-family: "Proxima Nova Bold", Arial, sans-serif;
+  text-transform: uppercase;
 }
 
 .content__cta {
   padding-bottom: 1rem;
-  font-size: 1.25em;
-  font-weight: bold;
-  line-height: 1.5em;
 }
 
 .content__description {
   display: flex;
   flex-direction: column;
   row-gap: 1rem;
-  line-height: 1.5em;
-}
-
-.content__description-paragraph {
-  margin: 0;
 }
 
 .content__title {
@@ -28,19 +34,12 @@
   align-items: center;
   text-align: center;
   padding-top: 3rem;
-  font-size: 1.875rem;
-  text-transform: uppercase;
-  font-weight: bold;
 }
 
-.content__paragraph {
-  line-height: 1.5em;
-}
-
-.content__container {
+.content__button {
   display: flex;
   justify-content: center;
-  padding-top: 2.75rem;
+  padding-top: 2.25rem;
   padding-bottom: 1rem;
 }
 
@@ -50,13 +49,27 @@
 
 @media screen and (min-width: 1024px) {
   .content {
-    padding: 3rem 256px;
+    padding: 3rem 5.75rem;
   }
+
+  .content p {
+    font-size: var(--font-large);
+  }
+
+  .content h1 {
+    font-size: var(--font-3xl);
+    font-family: "Proxima Nova Bold", Arial, sans-serif;
+  }
+
+  .content h2 {
+    font-size: var(--font-3xl);
+    font-family: "Proxima Nova Bold", Arial, sans-serif;
+    text-transform: uppercase;
+  }
+
   .content__cta {
     padding-top: 1rem;
     padding-bottom: 2rem;
-    font-size: 1.5625;
-    font-weight: bold;
   }
 
   .content__title {
@@ -65,16 +78,9 @@
     align-items: center;
     text-align: center;
     padding-top: 3rem;
-    font-size: 1.5625rem;
-    text-transform: uppercase;
-    font-weight: bold;
   }
 
-  .content__paragraph {
-    font-size: 1.125rem;
-  }
-
-  .content__container {
+  .content__button {
     display: flex;
     justify-content: flex-start;
     padding-top: 2.75rem;

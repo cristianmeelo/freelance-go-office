@@ -3,7 +3,7 @@
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: flex-end;
-  padding: 3rem 1.875rem;
+  padding: 3rem 2rem;
   margin-top: 2.5rem;
   background-color: var(--neutral-dark);
 }
@@ -26,7 +26,7 @@
   display: none;
 }
 
-.footer__link {
+.footer__links a {
   color: var(--white);
 }
 
@@ -55,7 +55,7 @@
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: flex-end;
-    padding: 3rem 16rem;
+    padding: 3rem 5.75rem;
     margin-top: 2.5rem;
     background-color: var(--neutral-dark);
   }
@@ -71,7 +71,7 @@
     text-transform: uppercase;
   }
 
-  .footer__link {
+  .footer__links a {
     color: var(--white);
   }
 
