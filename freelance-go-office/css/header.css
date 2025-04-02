@@ -1,16 +1,13 @@
-.header__div {
-  position: absolute;
+.header {
+  display: flex;
+  position: fixed;
   z-index: 10;
   top: 0;
   left: 0;
-}
-
-.header {
-  display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 32px;
-  position: relative;
+  width: 100%;
   background-color: var(--primary);
 }
 

@@ -34,5 +34,4 @@ function renderHeader() {
   document.getElementById("header").innerHTML = headerHTML;
 }
 
-// Renderiza o cabeçalho ao carregar o DOM
 document.addEventListener("DOMContentLoaded", renderHeader);
