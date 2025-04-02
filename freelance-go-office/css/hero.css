@@ -1,66 +1,27 @@
 .hero {
   position: relative;
-  width: 100%; /* Ocupará toda a largura disponível */
-  overflow: hidden; /* Esconde elementos que saírem do container */
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  background-color: var(--primary);
 }
 
 .hero__slider {
-  display: flex; /* Exibe os slides lado a lado em um flex container */
-  transition: transform 0.5s ease-in-out; /* Adiciona transição ao mover os slides */
+  display: flex;
+  transition: transform 0.5s ease-in-out;
   width: 100%;
+  height: 100%;
 }
 
 .hero__slide {
-  min-width: 100%; /* Cada slide ocupa toda a largura do container */
-  flex-shrink: 0; /* Impede que os slides se ajustem */
-}
-
-.hero__slide img {
-  width: 100%; /* Ajusta a imagem para ocupar toda a largura do slide */
-  height: auto; /* Mantém a proporção da imagem */
-  display: block; /* Remove espaços brancos ao redor da imagem */
-}
-
-.hero {
-  position: relative;
+  flex: none;
   width: 100%;
-  height: 100vh; /* O slider ocupará 100% da altura da tela */
-  overflow: hidden; /* Esconde o que ultrapassar os limites do container */
-}
-
-.hero__slider {
-  display: flex; /* Posiciona os slides lado a lado */
-  transition: transform 0.5s ease-in-out; /* Suaviza o movimento ao alternar slides */
-  height: 100%; /* Ocupa 100% da altura do container */
-}
-
-.hero__slide {
-  min-width: 100%; /* Cada slide ocupa 100% da largura da tela */
-  height: 100%; /* Cada slide ocupa 100% da altura do container */
-  flex-shrink: 0; /* Garante que os slides não redimensionem */
+  height: 100%;
 }
 
 .hero__slide img {
-  width: 100%; /* A imagem se ajusta à largura do slide */
-  height: 100%; /* A imagem se ajusta à altura do slide */
-  object-fit: cover; /* Garante que a imagem preencha completamente o slide sem distorção */
-  display: block; /* Remove espaços ao redor da imagem */
-}
-
-
-@media screen and (min-width: 1024px) {
-  .hero {
-    height: 80vh;
-  }
-
-  .hero__slider {
-    max-width: 1200px;
-    margin: 0 auto;
-  }
-
-  .hero__slide img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-  }
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
 }
