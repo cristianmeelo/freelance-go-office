@@ -6,40 +6,40 @@
     <link rel="stylesheet" href="css/reset.css" />
     <link rel="stylesheet" href="css/index.css" />
     <script src="./js/menu.js"></script>
-
     <title>Go Office</title>
   </head>
   <body>
     <header class="header">
-      <input type="checkbox" id="menu" class="header_button" />
-      <label for="menu">
-        <span class="header__hamburger_menu"></span>
+      <input type="checkbox" id="checkbox-hamburger" class="header__checkbox" />
+      <label for="checkbox-hamburger">
+        <div class="header__hamburger"></div>
       </label>
-      <ul class="list-menu">
-        <li class="list-menu__first-menu">
+
+      <!-- !! ok acima -->
+      <ul class="header__menu">
+        <li id="principal-menu" class="header__menu-item header__menu-item--first">
           <svg class="left-arrow" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M10 7L15 12L10 17" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
           </svg>
-          <label id="menu-principal">Menu Principal </label>
+          <label class="header__menu-item-label">Menu Principal</label>
         </li>
-
-        <li class="list-menu__title">
-          <input type="checkbox" id="produtos-menu" class="submenu_toggle" />
-          <label for="produtos-menu" class="list-menu__submenu">
+        <li id="products-menu" class="header__menu-item header__menu-item--title">
+          <input type="checkbox" id="checkbox-products" class="submenu_toggle" />
+          <label for="checkbox-products" class="list-menu__submenu">
             Produtos
             <svg class="arrow" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M10 7L15 12L10 17" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
             </svg>
           </label>
 
-          <!-- Submenu será preenchido dinamicamente -->
           <ul id="categories-menu"></ul>
         </li>
-        <li class="list-menu__title__another"><a href="./pages/brand.html" class="list-menu__link">Marca</a></li>
-        <li class="list-menu__title__another"><a href="./pages/sales-channel.html" class="list-menu__link">Canais de Venda</a></li>
-        <li class="list-menu__title__another"><a href="./pages/catalog.html" class="list-menu__link">Acesse o Catálogo</a></li>
+        <!-- <li class="list-menu__title__another"><a href="./pages/brand.html" class="list-menu__link">Marca</a></li> -->
+        <!-- <li class="list-menu__title__another"><a href="./pages/sales-channel.html" class="list-menu__link">Canais de Venda</a></li> -->
+        <!-- <li class="list-menu__title__another"><a href="./pages/catalog.html" class="list-menu__link">Acesse o Catálogo</a></li> -->
       </ul>
-      <img src="./img/logo-green.png" alt="Logotipo da GOoffice em um fundo verde, destacando a modernidade e a inovação em ambientes de trabalho colaborativos e flexíveis." width="160px" height="30px" />
+
+      <div class="header__logo"></div>
     </header>
 
     <section class="hero">
@@ -121,7 +121,7 @@
     </section>
 
     <footer class="footer">
-      <img class="footer__logo" src="./img/logo-gray.png" alt="Imagem da marca GOoffice, que oferece uma solução completa em materiais de escritório para atender todas as suas necessidades. Ideal para empresas e profissionais." />
+      <div class="footer__logo"></div>
       <div class="footer__group">
         <div class="footer__links">
           <a class="footer__link" href="">home</a>
@@ -129,7 +129,7 @@
           <a class="footer__link" href="">canais de venda</a>
         </div>
         <div class="footer__container">
-          <span class="footer__icon"></span>
+          <div class="footer__icon"></div>
           <a class="footer__info" href="mailto:sac@brsupply.com.br?subject=Atendimento%20ao%20Cliente&body=Olá, estou entrando em contato para...">sac@brsupply.com.br</a>
         </div>
       </div>

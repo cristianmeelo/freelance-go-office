@@ -8,12 +8,13 @@
   background-color: var(--neutral-dark);
 }
 
-.footer img {
-  width: 9.6875rem;
-}
-
 .footer__logo {
-  width: 9.6875px;
+  display: flex;
+  background: url("../assets/logo-gooffice-footer.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  height: 5rem;
+  width: 9.6875rem;
 }
 
 .footer__group {
@@ -29,20 +30,23 @@
   color: var(--white);
 }
 
+.footer__container {
+  display: flex;
+  text-align: center;
+}
+
 .footer__icon {
   background: url("../assets/email.svg");
-  width: 1rem;
-  height: 1rem;
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 0.875rem;
   margin-right: 0.25rem;
+  padding: 0.125rem;
 }
 
 .footer__info {
-  font-size: 0.875em;
+  font-size: 0.875rem;
   color: var(--white);
-}
-
-.footer__container {
-  display: flex;
 }
 
 @media screen and (min-width: 1024px) {
@@ -51,13 +55,9 @@
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: flex-end;
-    padding: 3rem 256px;
+    padding: 3rem 16rem;
     margin-top: 2.5rem;
     background-color: var(--neutral-dark);
-  }
-  
-  .footer img {
-    width: 180px;
   }
 
   .footer__group {
@@ -67,7 +67,7 @@
 
   .footer__links {
     display: flex;
-    gap: 32px;
+    gap: 2rem;
     text-transform: uppercase;
   }
 
@@ -78,6 +78,6 @@
   .footer__container {
     display: flex;
     justify-content: end;
-    padding-top: 28px;
+    padding-top: 1.75rem;
   }
 }

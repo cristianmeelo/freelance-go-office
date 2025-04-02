@@ -7,7 +7,11 @@
   background-color: var(--primary);
 }
 
-.header__hamburger_menu {
+.header__checkbox {
+  display: none;
+}
+
+.header__hamburger {
   width: 30px;
   height: 30px;
   background-image: url("../assets/hamburger-menu.svg");
@@ -15,11 +19,11 @@
   display: inline-block;
 }
 
-#menu:checked + label .header__hamburger_menu {
+#checkbox-hamburger:checked + label .header__hamburger {
   background-image: url("../assets/close-icon.svg");
 }
 
-.list-menu {
+.header__menu {
   display: none;
   position: absolute;
   top: 100%;
@@ -30,33 +34,45 @@
   height: 100vh;
   background-color: var(--white);
   z-index: 10;
+  max-height: 600px;
+  overflow-y: scroll;
 }
 
-.header_button:checked ~ .list-menu {
+#checkbox-hamburger:checked ~ .header__menu {
   display: block;
 }
 
-.list-menu__title {
+.header__menu-item {
+  padding: 32px 0 8px 12px;
+}
+
+.header__menu-item--first {
+  display: flex;
+  align-items: center;
+  display: none;
+}
+
+/* && acima ok */
+
+/* && abaixo nao mexi */
+
+.header__menu-item--title {
   font-size: 1.25em;
   font-weight: bold;
   padding: 12px 32px;
+  padding-top: 32px;
   border-bottom: 1px solid var(--neutral-medium);
-  max-height: 600px;
-  overflow-y: scroll;
+}
+
+.padding-top-32 {
+  background-color: red;
+  padding-top: 64px;
 }
 
 .list-menu__link {
   color: var(--neutral-dark);
   text-decoration: none;
   text-transform: uppercase;
-}
-
-.list-menu__first-menu {
-  display: flex;
-  align-items: center;
-  padding-top: 32px;
-  padding-left: 12px;
-  padding-bottom: 8px;
 }
 
 .list-menu__submenu {
@@ -106,18 +122,6 @@
   display: block;
 }
 
-.header_button {
-  display: none;
-}
-
-.list-menu__first-menu {
-  display: none;
-}
-
-.list-menu:has(#produtos-menu:checked) .list-menu__first-menu {
-  display: flex;
-}
-
 .list-menu__title__another {
   font-size: 1.25em;
   font-weight: bold;
@@ -137,4 +141,12 @@
 
 .selected {
   background-color: #dfdfdf;
+}
+
+.header__logo {
+  background-image: url("../assets/logo-gooffice-header.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 160px;
+  height: 30px;
 }
