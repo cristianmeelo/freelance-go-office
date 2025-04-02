@@ -8,6 +8,9 @@
   align-items: center;
   padding: 32px;
   width: 100%;
+}
+
+.apply__bg__color {
   background-color: var(--primary);
 }
 

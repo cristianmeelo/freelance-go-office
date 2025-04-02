@@ -34,4 +34,17 @@ function renderHeader() {
   document.getElementById("header").innerHTML = headerHTML;
 }
 
+function handleScroll() {
+  const header = document.querySelector(".header");
+
+  if (window.scrollY > 0) {
+    header.classList.add("apply__bg__color"); 
+  } else {
+    header.classList.remove("apply__bg__color");
+  }
+}
+
+window.addEventListener("scroll", handleScroll);
+
+
 document.addEventListener("DOMContentLoaded", renderHeader);
