@@ -1,12 +1,20 @@
-const slider = document.getElementById("slider");
-let index = 0;
+function createCarousel(sliderId) {
+  let currentIndex = 0;
+  const slider = document.querySelector(`#${sliderId}`);
+  const slides = slider.querySelectorAll(".hero__slide");
+  const totalSlides = slides.length;
 
-export function moveSlider() {
-  index++;
-  if (index >= slider.children.length) {
-    index = 0;
+  function showSlide(index) {
+    slider.style.transform = `translateX(-${index * 100}%)`;
   }
-  slider.style.transform = `translateX(-${index * 100}%)`;
+
+  function nextSlide() {
+    currentIndex = (currentIndex + 1) % totalSlides;
+    showSlide(currentIndex);
+  }
+
+  setInterval(nextSlide, 3000);
 }
 
-setInterval(moveSlider, 3000);
+createCarousel("slider-mobile");
+createCarousel("slider-desktop");

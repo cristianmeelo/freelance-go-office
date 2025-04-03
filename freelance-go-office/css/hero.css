@@ -2,25 +2,29 @@
   position: relative;
   width: 100%;
   overflow: hidden;
-  background-color: var(--primary);
 }
 
 .hero__slider {
   display: flex;
   transition: transform 0.5s ease-in-out;
-  width: 100%;
-  height: 100%;
 }
 
 .hero__slide {
-  flex: none;
+  flex-shrink: 0;
   width: 100%;
-  height: 100%;
+  box-sizing: border-box;
 }
 
-.hero__slide img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-  display: block;
+#slider-desktop {
+  display: none;
+}
+
+@media (min-width: 1024px) {
+  #slider-mobile {
+    display: none;
+  }
+
+  #slider-desktop {
+    display: flex;
+  }
 }

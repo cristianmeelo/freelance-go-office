@@ -5,8 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="css/reset.css" />
     <link rel="stylesheet" href="css/index.css" />
-    <script src="./js/menu.js"></script>
+    <script src="./js/menu.js" defer></script>
     <script src="./js/render-header.js" defer></script>
+    <script src="./js/hero-slider.js" defer></script>
 
     <title>Go Office</title>
   </head>
@@ -14,15 +15,39 @@
     <div id="header"></div>
 
     <section class="hero">
-      <div id="slider" class="hero__slider">
+      <div id="slider-mobile" class="hero__slider">
         <div class="hero__slide">
-          <img src="./img/hero-1.png" alt="Imagem que destaca a linha completa de materiais de escritório da GoOffice, incluindo papel A4, grampeadores e acessórios, ideal para uso profissional." />
+          <a href="#">
+            <img src="./img/banner_m1.png" alt="Imagem que destaca a linha completa de materiais de escritório da GoOffice, incluindo papel A4, grampeadores e acessórios, ideal para uso profissional." />
+          </a>
         </div>
         <div class="hero__slide">
-          <img src="./img/hero-2.png" alt="Imagem de papéis GoOffice, incluindo variedades como Multiuso, Eco e Pro, todos de alta qualidade e com 500 folhas. Conheça a linha de papéis GoOffice!" />
+          <a href="#">
+            <img src="./img/banner_m2.png" alt="Imagem de papéis GoOffice, incluindo variedades como Multiuso, Eco e Pro, todos de alta qualidade e com 500 folhas. Conheça a linha de papéis GoOffice!" />
+          </a>
         </div>
         <div class="hero__slide">
-          <img src="./img/hero-3.png" alt="Pacote de papel A4 GoOffice Eco, 100% reciclado, com 500 folhas, ideal para contribuir com a sustentabilidade e reduzir impactos ambientais." />
+          <a href="#">
+            <img src="./img/banner_m3.png" alt="Pacote de papel A4 GoOffice Eco, 100% reciclado, com 500 folhas, ideal para contribuir com a sustentabilidade e reduzir impactos ambientais." />
+          </a>
+        </div>
+      </div>
+
+      <div id="slider-desktop" class="hero__slider">
+        <div class="hero__slide">
+          <a href="pagina1.html">
+            <img src="./img/banner_d1.png" alt="Imagem que destaca a linha completa de materiais de escritório da GoOffice, incluindo papel A4, grampeadores e acessórios, ideal para uso profissional." />
+          </a>
+        </div>
+        <div class="hero__slide">
+          <a href="#">
+            <img src="./img/banner_d2.png" alt="Imagem de papéis GoOffice, incluindo variedades como Multiuso, Eco e Pro, todos de alta qualidade e com 500 folhas. Conheça a linha de papéis GoOffice!" />
+          </a>
+        </div>
+        <div class="hero__slide">
+          <a href="#">
+            <img src="./img/banner_d3.png" alt="Pacote de papel A4 GoOffice Eco, 100% reciclado, com 500 folhas, ideal para contribuir com a sustentabilidade e reduzir impactos ambientais." />
+          </a>
         </div>
       </div>
     </section>
@@ -109,11 +134,9 @@
     </footer>
 
     <script type="module">
-      import { moveSlider } from "./js/hero-slider.js";
       import { moveToSlide } from "./js/products-carousel.js";
       import { renderCategories } from "./js/render-header-products.js";
 
-      moveSlider();
       moveToSlide(0);
       renderCategories();
     </script>
