@@ -62,12 +62,12 @@ h3 {
 }
 
 .product__key {
-  width: 40%; /
-  text-align: left; 
+  width: 40%;
+  text-align: left;
 }
 
 .product__value {
-  width: 60%; 
+  width: 60%;
   text-align: left;
-  margin-left: 0; 
+  margin-left: 0;
 }
