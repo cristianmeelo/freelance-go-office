@@ -9,10 +9,11 @@
   padding: 32px;
   width: 100%;
   transition: background-color 0.2s ease;
+  background-color: var(--primary);
 }
 
-.apply__bg__color {
-  background-color: var(--primary);
+.apply__transparency {
+  background-color: #ff000000;
 }
 
 .header__checkbox {

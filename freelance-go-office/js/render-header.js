@@ -5,7 +5,6 @@ function renderHeader() {
         <div class="header__hamburger"></div>
       </label>
 
-      <!-- !! ok acima -->
       <ul class="header__menu">
         <li id="principal-menu" class="header__menu-item header__menu-item--first">
           <svg class="left-arrow" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -21,11 +20,8 @@ function renderHeader() {
               <path d="M10 7L15 12L10 17" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
             </svg>
           </label>
-
           <ul id="categories-menu"></ul>
         </li>
-        <!-- <li class="list-menu__title__another"><a href="./pages/brand.html" class="list-menu__link">Marca</a></li> -->
-        <!-- <li class="list-menu__title__another"><a href="./pages/sales-channel.html" class="list-menu__link">Canais de Venda</a></li> -->
         <li class="list-menu__title__another"><a href="./pages/catalog.html" class="list-menu__link">Acesse o Catálogo</a></li>
       </ul>
 
@@ -34,17 +30,21 @@ function renderHeader() {
   document.getElementById("header").innerHTML = headerHTML;
 }
 
-function handleScroll() {
+function handleHeaderTransparency() {
   const header = document.querySelector(".header");
 
-  if (window.scrollY > 0) {
-    header.classList.add("apply__bg__color"); 
+  const isHomePage = window.location.pathname.endsWith("index.html") || window.location.pathname === "/";
+
+  if (window.scrollY === 0 && isHomePage) {
+    header.classList.add("apply__transparency");
   } else {
-    header.classList.remove("apply__bg__color");
+    header.classList.remove("apply__transparency");
   }
 }
 
-window.addEventListener("scroll", handleScroll);
+window.addEventListener("scroll", handleHeaderTransparency);
 
-
-document.addEventListener("DOMContentLoaded", renderHeader);
+document.addEventListener("DOMContentLoaded", () => {
+  renderHeader();
+  handleHeaderTransparency();
+});
