@@ -1,0 +1,73 @@
+.product {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: start;
+  padding-top: 10rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+.product h1,
+h2,
+h3 {
+  font-size: var(--font-4xl);
+  font-family: "Proxima Nova Bold", Arial, sans-serif;
+  padding-top: 2rem;
+  text-align: center;
+}
+
+.product__code {
+  display: flex;
+  padding-top: 2rem;
+  font-size: var(--font-normal);
+}
+
+.product__content__button {
+  display: flex;
+  flex-direction: column;
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+  gap: 24px;
+}
+
+.product__description {
+  padding-top: 1rem;
+  line-height: 1.25rem;
+  text-align: justify;
+}
+
+.product__table {
+  display: flex;
+  flex-direction: column;
+  padding: 2rem 1rem 2rem 1rem;
+}
+
+.product__row--gray {
+  background-color: #f0f0f0;
+}
+
+.product__row--white {
+  background-color: var(--white);
+}
+
+.product__row--rounded {
+  border-radius: 4px;
+}
+
+.product__row {
+  display: flex;
+  align-items: center;
+  padding: 0.5rem 1rem;
+}
+
+.product__key {
+  width: 40%; /
+  text-align: left; 
+}
+
+.product__value {
+  width: 60%; 
+  text-align: left;
+  margin-left: 0; 
+}

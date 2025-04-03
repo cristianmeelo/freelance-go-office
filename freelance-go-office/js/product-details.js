@@ -7,9 +7,9 @@ const products = [
     description:
       "Os grampeadores da marca Go Oﬃce modelo Soft Touch possuem um sistema mecânico que reduz em até 60% o esforço para grampear. O design moderno permite o abastecimento frontal do grampo, de forma simples e rápida. Possui ainda um botão para remover facilmente os grampos que ﬁcam presos. A profundidade de utilização é ajustável, podendo atingir 45mm. O corpo é fabricado em metal e suporte em plástico de alta resistência, alinhado a um design moderno.",
     technicalSpecifications: {
-      segment: "Office",
-      family: "Staplers",
-      subfamily: "High Capacity Staplers",
+      segment: "Escritório e Papelaria",
+      family: "Grampeadores e Extratores",
+      subfamily: "Grampeador Metal",
       brand: "GoOffice",
     },
   },
@@ -158,21 +158,31 @@ const products = [
   },
 ];
 
-function renderProducts() {
-  const container = document.getElementById("products-list");
-  const contentHTML = products
-    .map(
-      (product) => `
-        <div class="product-item">
-          <a href="./product.html?id=${product.id}">
-            <img src="${product.image}" alt="${product.description}" />
-          </a>
-          <p title="${product.description}">${product.description}</p>
-        </div>
-      `
-    )
-    .join("");
-  container.innerHTML = contentHTML;
+function getProductById(productId) {
+  return products.find((product) => product.id === productId);
 }
 
-document.addEventListener("DOMContentLoaded", renderProducts);
+function formatDescription(description) {
+  return description.replace(/\.\s/g, ".<br><br>");
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+  const params = new URLSearchParams(window.location.search);
+  const productId = parseInt(params.get("id"));
+
+  const product = getProductById(productId);
+
+  if (product) {
+    document.getElementById("product-title").textContent = product.title;
+    document.getElementById("product-code").textContent = product.code;
+    document.getElementById("product-image").src = product.image;
+    document.getElementById("product-image").alt = product.title;
+    document.getElementById("product-description").innerHTML = formatDescription(product.description);
+    document.getElementById("product-segment").textContent = product.technicalSpecifications.segment;
+    document.getElementById("product-family").textContent = product.technicalSpecifications.family;
+    document.getElementById("product-subfamily").textContent = product.technicalSpecifications.subfamily;
+    document.getElementById("product-brand").textContent = product.technicalSpecifications.brand;
+  } else {
+    document.getElementById("product-details").innerHTML = "<p>Produto não encontrado.</p>";
+  }
+});
