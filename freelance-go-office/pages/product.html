@@ -10,28 +10,40 @@
   <body>
     <div id="header"></div>
 
-    <main>
-      <div id="product-details" class="product">
-        <img id="product-image" src="" alt="" width="380" />
-        <h1 id="product-title"></h1>
-        <p class="product__code">
-          Código do produto:
-          <span id="product-code"></span>
-        </p>
+    <main >
+      <section class="product-section">
 
-        <div class="product__content__button">
-          <button class="button button-primary">comprar agora</button>
-          <button class="button button-secondary">fazer cotação</button>
-          <button class="button button-tertiary">revender</button>
+      <div id="product-details" class="product">
+        <img id="product-image" src="" alt="" />
+
+        <div class="product__container">
+          <h1 id="product-title"></h1>
+
+          <p class="product__code">
+            Código do produto:
+            <span id="product-code"></span>
+
+            <div class="product-code-cta">
+              Para melhor direcioná-lo, <br>indique qual é o seu nível <br>de interesse neste produto:
+            </div>
+          </p>
+
+          <div class="product__content__button">
+            <button class="button button-primary">comprar agora</button>
+            <button class="button button-secondary">fazer cotação</button>
+            <button class="button button-tertiary">revender</button>
+          </div>
         </div>
+      </div>
+
+      <div>
 
         <h2>Descrição do Produto</h2>
         <p id="product-description" class="product__description"></p>
-
-        <h3>Especificações técnicas</h3>
       </div>
 
       <div id="product-technical-specifications" class="product__table">
+        <h3>Especificações técnicas</h3>
         <div class="product__row product__row--gray product__row--rounded">
           <div class="product__key">Segmento</div>
           <div class="product__value" id="product-segment"></div>
@@ -49,6 +61,8 @@
           <div class="product__value" id="product-brand"></div>
         </div>
       </div>
+      </section>
+
 
       <footer class="footer">
         <div class="footer__logo"></div>

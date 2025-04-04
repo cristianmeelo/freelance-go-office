@@ -2,7 +2,7 @@ const products = [
   {
     id: 1,
     image: "../img/mock.png",
-    title: "Stapler 100 Sheets White Soft Touch GoOffice GO 5886",
+    title: "Grampeador 100 Folhas Branco Soft Touch GoOffice GO 5886",
     code: "031627",
     description:
       "Os grampeadores da marca Go Oﬃce modelo Soft Touch possuem um sistema mecânico que reduz em até 60% o esforço para grampear. O design moderno permite o abastecimento frontal do grampo, de forma simples e rápida. Possui ainda um botão para remover facilmente os grampos que ﬁcam presos. A profundidade de utilização é ajustável, podendo atingir 45mm. O corpo é fabricado em metal e suporte em plástico de alta resistência, alinhado a um design moderno.",

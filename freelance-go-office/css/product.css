@@ -4,11 +4,13 @@
   align-items: center;
   justify-content: start;
   padding-top: 10rem;
-  padding-left: 2rem;
-  padding-right: 2rem;
 }
 
-.product h1,
+img {
+  width: 380px;
+}
+
+.product-section h1,
 h2,
 h3 {
   font-size: var(--font-4xl);
@@ -19,13 +21,20 @@ h3 {
 
 .product__code {
   display: flex;
+  justify-content: center;
   padding-top: 2rem;
   font-size: var(--font-normal);
+}
+
+.product-code-cta {
+  display: none;
 }
 
 .product__content__button {
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
   padding-top: 1.5rem;
   padding-bottom: 1.5rem;
   gap: 24px;
@@ -35,12 +44,18 @@ h3 {
   padding-top: 1rem;
   line-height: 1.25rem;
   text-align: justify;
+  padding-left: 2rem;
+  padding-right: 2rem;
 }
 
 .product__table {
   display: flex;
   flex-direction: column;
   padding: 2rem 1rem 2rem 1rem;
+}
+
+.product__table h3 {
+  padding-bottom: 2rem;
 }
 
 .product__row--gray {
@@ -70,4 +85,97 @@ h3 {
   width: 60%;
   text-align: left;
   margin-left: 0;
+}
+
+@media screen and (min-width: 1024px) {
+  .product-section {
+    padding-left: 20rem;
+    padding-right: 20rem;
+  }
+
+  .product {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    padding-top: 10rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+
+  img {
+    width: 500px;
+  }
+
+  .product h1 {
+    display: flex;
+    text-align: start;
+    font-size: var(--font-2xl);
+    font-family: "Proxima Nova Bold", Arial, sans-serif;
+  }
+
+  .product__container {
+    display: flex;
+    flex-direction: column;
+    padding-left: 60px;
+    height: 500px;
+    width: 400px;
+  }
+
+  .product__code {
+    display: flex;
+    justify-content: flex-start;
+    padding-top: 2rem;
+    font-size: var(--font-normal);
+  }
+
+  .product-code-cta {
+    display: block;
+    display: flex;
+    justify-content: flex-start;
+    padding-top: 2rem;
+  }
+
+  .product__content__button {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: start;
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+    gap: 24px;
+  }
+
+  .product__table {
+    display: flex;
+    flex-direction: column;
+    padding: 2rem 1rem 2rem 1rem;
+  }
+
+  .product-section h2 {
+    display: flex;
+    padding-top: 4rem;
+    font-size: var(--font-extra-large);
+    font-family: "Proxima Nova Bold", Arial, sans-serif;
+  }
+
+  .product__description {
+    padding: 0;
+    padding-top: 1.875rem;
+    line-height: 1.25rem;
+    text-align: justify;
+  }
+
+  .product__table {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .product-section h3 {
+    display: flex;
+    padding-top: 4rem;
+    padding-bottom: 1rem;
+    font-size: var(--font-extra-large);
+    font-family: "Proxima Nova Bold", Arial, sans-serif;
+  }
 }
