@@ -13,6 +13,19 @@
   background-color: var(--primary);
 }
 
+.header__logo {
+  width: 100px; /* Ajuste conforme necessário */
+  height: auto;
+  display: flex;
+  align-items: center;
+  /justify-content: center;
+}
+
+.header__logo img {
+  width: 100%; /* Ajuste para preencher o espaço */
+  height: auto;
+}
+
 /* TOGGLE (Checkbox e Ícones) */
 .header__toggle-checkbox {
   display: none;

@@ -1,4 +1,4 @@
-const products = [
+const productsWithoutCat = [
   {
     id: 1,
     image: "../img/mock.png",
@@ -160,7 +160,7 @@ const products = [
 
 function renderProducts() {
   const container = document.getElementById("products-list");
-  const contentHTML = products
+  const contentHTML = productsWithoutCat
     .map(
       (product) => `
         <div class="product-item">

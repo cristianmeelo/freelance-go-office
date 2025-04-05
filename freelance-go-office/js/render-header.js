@@ -3,9 +3,9 @@ const products = [
     id: "prod-001",
     product: "Grampeadores e Extratores",
     subcategories: [
-      { id: "subcat-001", name: "Grampeador Manual" },
-      { id: "subcat-002", name: "Grampeador Elétrico" },
-      { id: "subcat-003", name: "Extrator de Grampos" },
+      { id: "1", name: "Grampeador Manual" },
+      { id: "2", name: "Grampeador Elétrico" },
+      { id: "3", name: "Extrator de Grampos" },
     ],
   },
   {
@@ -134,7 +134,15 @@ function renderHeader() {
     </li>
   </ul>
 
-  <div class="header__logo"></div>
+  <div class="header__logo">
+  <img 
+  src="../assets/logo-gooffice-header.svg" 
+  alt="Logo" 
+  onClick="window.location.href='/freelance-go-office/pages/index.html';"
+/>
+
+</div>
+
 </header>
   `;
   document.getElementById("header").innerHTML = headerHTML;
@@ -253,13 +261,24 @@ document.addEventListener("DOMContentLoaded", () => {
 
   renderProductsMenu();
 
-  // Gerenciar clique nas subcategorias
   const subSubmenuItems = document.querySelectorAll(".header__sub-submenu-item");
+
   subSubmenuItems.forEach((subItem) => {
-    subItem.addEventListener("click", (event) => {
-      event.stopPropagation(); // Evita que o clique afete outros elementos
-      console.log(`Subcategoria clicada: ID=${subItem.id}, Name=${subItem.textContent}`); // Ação ao clicar
-      // Adicione outras ações aqui, como redirecionamento
-    });
+    const subcategoryId = subItem.id;
+
+    if (subcategoryId) {
+      // Monta a URL de forma dinâmica com base no ID da subcategoria
+      const productPageUrl = `${window.location.origin}/freelance-go-office/pages/product.html?id=${subcategoryId}`;
+
+      subItem.addEventListener("click", (event) => {
+        event.stopPropagation(); // Evita propagação do clique
+
+        // Verifica e redireciona para a página de detalhes do produto
+        console.log(`Redirecionando para: ${productPageUrl}`);
+        window.location.href = productPageUrl;
+      });
+    } else {
+      console.error("ID de subcategoria inválido ou não encontrado!");
+    }
   });
 });
