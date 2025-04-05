@@ -62,13 +62,16 @@
   font-size: 1.25em;
 }
 
-/* Outros Itens do Menu */
+/* MENU */
+.header__menu-item--products,
 .header__menu-item--brand,
 .header__menu-item--sales-channels,
 .header__menu-item--catalog {
   font-size: var(--font-extra-large);
   text-transform: uppercase;
   font-family: "Proxima Nova Bold", Arial, sans-serif;
+  cursor: pointer;
+  padding: 16px 32px; /* Uniformizar com outros itens */
 }
 
 .header__menu-link {
@@ -76,47 +79,57 @@
   color: inherit;
 }
 
-/* SUBMENU - Apenas em Produtos */
+/* SUBMENU */
 .header__submenu {
   display: none;
-  flex-direction: column;
-  gap: 8px; /* Espaçamento entre itens */
-  padding: 8px 0; /* Espaçamento interno no topo e na base */
+  flex-direction: column; /* Subcategorias alinhadas verticalmente */
+  gap: 8px; /* Espaçamento entre as categorias */
+  padding: 8px 0;
   background-color: var(--neutral-light);
 }
 
 .header__submenu--open {
-  display: block;
+  display: flex; /* Submenu aparece com alinhamento vertical */
 }
 
 .header__submenu-item {
-  padding: 8px 16px; /* Espaçamento interno de cada item */
+  display: flex; /* Alinhamento horizontal para seta e texto */
+  justify-content: space-between; /* Espaço entre texto e seta */
+  flex-direction: column;
+  align-items: center;
+  padding: 8px 16px;
   font-size: var(--font-large);
-  text-transform: capitalize;
-  font-family: Arial, sans-serif;
   cursor: pointer;
+  text-transform: lowercase;
+  font-family: "Proxima Nova Regular", Arial, sans-serif;
+}
+
+.header__submenu-item-label {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  align-items: center;
 }
 
 .header__submenu-item:hover {
-  background-color: var(--neutral-medium); /* Cor ao passar o mouse */
+  background-color: var(--neutral-medium);
 }
 
-.header__submenu-label {
-  display: flex;
-  align-items: center;
-  font-size: var(--font-extra-large);
-  text-transform: uppercase;
-  font-family: "Proxima Nova Bold", Arial, sans-serif;
+/* SUB-SUBMENU */
+.header__sub-submenu {
+  display: none;
+  flex-direction: column; /* Subcategorias alinhadas verticalmente */
+  gap: 4px; /* Espaçamento entre subcategorias */
 }
 
-/* ITEM "MENU PRINCIPAL" */
-.header__menu-item--main {
+.header__sub-submenu--open {
+  display: flex; /* Exibir sub-submenu com flexbox */
+}
+
+.header__sub-submenu-item {
+  padding: 6px 16px;
+  font-size: var(--font-medium);
   cursor: pointer;
-
-  display: flex; /* Ativa o flexbox para alinhamento */
-  align-items: center; /* Alinha verticalmente */
-  justify-content: flex-start; /* Garante alinhamento horizontal à esquerda */
-  gap: 4px; /* Espaçamento entre a seta e o texto */
 }
 
 /* ARROWS */
@@ -129,7 +142,16 @@
   stroke: var(--primary);
 }
 
+.header__arrow--right {
+  stroke: var(--primary);
+}
+
+.header__arrow--up {
+  stroke: var(--primary);
+  transform: rotate(-90deg); /* Aponta para cima */
+}
+
 .header__arrow--left {
   stroke: var(--primary);
-  transform: scaleX(-1); /* Inverte horizontalmente */
+  transform: scaleX(-1);
 }

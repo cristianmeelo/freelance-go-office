@@ -7,15 +7,13 @@ function renderHeader() {
   </label>
 
   <ul class="header__menu">
-    <!-- Menu Principal (criado dinamicamente via JavaScript) -->
+    <!-- Menu Principal -->
     <li class="header__menu-item header__menu-item--main" style="display: none;">
-    
-    
-   <svg class="header__arrow header__arrow--left" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M10 7L15 12L10 17" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
-        </svg>
-
-    Menu Principal</li>
+      <svg class="header__arrow header__arrow--left" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M10 7L15 12L10 17" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+      </svg>
+      Menu Principal
+    </li>
 
     <!-- Produtos com Submenu -->
     <li class="header__menu-item header__menu-item--products">
@@ -25,9 +23,34 @@ function renderHeader() {
           <path d="M10 7L15 12L10 17" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
         </svg>
       </label>
-      <ul class="header__submenu">
-        <li class="header__submenu-item">Categoria 1</li>
-        <li class="header__submenu-item">Categoria 2</li>
+      <ul class="header__submenu header__submenu--products">
+        <!-- Categoria 1 -->
+        <li class="header__submenu-item">
+          <label class="header__submenu-item-label">
+            Categoria 1
+            <svg class="header__arrow header__arrow--right" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M10 7L15 12L10 17" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+            </svg>
+          </label>
+          <ul class="header__sub-submenu">
+            <li class="header__sub-submenu-item">Subcategoria 1.1</li>
+            <li class="header__sub-submenu-item">Subcategoria 1.2</li>
+          </ul>
+        </li>
+
+        <!-- Categoria 2 -->
+        <li class="header__submenu-item">
+          <label class="header__submenu-item-label">
+            Categoria 2
+            <svg class="header__arrow header__arrow--right" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M10 7L15 12L10 17" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+            </svg>
+          </label>
+          <ul class="header__sub-submenu">
+            <li class="header__sub-submenu-item">Subcategoria 2.1</li>
+            <li class="header__sub-submenu-item">Subcategoria 2.2</li>
+          </ul>
+        </li>
       </ul>
     </li>
 
@@ -52,74 +75,6 @@ function renderHeader() {
 
 
 
-`;
-  document.getElementById("header").innerHTML = headerHTML;
-}
-
-function handleHeaderTransparency() {
-  const header = document.querySelector(".header");
-
-  const isHomePage = window.location.pathname.endsWith("index.html") || window.location.pathname === "/";
-
-  if (window.scrollY === 0 && isHomePage) {
-    header.classList.add("apply__transparency");
-  } else {
-    header.classList.remove("apply__transparency");
-  }
-}
-
-window.addEventListener("scroll", handleHeaderTransparency);
-function renderHeader() {
-  const headerHTML = `
-<header class="header">
-  <input type="checkbox" id="menu-toggle" class="header__toggle-checkbox" />
-  <label for="menu-toggle" class="header__toggle-label">
-    <div class="header__icon header__icon--hamburger"></div>
-  </label>
-
-  <ul class="header__menu">
-    <!-- Menu Principal (criado dinamicamente via JavaScript) -->
-    <li class="header__menu-item header__menu-item--main" style="display: none;">
-    
-    
-   <svg class="header__arrow header__arrow--left" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M10 7L15 12L10 17" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
-        </svg>
-
-    Menu Principal</li>
-
-    <!-- Produtos com Submenu -->
-    <li class="header__menu-item header__menu-item--products">
-      <label class="header__submenu-label">
-        Produtos
-        <svg class="header__arrow header__arrow--down" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M10 7L15 12L10 17" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
-        </svg>
-      </label>
-      <ul class="header__submenu">
-        <li class="header__submenu-item">Categoria 1</li>
-        <li class="header__submenu-item">Categoria 2</li>
-      </ul>
-    </li>
-
-    <!-- Marca sem Submenu -->
-    <li class="header__menu-item header__menu-item--brand">
-      <a href="./pages/brand.html" class="header__menu-link">Marca</a>
-    </li>
-
-    <!-- Canais de Venda sem Submenu -->
-    <li class="header__menu-item header__menu-item--sales-channels">
-      <a href="./pages/sales.html" class="header__menu-link">Canais de Venda</a>
-    </li>
-
-    <!-- Acesso ao Catálogo sem Submenu -->
-    <li class="header__menu-item header__menu-item--catalog">
-      <a href="./pages/catalog.html" class="header__menu-link">Acesse o Catálogo</a>
-    </li>
-  </ul>
-
-  <div class="header__logo"></div>
-</header>
 
 
 
@@ -150,64 +105,78 @@ document.addEventListener("DOMContentLoaded", () => {
   const menuIcon = document.querySelector(".header__icon");
 
   // Controle do estado do menu hamburguer
-  menuToggle.addEventListener("change", () => {
-    if (menuToggle.checked) {
-      // Abre o menu
-      headerMenu.classList.add("header__menu--open");
-      menuIcon.classList.add("header__icon--close");
-      menuIcon.classList.remove("header__icon--hamburger");
-    } else {
-      // Fecha o menu
-      headerMenu.classList.remove("header__menu--open");
-      menuIcon.classList.remove("header__icon--close");
-      menuIcon.classList.add("header__icon--hamburger");
-    }
-  });
+  if (menuToggle && headerMenu && menuIcon) {
+    menuToggle.addEventListener("change", () => {
+      if (menuToggle.checked) {
+        // Abre o menu
+        headerMenu.classList.add("header__menu--open");
+        menuIcon.classList.add("header__icon--close");
+        menuIcon.classList.remove("header__icon--hamburger");
+      } else {
+        // Fecha o menu
+        headerMenu.classList.remove("header__menu--open");
+        menuIcon.classList.remove("header__icon--close");
+        menuIcon.classList.add("header__icon--hamburger");
+      }
+    });
+  } else {
+    console.error("Elementos do menu hamburguer não encontrados. Verifique o HTML.");
+  }
 
   // Controle de "Produtos" e "Menu Principal"
   const productsLabel = document.querySelector(".header__menu-item--products .header__submenu-label");
   const productsSubmenu = document.querySelector(".header__menu-item--products .header__submenu");
-  const arrowDown = document.querySelector(".header__arrow--down"); // A seta ao lado de "Produtos"
   const menuPrincipal = document.querySelector(".header__menu-item--main");
   const otherMenuItems = document.querySelectorAll(".header__menu-item:not(.header__menu-item--products):not(.header__menu-item--main)");
 
-  // Clique em Produtos
-  let isProductsOpen = false; // Variável para rastrear o estado do submenu de Produtos
+  if (productsLabel && productsSubmenu && menuPrincipal && otherMenuItems.length > 0) {
+    let isProductsOpen = false;
 
-  productsLabel.addEventListener("click", () => {
-    if (!isProductsOpen) {
-      // Abrir o submenu de Produtos apenas se ainda não estiver aberto
-      productsSubmenu.classList.add("header__submenu--open");
-      isProductsOpen = true;
+    productsLabel.addEventListener("click", () => {
+      if (!isProductsOpen) {
+        productsSubmenu.classList.add("header__submenu--open");
+        isProductsOpen = true;
 
-      // Esconde a seta ao lado de Produtos
-      arrowDown.style.display = "none";
+        menuPrincipal.style.display = "flex";
 
-      // Exibe "Menu Principal"
-      menuPrincipal.style.display = "flex";
-
-      // Esconde outros itens do menu
-      otherMenuItems.forEach((item) => {
-        item.style.display = "none";
-      });
-    }
-  });
-
-  // Clique em "Menu Principal"
-  menuPrincipal.addEventListener("click", () => {
-    // Fecha o submenu de Produtos
-    productsSubmenu.classList.remove("header__submenu--open");
-    isProductsOpen = false;
-
-    // Reexibe a seta ao lado de Produtos
-    arrowDown.style.display = "inline";
-
-    // Esconde "Menu Principal"
-    menuPrincipal.style.display = "none";
-
-    // Reexibe outros itens do menu
-    otherMenuItems.forEach((item) => {
-      item.style.display = "flex";
+        otherMenuItems.forEach((item) => {
+          item.style.display = "none";
+        });
+      }
     });
-  });
+
+    menuPrincipal.addEventListener("click", () => {
+      productsSubmenu.classList.remove("header__submenu--open");
+      isProductsOpen = false;
+
+      menuPrincipal.style.display = "none";
+
+      otherMenuItems.forEach((item) => {
+        item.style.display = "flex";
+      });
+    });
+
+    // Controle das subcategorias
+    const categoryItems = document.querySelectorAll(".header__submenu-item");
+    categoryItems.forEach((item) => {
+      const subSubmenu = item.querySelector(".header__sub-submenu");
+      const arrowRight = item.querySelector(".header__arrow--right");
+
+      if (subSubmenu && arrowRight) {
+        item.addEventListener("click", () => {
+          if (subSubmenu.classList.contains("header__sub-submenu--open")) {
+            subSubmenu.classList.remove("header__sub-submenu--open");
+            arrowRight.classList.remove("header__arrow--up");
+            arrowRight.classList.add("header__arrow--right");
+          } else {
+            subSubmenu.classList.add("header__sub-submenu--open");
+            arrowRight.classList.remove("header__arrow--right");
+            arrowRight.classList.add("header__arrow--up");
+          }
+        });
+      }
+    });
+  } else {
+    console.error("Elementos relacionados a Produtos não encontrados. Verifique o HTML.");
+  }
 });
