@@ -1,3 +1,95 @@
+const products = [
+  {
+    id: "prod-001",
+    product: "Grampeadores e Extratores",
+    subcategories: [
+      { id: "subcat-001", name: "Grampeador Manual" },
+      { id: "subcat-002", name: "Grampeador Elétrico" },
+      { id: "subcat-003", name: "Extrator de Grampos" },
+    ],
+  },
+  {
+    id: "prod-002",
+    product: "Papelaria",
+    subcategories: [
+      { id: "subcat-004", name: "Canetas" },
+      { id: "subcat-005", name: "Lápis" },
+      { id: "subcat-006", name: "Borracha" },
+    ],
+  },
+  {
+    id: "prod-003",
+    product: "Organização",
+    subcategories: [
+      { id: "subcat-007", name: "Pastas de Arquivo" },
+      { id: "subcat-008", name: "Caixas Organizadoras" },
+    ],
+  },
+  {
+    id: "prod-004",
+    product: "Móveis de Escritório",
+    subcategories: [
+      { id: "subcat-009", name: "Cadeiras Ergonômicas" },
+      { id: "subcat-010", name: "Mesas de Escritório" },
+    ],
+  },
+  {
+    id: "prod-005",
+    product: "Tecnologia",
+    subcategories: [
+      { id: "subcat-011", name: "Notebooks" },
+      { id: "subcat-012", name: "Monitores" },
+      { id: "subcat-013", name: "Teclados e Mouses" },
+    ],
+  },
+  {
+    id: "prod-006",
+    product: "Limpeza",
+    subcategories: [
+      { id: "subcat-014", name: "Detergentes" },
+      { id: "subcat-015", name: "Luvas de Limpeza" },
+      { id: "subcat-016", name: "Esponjas" },
+    ],
+  },
+  {
+    id: "prod-007",
+    product: "Copa e Cozinha",
+    subcategories: [
+      { id: "subcat-017", name: "Utensílios de Cozinha" },
+      { id: "subcat-018", name: "Louças" },
+      { id: "subcat-019", name: "Talheres" },
+    ],
+  },
+  {
+    id: "prod-008",
+    product: "Eletrônicos",
+    subcategories: [
+      { id: "subcat-020", name: "Celulares" },
+      { id: "subcat-021", name: "Tablets" },
+      { id: "subcat-022", name: "Fones de Ouvido" },
+    ],
+  },
+  {
+    id: "prod-009",
+    product: "Ferramentas",
+    subcategories: [
+      { id: "subcat-023", name: "Furadeiras" },
+      { id: "subcat-024", name: "Chaves de Fenda" },
+      { id: "subcat-025", name: "Alicates" },
+    ],
+  },
+  {
+    id: "prod-010",
+    product: "Automotivo",
+    subcategories: [
+      { id: "subcat-026", name: "Óleos e Lubrificantes" },
+      { id: "subcat-027", name: "Limpadores Automotivos" },
+      { id: "subcat-028", name: "Acessórios para Carros" },
+    ],
+  },
+];
+
+// Função para renderizar o cabeçalho
 function renderHeader() {
   const headerHTML = `
 <header class="header">
@@ -23,35 +115,7 @@ function renderHeader() {
           <path d="M10 7L15 12L10 17" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
         </svg>
       </label>
-      <ul class="header__submenu header__submenu--products">
-        <!-- Categoria 1 -->
-        <li class="header__submenu-item">
-          <label class="header__submenu-item-label">
-            Categoria 1
-            <svg class="header__arrow header__arrow--right" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M10 7L15 12L10 17" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
-            </svg>
-          </label>
-          <ul class="header__sub-submenu">
-            <li class="header__sub-submenu-item">Subcategoria 1.1</li>
-            <li class="header__sub-submenu-item">Subcategoria 1.2</li>
-          </ul>
-        </li>
-
-        <!-- Categoria 2 -->
-        <li class="header__submenu-item">
-          <label class="header__submenu-item-label">
-            Categoria 2
-            <svg class="header__arrow header__arrow--right" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M10 7L15 12L10 17" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
-            </svg>
-          </label>
-          <ul class="header__sub-submenu">
-            <li class="header__sub-submenu-item">Subcategoria 2.1</li>
-            <li class="header__sub-submenu-item">Subcategoria 2.2</li>
-          </ul>
-        </li>
-      </ul>
+      <ul class="header__submenu header__submenu--products"></ul>
     </li>
 
     <!-- Marca sem Submenu -->
@@ -72,16 +136,11 @@ function renderHeader() {
 
   <div class="header__logo"></div>
 </header>
-
-
-
-
-
-
-`;
+  `;
   document.getElementById("header").innerHTML = headerHTML;
 }
 
+// Função para gerenciar a transparência do cabeçalho
 function handleHeaderTransparency() {
   const header = document.querySelector(".header");
 
@@ -94,12 +153,11 @@ function handleHeaderTransparency() {
   }
 }
 
-window.addEventListener("scroll", handleHeaderTransparency);
+// Lógica principal do menu
 document.addEventListener("DOMContentLoaded", () => {
   renderHeader();
   handleHeaderTransparency();
 
-  // Elementos principais
   const menuToggle = document.getElementById("menu-toggle");
   const headerMenu = document.querySelector(".header__menu");
   const menuIcon = document.querySelector(".header__icon");
@@ -108,75 +166,100 @@ document.addEventListener("DOMContentLoaded", () => {
   if (menuToggle && headerMenu && menuIcon) {
     menuToggle.addEventListener("change", () => {
       if (menuToggle.checked) {
-        // Abre o menu
         headerMenu.classList.add("header__menu--open");
         menuIcon.classList.add("header__icon--close");
         menuIcon.classList.remove("header__icon--hamburger");
       } else {
-        // Fecha o menu
         headerMenu.classList.remove("header__menu--open");
         menuIcon.classList.remove("header__icon--close");
         menuIcon.classList.add("header__icon--hamburger");
       }
     });
-  } else {
-    console.error("Elementos do menu hamburguer não encontrados. Verifique o HTML.");
   }
 
-  // Controle de "Produtos" e "Menu Principal"
-  const productsLabel = document.querySelector(".header__menu-item--products .header__submenu-label");
-  const productsSubmenu = document.querySelector(".header__menu-item--products .header__submenu");
-  const menuPrincipal = document.querySelector(".header__menu-item--main");
-  const otherMenuItems = document.querySelectorAll(".header__menu-item:not(.header__menu-item--products):not(.header__menu-item--main)");
+  const renderProductsMenu = () => {
+    const productsSubmenu = document.querySelector(".header__submenu--products");
 
-  if (productsLabel && productsSubmenu && menuPrincipal && otherMenuItems.length > 0) {
+    products.forEach((productData) => {
+      const productItem = document.createElement("li");
+      productItem.className = "header__submenu-item";
+
+      const label = document.createElement("label");
+      label.className = "header__submenu-item-label";
+      label.textContent = productData.product;
+
+      const arrow = document.createElement("svg");
+      arrow.className = "header__arrow header__arrow--right";
+      arrow.innerHTML = `<path d="M10 7L15 12L10 17" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>`;
+
+      label.appendChild(arrow);
+      productItem.appendChild(label);
+
+      const subSubmenu = document.createElement("ul");
+      subSubmenu.className = "header__sub-submenu";
+
+      productData.subcategories.forEach((subcategory) => {
+        const subcategoryItem = document.createElement("li");
+        subcategoryItem.className = "header__sub-submenu-item";
+        subcategoryItem.id = subcategory.id;
+        subcategoryItem.textContent = subcategory.name;
+
+        subSubmenu.appendChild(subcategoryItem);
+      });
+
+      productItem.appendChild(subSubmenu);
+      productsSubmenu.appendChild(productItem);
+
+      // Evento para abrir/fechar subcategorias
+      label.addEventListener("click", () => {
+        const isOpen = subSubmenu.classList.contains("header__sub-submenu--open");
+
+        // Alterna estado do submenu e flechas
+        if (isOpen) {
+          subSubmenu.classList.remove("header__sub-submenu--open");
+          arrow.classList.remove("header__arrow--up");
+          arrow.classList.add("header__arrow--right");
+        } else {
+          subSubmenu.classList.add("header__sub-submenu--open");
+          arrow.classList.remove("header__arrow--right");
+          arrow.classList.add("header__arrow--up");
+        }
+      });
+    });
+
+    // Adiciona evento ao submenu principal de Produtos
+    const productsLabel = document.querySelector(".header__menu-item--products .header__submenu-label");
+    const productsSubmenuToggle = document.querySelector(".header__submenu--products");
+    const menuPrincipal = document.querySelector(".header__menu-item--main");
+    const otherMenuItems = document.querySelectorAll(".header__menu-item:not(.header__menu-item--products):not(.header__menu-item--main)");
     let isProductsOpen = false;
 
     productsLabel.addEventListener("click", () => {
       if (!isProductsOpen) {
-        productsSubmenu.classList.add("header__submenu--open");
+        productsSubmenuToggle.classList.add("header__submenu--open");
+        menuPrincipal.style.display = "flex"; // Exibe "Menu Principal"
+        otherMenuItems.forEach((item) => (item.style.display = "none")); // Esconde outros menus
         isProductsOpen = true;
-
-        menuPrincipal.style.display = "flex";
-
-        otherMenuItems.forEach((item) => {
-          item.style.display = "none";
-        });
       }
     });
 
     menuPrincipal.addEventListener("click", () => {
-      productsSubmenu.classList.remove("header__submenu--open");
+      productsSubmenuToggle.classList.remove("header__submenu--open");
+      menuPrincipal.style.display = "none"; // Esconde "Menu Principal"
+      otherMenuItems.forEach((item) => (item.style.display = "flex")); // Reexibe os outros menus
       isProductsOpen = false;
-
-      menuPrincipal.style.display = "none";
-
-      otherMenuItems.forEach((item) => {
-        item.style.display = "flex";
-      });
     });
+  };
 
-    // Controle das subcategorias
-    const categoryItems = document.querySelectorAll(".header__submenu-item");
-    categoryItems.forEach((item) => {
-      const subSubmenu = item.querySelector(".header__sub-submenu");
-      const arrowRight = item.querySelector(".header__arrow--right");
+  renderProductsMenu();
 
-      if (subSubmenu && arrowRight) {
-        item.addEventListener("click", () => {
-          if (subSubmenu.classList.contains("header__sub-submenu--open")) {
-            subSubmenu.classList.remove("header__sub-submenu--open");
-            arrowRight.classList.remove("header__arrow--up");
-            arrowRight.classList.add("header__arrow--right");
-          } else {
-            subSubmenu.classList.add("header__sub-submenu--open");
-            arrowRight.classList.remove("header__arrow--right");
-            arrowRight.classList.add("header__arrow--up");
-          }
-        });
-      }
+  // Gerenciar clique nas subcategorias
+  const subSubmenuItems = document.querySelectorAll(".header__sub-submenu-item");
+  subSubmenuItems.forEach((subItem) => {
+    subItem.addEventListener("click", (event) => {
+      event.stopPropagation(); // Evita que o clique afete outros elementos
+      console.log(`Subcategoria clicada: ID=${subItem.id}, Name=${subItem.textContent}`); // Ação ao clicar
+      // Adicione outras ações aqui, como redirecionamento
     });
-  } else {
-    console.error("Elementos relacionados a Produtos não encontrados. Verifique o HTML.");
-  }
+  });
 });

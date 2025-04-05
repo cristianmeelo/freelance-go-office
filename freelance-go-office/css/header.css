@@ -119,7 +119,8 @@
 .header__sub-submenu {
   display: none;
   flex-direction: column; /* Subcategorias alinhadas verticalmente */
-  gap: 4px; /* Espaçamento entre subcategorias */
+  gap: 12px; /* Espaçamento entre subcategorias */
+  padding-top: 12px;
 }
 
 .header__sub-submenu--open {
@@ -127,9 +128,15 @@
 }
 
 .header__sub-submenu-item {
+  cursor: pointer;
   padding: 6px 16px;
   font-size: var(--font-medium);
-  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.header__sub-submenu-item:hover {
+  background-color: var(--neutral-medium);
+  color: var(--primary-dark);
 }
 
 /* ARROWS */
