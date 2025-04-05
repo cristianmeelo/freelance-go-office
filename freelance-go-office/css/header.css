@@ -57,10 +57,12 @@
   padding: 16px 32px;
 }
 
+/* Produtos */
 .header__menu-item--products {
   font-size: 1.25em;
 }
 
+/* Outros Itens do Menu */
 .header__menu-item--brand,
 .header__menu-item--sales-channels,
 .header__menu-item--catalog {
@@ -77,8 +79,26 @@
 /* SUBMENU - Apenas em Produtos */
 .header__submenu {
   display: none;
-  background-color: var(--neutral-light);
   flex-direction: column;
+  gap: 8px; /* Espaçamento entre itens */
+  padding: 8px 0; /* Espaçamento interno no topo e na base */
+  background-color: var(--neutral-light);
+}
+
+.header__submenu--open {
+  display: block;
+}
+
+.header__submenu-item {
+  padding: 8px 16px; /* Espaçamento interno de cada item */
+  font-size: var(--font-large);
+  text-transform: capitalize;
+  font-family: Arial, sans-serif;
+  cursor: pointer;
+}
+
+.header__submenu-item:hover {
+  background-color: var(--neutral-medium); /* Cor ao passar o mouse */
 }
 
 .header__submenu-label {
@@ -89,12 +109,14 @@
   font-family: "Proxima Nova Bold", Arial, sans-serif;
 }
 
-.header__submenu-toggle {
-  display: none;
-}
+/* ITEM "MENU PRINCIPAL" */
+.header__menu-item--main {
+  cursor: pointer;
 
-.header__submenu-toggle:checked + .header__submenu-label + .header__submenu {
-  display: block;
+  display: flex; /* Ativa o flexbox para alinhamento */
+  align-items: center; /* Alinha verticalmente */
+  justify-content: flex-start; /* Garante alinhamento horizontal à esquerda */
+  gap: 4px; /* Espaçamento entre a seta e o texto */
 }
 
 /* ARROWS */
@@ -105,4 +127,9 @@
 
 .header__arrow--down {
   stroke: var(--primary);
+}
+
+.header__arrow--left {
+  stroke: var(--primary);
+  transform: scaleX(-1); /* Inverte horizontalmente */
 }
