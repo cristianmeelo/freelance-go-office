@@ -1,3 +1,4 @@
+/* HEADER GERAL */
 .header {
   display: flex;
   position: fixed;
@@ -12,150 +13,96 @@
   background-color: var(--primary);
 }
 
-.apply__transparency {
-  background-color: #ff000000;
-}
-
-.header__checkbox {
+/* TOGGLE (Checkbox e Ícones) */
+.header__toggle-checkbox {
   display: none;
 }
 
-.header__hamburger {
-  width: 30px;
-  height: 30px;
-  background-image: url("../assets/hamburger-menu.svg");
-  background-size: cover;
-  display: inline-block;
+.header__toggle-label {
+  cursor: pointer;
 }
 
-#checkbox-hamburger:checked + label .header__hamburger {
+.header__icon {
+  width: 30px;
+  height: 30px;
+  background-size: cover;
+}
+
+.header__icon--hamburger {
+  background-image: url("../assets/hamburger-menu.svg");
+}
+
+.header__icon--close {
   background-image: url("../assets/close-icon.svg");
 }
 
+/* MENU */
 .header__menu {
   display: none;
   position: absolute;
   top: 100%;
   left: 0;
-  padding: 0;
-  margin: 0;
   width: 100vw;
   height: 100vh;
   background-color: var(--white);
   z-index: 10;
-  max-height: 600px;
-  overflow-y: scroll;
+  overflow-y: auto;
 }
 
-#checkbox-hamburger:checked ~ .header__menu {
+.header__menu--open {
   display: block;
 }
 
 .header__menu-item {
-  padding: 32px 0 8px 12px;
+  padding: 16px 32px;
 }
 
-.header__menu-item--first {
-  display: flex;
-  align-items: center;
-  display: none;
-}
-
-/* && acima ok */
-
-/* && abaixo nao mexi */
-
-.header__menu-item--title {
+.header__menu-item--products {
   font-size: 1.25em;
-  font-weight: bold;
-  padding: 12px 32px;
-  padding-top: 32px;
-  border-bottom: 1px solid var(--neutral-medium);
 }
 
-.padding-top-32 {
-  background-color: red;
-  padding-top: 64px;
+.header__menu-item--brand,
+.header__menu-item--sales-channels,
+.header__menu-item--catalog {
+  font-size: var(--font-extra-large);
+  text-transform: uppercase;
+  font-family: "Proxima Nova Bold", Arial, sans-serif;
 }
 
-.list-menu__link {
-  color: var(--neutral-dark);
+.header__menu-link {
   text-decoration: none;
-  text-transform: uppercase;
+  color: inherit;
 }
 
-.list-menu__submenu {
-  display: flex;
-  align-items: center;
-  text-transform: uppercase;
-}
-
-.list-menu__subcategory {
-  font-weight: normal;
-  padding-top: 28px;
-}
-
-.arrow {
-  display: flex;
-  align-items: center;
-  width: 20px;
-  height: 20px;
-  stroke: var(--primary);
-}
-
-.left-arrow {
-  display: flex;
-  align-items: center;
-  width: 20px;
-  height: 20px;
-  stroke: var(--primary);
-  transform: scaleX(-1);
-}
-
-.submenu {
+/* SUBMENU - Apenas em Produtos */
+.header__submenu {
   display: none;
-  padding-left: 16px;
   background-color: var(--neutral-light);
   flex-direction: column;
 }
 
-.submenu_toggle:checked + label .arrow {
+.header__submenu-label {
+  display: flex;
+  align-items: center;
+  font-size: var(--font-extra-large);
+  text-transform: uppercase;
+  font-family: "Proxima Nova Bold", Arial, sans-serif;
+}
+
+.header__submenu-toggle {
   display: none;
 }
 
-.submenu_toggle {
-  display: none;
-}
-
-.submenu_toggle:checked + label + .submenu {
+.header__submenu-toggle:checked + .header__submenu-label + .header__submenu {
   display: block;
 }
 
-.list-menu__title__another {
-  font-size: 1.25em;
-  font-weight: bold;
-  padding: 12px 32px;
-  border-bottom: 1px solid var(--neutral-medium);
+/* ARROWS */
+.header__arrow {
+  width: 20px;
+  height: 20px;
 }
 
-.submenu-item {
-  padding: 12px 0;
-}
-
-.submenu-item a {
-  text-decoration: none;
-  color: var(--neutral-dark);
-  padding-left: 4px;
-}
-
-.selected {
-  background-color: #dfdfdf;
-}
-
-.header__logo {
-  background-image: url("../assets/logo-gooffice-header.svg");
-  background-size: contain;
-  background-repeat: no-repeat;
-  width: 160px;
-  height: 30px;
+.header__arrow--down {
+  stroke: var(--primary);
 }
