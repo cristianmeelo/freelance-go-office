@@ -5,38 +5,38 @@ export const renderMobileHeader = () => {
   <header id="header-renderized-mobile" class="header">
     <div class="header__mobile">
       <input type="checkbox" id="menu-toggle" class="header__toggle-checkbox" />
-      <label for="menu-toggle" class="header__toggle-label">
-        <div class="header__icon header__icon--hamburger"></div>
+      <label for="menu-toggle" id="menu-toggle-label">
+        <div id="menu-icon" class="header__icon header__icon--hamburger"></div>
       </label>
 
-      <ul class="header__menu">
-        <li class="header__menu-item header__menu-item--main" style="display: none">
-          <svg class="header__arrow header__arrow--left" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <ul id="header-menu" class="header__menu">
+        <li id="menu-principal" class="header__menu-item header__menu-item--main" style="display: none">
+          <svg id="arrow-left" class="header__arrow header__arrow--left" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M10 7L15 12L10 17" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
           </svg>
           Menu Principal
         </li>
-        <li class="header__menu-item header__menu-item--products">
-          <label class="header__submenu-label">
+        <li id="products-menu-item" class="header__menu-item header__menu-item--products">
+          <label id="products-label" class="header__submenu-label">
             Produtos
-            <svg class="header__arrow header__arrow--down" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <svg id="arrow-down" class="header__arrow header__arrow--down" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M10 7L15 12L10 17" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
             </svg>
           </label>
-          <ul class="header__submenu header__submenu--products"></ul>
+          <ul id="products-submenu" class="header__submenu header__submenu--products"></ul>
         </li>
-        <li class="header__menu-item header__menu-item--brand">
+        <li id="brand-menu-item" class="header__menu-item header__menu-item--brand">
           <a href="./pages/brand.html" class="header__menu-link">Marca</a>
         </li>
-        <li class="header__menu-item header__menu-item--sales-channels">
+        <li id="sales-menu-item" class="header__menu-item header__menu-item--sales-channels">
           <a href="./pages/sales.html" class="header__menu-link">Canais de Venda</a>
         </li>
-        <li class="header__menu-item header__menu-item--catalog">
+        <li id="catalog-menu-item" class="header__menu-item header__menu-item--catalog">
           <a href="./pages/catalog.html" class="header__menu-link">Acesse o Catálogo</a>
         </li>
       </ul>
 
-      <div class="header__logo">
+      <div id="header-logo" class="header__logo">
         <img src="../assets/logo-gooffice-header.svg" alt="Logo" onClick="window.location.href='/freelance-go-office/pages/index.html';" />
       </div>
     </div>
@@ -46,7 +46,7 @@ export const renderMobileHeader = () => {
 };
 
 export const renderMobileProductsMenu = () => {
-  const productsSubmenu = document.querySelector(".header__submenu--products");
+  const productsSubmenu = document.getElementById("products-submenu");
 
   if (!productsSubmenu) {
     console.error("Submenu de produtos não encontrado.");
@@ -95,11 +95,7 @@ export const renderMobileProductsMenu = () => {
     label.addEventListener("click", () => {
       const isOpen = subSubmenu.classList.contains("header__sub-submenu--open");
 
-      if (isOpen) {
-        subSubmenu.classList.remove("header__sub-submenu--open");
-        arrow.classList.remove("header__arrow--up");
-        arrow.classList.add("header__arrow--right");
-      } else {
+      if (!isOpen) {
         subSubmenu.classList.add("header__sub-submenu--open");
         arrow.classList.remove("header__arrow--right");
         arrow.classList.add("header__arrow--up");
@@ -113,11 +109,13 @@ document.addEventListener("DOMContentLoaded", () => {
   renderMobileProductsMenu();
 
   const menuToggle = document.getElementById("menu-toggle");
-  const headerMenu = document.querySelector(".header__menu");
-  const menuIcon = document.querySelector(".header__icon");
-  console.log("%cfreelance-go-office/js/header/header-mobile.js:118 menuToggle && headerMenu && menuIcon", "color: #26bfa5;", !!menuToggle);
+  const headerMenu = document.getElementById("header-menu");
+  const menuIcon = document.getElementById("menu-icon");
+  const productsMenuButton = document.getElementById("products-label");
+  const productsSubmenuToggle = document.getElementById("products-submenu");
+  const menuPrincipal = document.getElementById("menu-principal");
 
-  if (!!menuToggle && !!headerMenu && !!menuIcon) {
+  if (!!menuToggle && !!headerMenu && !!menuIcon && !!productsMenuButton && !!productsSubmenuToggle && !!menuPrincipal) {
     menuToggle.addEventListener("change", () => {
       if (menuToggle.checked) {
         headerMenu.classList.add("header__menu--open");
@@ -129,23 +127,21 @@ document.addEventListener("DOMContentLoaded", () => {
         menuIcon.classList.add("header__icon--hamburger");
       }
     });
-  }
 
-  const productsMenuButton = document.querySelector(".header__submenu-label"); // Botão que abre o submenu
-  const productsSubmenuToggle = document.querySelector(".header__submenu--products"); // Submenu associado
+    productsMenuButton.addEventListener("click", () => {
+      const isOpen = productsSubmenuToggle.classList.contains("header__submenu--open");
 
-  if (!productsMenuButton || !productsSubmenuToggle) {
-    return;
-  }
+      if (!isOpen) {
+        productsSubmenuToggle.classList.add("header__submenu--open");
+        menuPrincipal.style.display = "flex";
+      }
+    });
 
-
-  productsMenuButton.addEventListener("click", () => {
-    const isOpen = productsSubmenuToggle.classList.contains("header__submenu--open");
-
-    if (isOpen) {
+    menuPrincipal.addEventListener("click", () => {
       productsSubmenuToggle.classList.remove("header__submenu--open");
-    } else {
-      productsSubmenuToggle.classList.add("header__submenu--open");
-    }
-  });
+      menuPrincipal.style.display = "none";
+    });
+  } else {
+    console.error("Erro: Elementos necessários para o funcionamento do menu não encontrados.");
+  }
 });
