@@ -89,7 +89,6 @@ const products = [
   },
 ];
 
-// Função para renderizar o cabeçalho
 function renderHeader() {
   const headerHTML = `
 <header class="header">
@@ -148,7 +147,6 @@ function renderHeader() {
   document.getElementById("header").innerHTML = headerHTML;
 }
 
-// Função para gerenciar a transparência do cabeçalho
 function handleHeaderTransparency() {
   const header = document.querySelector(".header");
 
@@ -161,7 +159,6 @@ function handleHeaderTransparency() {
   }
 }
 
-// Lógica principal do menu
 document.addEventListener("DOMContentLoaded", () => {
   renderHeader();
   handleHeaderTransparency();
@@ -198,6 +195,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
       const arrow = document.createElement("svg");
       arrow.className = "header__arrow header__arrow--right";
+      arrow.setAttribute("viewBox", "0 0 24 24");
+      arrow.setAttribute("fill", "none");
+      arrow.setAttribute("xmlns", "http://www.w3.org/2000/svg");
       arrow.innerHTML = `<path d="M10 7L15 12L10 17" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>`;
 
       label.appendChild(arrow);
@@ -218,11 +218,9 @@ document.addEventListener("DOMContentLoaded", () => {
       productItem.appendChild(subSubmenu);
       productsSubmenu.appendChild(productItem);
 
-      // Evento para abrir/fechar subcategorias
       label.addEventListener("click", () => {
         const isOpen = subSubmenu.classList.contains("header__sub-submenu--open");
 
-        // Alterna estado do submenu e flechas
         if (isOpen) {
           subSubmenu.classList.remove("header__sub-submenu--open");
           arrow.classList.remove("header__arrow--up");
@@ -235,7 +233,6 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     });
 
-    // Adiciona evento ao submenu principal de Produtos
     const productsLabel = document.querySelector(".header__menu-item--products .header__submenu-label");
     const productsSubmenuToggle = document.querySelector(".header__submenu--products");
     const menuPrincipal = document.querySelector(".header__menu-item--main");
@@ -245,16 +242,16 @@ document.addEventListener("DOMContentLoaded", () => {
     productsLabel.addEventListener("click", () => {
       if (!isProductsOpen) {
         productsSubmenuToggle.classList.add("header__submenu--open");
-        menuPrincipal.style.display = "flex"; // Exibe "Menu Principal"
-        otherMenuItems.forEach((item) => (item.style.display = "none")); // Esconde outros menus
+        menuPrincipal.style.display = "flex";
+        otherMenuItems.forEach((item) => (item.style.display = "none"));
         isProductsOpen = true;
       }
     });
 
     menuPrincipal.addEventListener("click", () => {
       productsSubmenuToggle.classList.remove("header__submenu--open");
-      menuPrincipal.style.display = "none"; // Esconde "Menu Principal"
-      otherMenuItems.forEach((item) => (item.style.display = "flex")); // Reexibe os outros menus
+      menuPrincipal.style.display = "none";
+      otherMenuItems.forEach((item) => (item.style.display = "flex"));
       isProductsOpen = false;
     });
   };
@@ -267,13 +264,11 @@ document.addEventListener("DOMContentLoaded", () => {
     const subcategoryId = subItem.id;
 
     if (subcategoryId) {
-      // Monta a URL de forma dinâmica com base no ID da subcategoria
       const productPageUrl = `${window.location.origin}/freelance-go-office/pages/product.html?id=${subcategoryId}`;
 
       subItem.addEventListener("click", (event) => {
-        event.stopPropagation(); // Evita propagação do clique
+        event.stopPropagation();
 
-        // Verifica e redireciona para a página de detalhes do produto
         console.log(`Redirecionando para: ${productPageUrl}`);
         window.location.href = productPageUrl;
       });

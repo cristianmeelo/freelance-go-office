@@ -19,6 +19,11 @@ h3 {
   text-align: center;
 }
 
+.product-section h1 {
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
 .product__code {
   display: flex;
   justify-content: center;

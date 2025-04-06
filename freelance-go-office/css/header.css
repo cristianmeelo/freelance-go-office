@@ -1,4 +1,3 @@
-/* HEADER GERAL */
 .header {
   display: flex;
   position: fixed;
@@ -14,19 +13,17 @@
 }
 
 .header__logo {
-  width: 100px; /* Ajuste conforme necessário */
+  width: 100px;
   height: auto;
   display: flex;
   align-items: center;
-  /justify-content: center;
 }
 
 .header__logo img {
-  width: 100%; /* Ajuste para preencher o espaço */
+  width: 100%;
   height: auto;
 }
 
-/* TOGGLE (Checkbox e Ícones) */
 .header__toggle-checkbox {
   display: none;
 }
@@ -49,7 +46,6 @@
   background-image: url("../assets/close-icon.svg");
 }
 
-/* MENU */
 .header__menu {
   display: none;
   position: absolute;
@@ -70,12 +66,6 @@
   padding: 16px 32px;
 }
 
-/* Produtos */
-.header__menu-item--products {
-  font-size: 1.25em;
-}
-
-/* MENU */
 .header__menu-item--products,
 .header__menu-item--brand,
 .header__menu-item--sales-channels,
@@ -84,7 +74,7 @@
   text-transform: uppercase;
   font-family: "Proxima Nova Bold", Arial, sans-serif;
   cursor: pointer;
-  padding: 16px 32px; /* Uniformizar com outros itens */
+  padding: 16px 32px;
 }
 
 .header__menu-link {
@@ -92,22 +82,21 @@
   color: inherit;
 }
 
-/* SUBMENU */
 .header__submenu {
   display: none;
-  flex-direction: column; /* Subcategorias alinhadas verticalmente */
-  gap: 8px; /* Espaçamento entre as categorias */
+  flex-direction: column;
+  gap: 8px;
   padding: 8px 0;
   background-color: var(--neutral-light);
 }
 
 .header__submenu--open {
-  display: flex; /* Submenu aparece com alinhamento vertical */
+  display: flex;
 }
 
 .header__submenu-item {
-  display: flex; /* Alinhamento horizontal para seta e texto */
-  justify-content: space-between; /* Espaço entre texto e seta */
+  display: flex;
+  justify-content: space-between;
   flex-direction: column;
   align-items: center;
   padding: 8px 16px;
@@ -124,20 +113,23 @@
   align-items: center;
 }
 
+.header__submenu-label {
+  display: flex;
+}
+
 .header__submenu-item:hover {
   background-color: var(--neutral-medium);
 }
 
-/* SUB-SUBMENU */
 .header__sub-submenu {
   display: none;
-  flex-direction: column; /* Subcategorias alinhadas verticalmente */
-  gap: 12px; /* Espaçamento entre subcategorias */
+  flex-direction: column;
+  gap: 12px;
   padding-top: 12px;
 }
 
 .header__sub-submenu--open {
-  display: flex; /* Exibir sub-submenu com flexbox */
+  display: flex;
 }
 
 .header__sub-submenu-item {
@@ -152,7 +144,6 @@
   color: var(--primary-dark);
 }
 
-/* ARROWS */
 .header__arrow {
   width: 20px;
   height: 20px;
@@ -168,7 +159,7 @@
 
 .header__arrow--up {
   stroke: var(--primary);
-  transform: rotate(-90deg); /* Aponta para cima */
+  transform: rotate(-90deg);
 }
 
 .header__arrow--left {
