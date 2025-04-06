@@ -89,9 +89,9 @@ const products = [
   },
 ];
 
-function renderHeader() {
+function renderMobileHeader() {
   const headerHTML = `
-  <header id="header-renderized" class="header">
+  <header id="header-renderized-mobile" class="header">
     <div class="header__mobile">
       <input type="checkbox" id="menu-toggle" class="header__toggle-checkbox" />
       <label for="menu-toggle" class="header__toggle-label">
@@ -129,46 +129,55 @@ function renderHeader() {
         <img src="../assets/logo-gooffice-header.svg" alt="Logo" onClick="window.location.href='/freelance-go-office/pages/index.html';" />
       </div>
     </div>
-    <div class="header__desktop">
-
-        
-        <img width="180px" src="../assets/logo-gooffice-header.svg" alt="Logo" onClick="window.location.href='/freelance-go-office/pages/index.html';" />
-
-       <div class="header__desktop-menu">
-        <ul class="header__desktop-menu-list">
-          <li>produtos</li>
-          <li>marca</li>
-          <li>canais de venda</li>
-        </ul>
-
-        <span>
-          acesse o catálogo
-        </span>
-       </div>
-
-    </div>
   </header>
 
   `;
-  document.getElementById("header").innerHTML = headerHTML;
+  document.getElementById("header-mobile").innerHTML = headerHTML;
+}
+
+function renderDesktopHeader() {
+  const headerHTML = `
+  <header id="header-renderized-desktop" class="header">
+
+   <div class="header__desktop">
+     <img width="180px" src="../assets/logo-gooffice-header.svg" alt="Logo" onClick="window.location.href='/freelance-go-office/pages/index.html';" />
+
+     <div class="header__desktop-menu">
+       <ul class="header__desktop-menu-list">
+         <li>produtos</li>
+         <li>marca</li>
+         <li>canais de venda</li>
+       </ul>
+
+       <span>acesse o catálogo</span>
+     </div>
+     </div>
+
+   </div>
+     `;
+  document.getElementById("header-desktop").innerHTML = headerHTML;
 }
 
 function handleHeaderTransparency() {
-  const header = document.getElementById("header-renderized");
+  const header_mobile = document.getElementById("header-renderized-mobile");
+  const header_desktop = document.getElementById("header-renderized-desktop");
 
   const isHomePage = window.location.pathname.endsWith("index.html") || window.location.pathname === "/";
 
   if (window.scrollY === 0 && isHomePage) {
-    header.classList.add("apply__transparency");
+    header_mobile.classList.add("apply__transparency");
+    header_desktop.classList.add("apply__transparency");
   } else {
-    header.classList.remove("apply__transparency");
+    header_mobile.classList.remove("apply__transparency");
+    header_desktop.classList.remove("apply__transparency");
   }
 }
 
 window.addEventListener("scroll", handleHeaderTransparency);
 
 document.addEventListener("DOMContentLoaded", () => {
-  renderHeader();
+  renderMobileHeader();
+  renderDesktopHeader();
   handleHeaderTransparency();
 
   const menuToggle = document.getElementById("menu-toggle");

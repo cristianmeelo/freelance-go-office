@@ -17,6 +17,10 @@
   width: 100%;
 }
 
+.header__desktop {
+  display: none;
+}
+
 .header__logo {
   width: 100px;
   height: auto;
@@ -172,7 +176,13 @@
   transform: scaleX(-1);
 }
 
+.apply__transparency {
+  background-color: transparent;
+  transition: opacity 0.3s ease;
+}
+
 @media screen and (min-width: 1024px) {
+  
   .header__mobile {
     display: none;
   }
@@ -220,9 +230,8 @@
     text-transform: uppercase;
     cursor: pointer;
   }
-}
-
-.apply__transparency {
-  background-color: transparent; 
-  transition: opacity 0.3s ease; 
+  .apply__transparency {
+    background-color: transparent;
+    transition: opacity 0.3s ease;
+  }
 }
