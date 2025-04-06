@@ -115,7 +115,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const productsSubmenuToggle = document.getElementById("products-submenu");
   const menuPrincipal = document.getElementById("menu-principal");
 
-  if (!!menuToggle && !!headerMenu && !!menuIcon && !!productsMenuButton && !!productsSubmenuToggle && !!menuPrincipal) {
+  if (menuToggle && headerMenu && menuIcon && productsMenuButton && productsSubmenuToggle && menuPrincipal) {
     menuToggle.addEventListener("change", () => {
       if (menuToggle.checked) {
         headerMenu.classList.add("header__menu--open");
@@ -132,14 +132,39 @@ document.addEventListener("DOMContentLoaded", () => {
       const isOpen = productsSubmenuToggle.classList.contains("header__submenu--open");
 
       if (!isOpen) {
+        // Fecha todos os submenus e sub-submenus antes de abrir o de Produtos
+        const allSubmenus = document.querySelectorAll(".header__submenu--open");
+        const allSubSubmenus = document.querySelectorAll(".header__sub-submenu--open");
+
+        allSubmenus.forEach((submenu) => {
+          submenu.classList.remove("header__submenu--open");
+        });
+
+        allSubSubmenus.forEach((subSubmenu) => {
+          subSubmenu.classList.remove("header__sub-submenu--open");
+        });
+
         productsSubmenuToggle.classList.add("header__submenu--open");
         menuPrincipal.style.display = "flex";
+        console.log("Submenu Produtos aberto e outros submenus e sub-submenus fechados.");
       }
     });
 
     menuPrincipal.addEventListener("click", () => {
-      productsSubmenuToggle.classList.remove("header__submenu--open");
+      // Fecha todos os submenus e sub-submenus
+      const allSubmenus = document.querySelectorAll(".header__submenu--open");
+      const allSubSubmenus = document.querySelectorAll(".header__sub-submenu--open");
+
+      allSubmenus.forEach((submenu) => {
+        submenu.classList.remove("header__submenu--open");
+      });
+
+      allSubSubmenus.forEach((subSubmenu) => {
+        subSubmenu.classList.remove("header__sub-submenu--open");
+      });
+
       menuPrincipal.style.display = "none";
+      console.log("Menu Principal clicado: todos os submenus e sub-submenus foram fechados.");
     });
   } else {
     console.error("Erro: Elementos necessários para o funcionamento do menu não encontrados.");
