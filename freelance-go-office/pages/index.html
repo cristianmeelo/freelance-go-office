@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="../css/reset.css" />
     <link rel="stylesheet" href="../css/index.css" />
-    <script src="../js/render-header.js" defer></script>
     <script src="../js/hero-slider.js" defer></script>
+    <script type="module" src="../js/header/index.js"></script>
 
     <title>Go Office</title>
   </head>
@@ -132,13 +132,5 @@
         </div>
       </div>
     </footer>
-
-    <script type="module">
-      import { moveToSlide } from "./js/products-carousel.js";
-      import { renderCategories } from "./js/render-header-products.js";
-
-      moveToSlide(0);
-      renderCategories();
-    </script>
   </body>
 </html>
