@@ -138,20 +138,24 @@ function renderMobileHeader() {
 function renderDesktopHeader() {
   const headerHTML = `
   <header id="header-renderized-desktop" class="header">
-
    <div class="header__desktop">
      <img width="180px" src="../assets/logo-gooffice-header.svg" alt="Logo" onClick="window.location.href='/freelance-go-office/pages/index.html';" />
-
      <div class="header__desktop-menu">
        <ul class="header__desktop-menu-list">
-         <li>produtos</li>
-         <li>marca</li>
+            <li id="products-menu" onClick="openLeftMenu()">produtos</li>
+                     <li>marca</li>
          <li>canais de venda</li>
        </ul>
-
        <span>acesse o catálogo</span>
      </div>
      </div>
+
+     <div id="desktop-left-menu" class="desktop-left-menu">
+        <button id="close-left-menu" class="desktop-left-menu__close-button">X</button>
+        <div class="desktop-left-menu__content">
+          <p>Este é o menu lateral de produtos.</p>
+        </div>
+      </div>
 
    </div>
      `;
@@ -291,5 +295,18 @@ document.addEventListener("DOMContentLoaded", () => {
     } else {
       console.error("ID de subcategoria inválido ou não encontrado!");
     }
+  });
+
+  // && DESKTOP
+
+  const leftMenu = document.getElementById("desktop-left-menu");
+  const closeButton = document.getElementById("close-left-menu");
+
+  window.openLeftMenu = () => {
+    leftMenu.style.left = "0";
+  };
+
+  closeButton.addEventListener("click", () => {
+    leftMenu.style.left = "-300px";
   });
 });

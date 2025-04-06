@@ -182,7 +182,6 @@
 }
 
 @media screen and (min-width: 1024px) {
-  
   .header__mobile {
     display: none;
   }
@@ -230,8 +229,76 @@
     text-transform: uppercase;
     cursor: pointer;
   }
+
+  .desktop-left-menu {
+    position: fixed;
+    top: 0;
+    left: -300px; /* Inicialmente fora da tela */
+    width: 300px; /* Largura do menu */
+    height: 100%; /* Ocupa toda a altura disponível */
+    background-color: #f4f4f4; /* Cor de fundo */
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
+    z-index: 100; /* Sobreposição */
+    transition: left 0.3s ease; /* Suaviza a transição */
+  }
+
+  .desktop-left-menu__close-button {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    font-size: 18px;
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+
+  .desktop-left-menu__content {
+    padding: 16px;
+    overflow-y: auto;
+  }
+
   .apply__transparency {
     background-color: transparent;
     transition: opacity 0.3s ease;
+  }
+
+  /* Overlay - Efeito esmaecido */
+  .overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%; /* Cobre toda a tela */
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Preto translúcido */
+    z-index: 98; /* Atrás do menu lateral */
+    display: none; /* Inicialmente escondido */
+  }
+
+  /* Estilo para o menu lateral */
+  .desktop-left-menu {
+    position: fixed;
+    top: 0;
+    left: -300px; /* Fora da tela por padrão */
+    width: 300px; /* Largura do menu */
+    height: 100%; /* Ocupa toda a altura */
+    background-color: #ffffff; /* Cor do menu */
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
+    z-index: 99; /* Na frente do overlay */
+    transition: left 0.3s ease; /* Animação suave */
+  }
+
+  .desktop-left-menu__close-button {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    font-size: 18px;
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+
+  .desktop-left-menu__content {
+    padding: 16px;
+    overflow-y: auto; /* Permite rolagem se necessário */
   }
 }
