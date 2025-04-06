@@ -115,8 +115,9 @@ document.addEventListener("DOMContentLoaded", () => {
   const menuToggle = document.getElementById("menu-toggle");
   const headerMenu = document.querySelector(".header__menu");
   const menuIcon = document.querySelector(".header__icon");
+  console.log("%cfreelance-go-office/js/header/header-mobile.js:118 menuToggle && headerMenu && menuIcon", "color: #26bfa5;", !!menuToggle);
 
-  if (menuToggle && headerMenu && menuIcon) {
+  if (!!menuToggle && !!headerMenu && !!menuIcon) {
     menuToggle.addEventListener("change", () => {
       if (menuToggle.checked) {
         headerMenu.classList.add("header__menu--open");
@@ -129,4 +130,22 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
   }
+
+  const productsMenuButton = document.querySelector(".header__submenu-label"); // Botão que abre o submenu
+  const productsSubmenuToggle = document.querySelector(".header__submenu--products"); // Submenu associado
+
+  if (!productsMenuButton || !productsSubmenuToggle) {
+    return;
+  }
+
+
+  productsMenuButton.addEventListener("click", () => {
+    const isOpen = productsSubmenuToggle.classList.contains("header__submenu--open");
+
+    if (isOpen) {
+      productsSubmenuToggle.classList.remove("header__submenu--open");
+    } else {
+      productsSubmenuToggle.classList.add("header__submenu--open");
+    }
+  });
 });
