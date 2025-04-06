@@ -320,4 +320,57 @@
     padding: 16px;
     overflow-y: auto; /* Permite rolagem se necessário */
   }
+
+  /* Cabeçalho "Produtos" */
+.desktop-products-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #dcdcdc; /* Fundo cinza */
+  padding: 10px 15px;
+  border-bottom: solid 1px #ccc;
+}
+
+.desktop-products-title {
+  font-family: "Proxima Nova Bold", Arial, sans-serif;
+  text-transform: capitalize;
+  font-size: 18px;
+}
+
+.close-icon {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+}
+
+/* Categorias */
+.desktop-category-item {
+  background-color: #ffffff; /* Fundo branco */
+  padding: 10px 15px;
+  border-bottom: solid 1px #dcdcdc; /* Border cinza */
+  font-family: Arial, sans-serif;
+  cursor: pointer;
+}
+
+.desktop-sub-submenu {
+  list-style: none;
+  margin: 0;
+  padding: 0 15px;
+  display: none;
+}
+
+.desktop-sub-submenu--open {
+  display: block;
+}
+
+.desktop-sub-submenu-item {
+  padding: 5px 0;
+}
+
+.desktop-sub-submenu-view-all span {
+  font-family: "Proxima Nova Bold", Arial, sans-serif;
+  color: #34a853; /* Verde */
+  cursor: pointer;
+}
+
 }
