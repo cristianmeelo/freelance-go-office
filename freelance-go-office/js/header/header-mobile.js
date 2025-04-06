@@ -63,11 +63,13 @@ export const renderMobileProductsMenu = () => {
     label.className = "header__submenu-item-label";
     label.textContent = productData.product;
 
-    const arrow = document.createElement("svg");
-    arrow.className = "header__arrow header__arrow--right";
-    arrow.innerHTML = `<path d="M10 7L15 12L10 17" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>`;
+    const arrow = `
+      <svg class="header__arrow header__arrow--right" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M10 7L15 12L10 17"  stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+      </svg>
+    `;
+    label.innerHTML += arrow;
 
-    label.appendChild(arrow);
     productItem.appendChild(label);
 
     const subSubmenu = document.createElement("ul");
@@ -99,8 +101,16 @@ export const renderMobileProductsMenu = () => {
 
       if (!isOpen) {
         subSubmenu.classList.add("header__sub-submenu--open");
-        arrow.classList.remove("header__arrow--right");
-        arrow.classList.add("header__arrow--up");
+
+        const arrowElement = label.querySelector(".header__arrow");
+        arrowElement.classList.remove("header__arrow--right");
+        arrowElement.classList.add("header__arrow--up");
+      } else {
+        subSubmenu.classList.remove("header__sub-submenu--open");
+
+        const arrowElement = label.querySelector(".header__arrow");
+        arrowElement.classList.remove("header__arrow--up");
+        arrowElement.classList.add("header__arrow--right");
       }
     });
   });
