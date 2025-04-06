@@ -14,10 +14,12 @@ export const renderMobileHeader = () => {
           <svg id="arrow-left" class="header__arrow header__arrow--left" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M10 7L15 12L10 17" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
           </svg>
+          <label>
           Menu Principal
+          </label>
         </li>
-        <li id="products-menu-item" class="header__menu-item header__menu-item--products">
-          <label id="products-label" class="header__submenu-label">
+        <li id="products-menu-item" class="header__menu-item header__menu-item--products ">
+          <label id="products-label" class="header__submenu-label header__submenu-label--padding">
             Produtos
             <svg id="arrow-down" class="header__arrow header__arrow--down" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M10 7L15 12L10 17" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
@@ -114,9 +116,10 @@ document.addEventListener("DOMContentLoaded", () => {
   const productsMenuButton = document.getElementById("products-label");
   const productsSubmenuToggle = document.getElementById("products-submenu");
   const menuPrincipal = document.getElementById("menu-principal");
+  const productsMenuLabel = document.getElementById("products-label");
   const body = document.body;
 
-  if (menuToggle && headerMenu && menuIcon && productsMenuButton && productsSubmenuToggle && menuPrincipal) {
+  if (menuToggle && headerMenu && menuIcon && productsMenuButton && productsSubmenuToggle && menuPrincipal && productsMenuLabel) {
     menuToggle.addEventListener("change", () => {
       if (menuToggle.checked) {
         headerMenu.classList.add("header__menu--open");
@@ -147,9 +150,12 @@ document.addEventListener("DOMContentLoaded", () => {
           subSubmenu.classList.remove("header__sub-submenu--open");
         });
 
+        // Remove o padding extra da label "Produtos"
+        productsMenuLabel.classList.remove("header__submenu-label--padding");
+
         productsSubmenuToggle.classList.add("header__submenu--open");
         menuPrincipal.style.display = "flex";
-        console.log("Submenu Produtos aberto e outros submenus e sub-submenus fechados.");
+        console.log("Submenu Produtos aberto, padding removido, outros submenus fechados.");
       }
     });
 
@@ -166,8 +172,11 @@ document.addEventListener("DOMContentLoaded", () => {
         subSubmenu.classList.remove("header__sub-submenu--open");
       });
 
+      // Reaplica o padding extra na label "Produtos"
+      productsMenuLabel.classList.add("header__submenu-label--padding");
+
       menuPrincipal.style.display = "none";
-      console.log("Menu Principal clicado: todos os submenus e sub-submenus foram fechados.");
+      console.log("Menu Principal clicado: todos os submenus e sub-submenus foram fechados e padding reaplicado.");
     });
   } else {
     console.error("Erro: Elementos necessários para o funcionamento do menu não encontrados.");

@@ -72,7 +72,13 @@
 }
 
 .header__menu-item {
-  padding: 16px 32px;
+  padding: 16px 10px;
+}
+
+.header__menu-item--main {
+  display: flex;
+  align-items: center;
+  padding-top: 2rem;
 }
 
 .header__menu-item--products,
@@ -108,7 +114,7 @@
   justify-content: space-between;
   flex-direction: column;
   align-items: center;
-  padding: 8px 16px;
+  padding: 8px 0px;
   font-size: var(--font-large);
   cursor: pointer;
   text-transform: lowercase;
@@ -126,6 +132,10 @@
   display: flex;
 }
 
+.header__submenu-label--padding {
+  padding-top: 4rem;
+}
+
 .header__submenu-item:hover {
   background-color: var(--neutral-medium);
 }
@@ -134,7 +144,8 @@
   display: none;
   flex-direction: column;
   gap: 12px;
-  padding-top: 12px;
+  padding: 12px 32px 12px 32px;
+  width: 100%;
 }
 
 .header__sub-submenu--open {
@@ -143,7 +154,7 @@
 
 .header__sub-submenu-item {
   cursor: pointer;
-  padding: 6px 16px;
+  padding: 6px 0px;
   font-size: var(--font-medium);
   transition: background-color 0.3s ease;
 }
@@ -194,7 +205,6 @@
   overflow: hidden; /* Impede que o fundo role */
   height: 100vh; /* Garante que a altura do fundo não seja rolável */
 }
-
 
 @media screen and (min-width: 1024px) {
   .header__mobile {
@@ -328,55 +338,54 @@
   }
 
   /* Cabeçalho "Produtos" */
-.desktop-products-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background-color: #dcdcdc; /* Fundo cinza */
-  padding: 10px 15px;
-  border-bottom: solid 1px #ccc;
-}
+  .desktop-products-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #dcdcdc; /* Fundo cinza */
+    padding: 10px 15px;
+    border-bottom: solid 1px #ccc;
+  }
 
-.desktop-products-title {
-  font-family: "Proxima Nova Bold", Arial, sans-serif;
-  text-transform: capitalize;
-  font-size: 18px;
-}
+  .desktop-products-title {
+    font-family: "Proxima Nova Bold", Arial, sans-serif;
+    text-transform: capitalize;
+    font-size: 18px;
+  }
 
-.close-icon {
-  width: 20px;
-  height: 20px;
-  cursor: pointer;
-}
+  .close-icon {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+  }
 
-/* Categorias */
-.desktop-category-item {
-  background-color: #ffffff; /* Fundo branco */
-  padding: 10px 15px;
-  border-bottom: solid 1px #dcdcdc; /* Border cinza */
-  font-family: Arial, sans-serif;
-  cursor: pointer;
-}
+  /* Categorias */
+  .desktop-category-item {
+    background-color: #ffffff; /* Fundo branco */
+    padding: 10px 15px;
+    border-bottom: solid 1px #dcdcdc; /* Border cinza */
+    font-family: Arial, sans-serif;
+    cursor: pointer;
+  }
 
-.desktop-sub-submenu {
-  list-style: none;
-  margin: 0;
-  padding: 0 15px;
-  display: none;
-}
+  .desktop-sub-submenu {
+    list-style: none;
+    margin: 0;
+    padding: 0 15px;
+    display: none;
+  }
 
-.desktop-sub-submenu--open {
-  display: block;
-}
+  .desktop-sub-submenu--open {
+    display: block;
+  }
 
-.desktop-sub-submenu-item {
-  padding: 5px 0;
-}
+  .desktop-sub-submenu-item {
+    padding: 5px 0;
+  }
 
-.desktop-sub-submenu-view-all span {
-  font-family: "Proxima Nova Bold", Arial, sans-serif;
-  color: #34a853; /* Verde */
-  cursor: pointer;
-}
-
+  .desktop-sub-submenu-view-all span {
+    font-family: "Proxima Nova Bold", Arial, sans-serif;
+    color: #34a853; /* Verde */
+    cursor: pointer;
+  }
 }
