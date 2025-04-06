@@ -114,6 +114,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const productsMenuButton = document.getElementById("products-label");
   const productsSubmenuToggle = document.getElementById("products-submenu");
   const menuPrincipal = document.getElementById("menu-principal");
+  const body = document.body;
 
   if (menuToggle && headerMenu && menuIcon && productsMenuButton && productsSubmenuToggle && menuPrincipal) {
     menuToggle.addEventListener("change", () => {
@@ -121,10 +122,12 @@ document.addEventListener("DOMContentLoaded", () => {
         headerMenu.classList.add("header__menu--open");
         menuIcon.classList.add("header__icon--close");
         menuIcon.classList.remove("header__icon--hamburger");
+        body.classList.add("body-no-scroll");
       } else {
         headerMenu.classList.remove("header__menu--open");
         menuIcon.classList.remove("header__icon--close");
         menuIcon.classList.add("header__icon--hamburger");
+        body.classList.remove("body-no-scroll");
       }
     });
 

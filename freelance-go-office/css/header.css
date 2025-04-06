@@ -190,6 +190,12 @@
   display: none;
 }
 
+.body-no-scroll {
+  overflow: hidden; /* Impede que o fundo role */
+  height: 100vh; /* Garante que a altura do fundo não seja rolável */
+}
+
+
 @media screen and (min-width: 1024px) {
   .header__mobile {
     display: none;
