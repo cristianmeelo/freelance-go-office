@@ -153,6 +153,11 @@
   color: var(--primary-dark);
 }
 
+.header__sub-submenu-view-all {
+  font-family: "Proxima Nova Bold", Arial, sans-serif;
+  text-transform: none;
+}
+
 .header__arrow {
   width: 20px;
   height: 20px;
@@ -179,6 +184,10 @@
 .apply__transparency {
   background-color: transparent;
   transition: opacity 0.3s ease;
+}
+
+.desktop-left-menu {
+  display: none;
 }
 
 @media screen and (min-width: 1024px) {
@@ -217,20 +226,30 @@
     display: flex;
     justify-content: space-between;
     gap: 80px;
-  }
-
-  .header__desktop-menu li {
     text-transform: uppercase;
     cursor: pointer;
   }
 
-  .header__desktop span {
+  .header__desktop-menu li a {
+    text-transform: uppercase;
+    cursor: pointer;
+    text-decoration: none;
+    color: inherit;
+  }
+
+  .header__desktop-link {
     text-align: end;
     text-transform: uppercase;
+  }
+
+  .header__desktop-link a {
     cursor: pointer;
+    text-decoration: none;
+    color: inherit;
   }
 
   .desktop-left-menu {
+    display: block;
     position: fixed;
     top: 0;
     left: -300px; /* Inicialmente fora da tela */

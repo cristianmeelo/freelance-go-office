@@ -3,9 +3,9 @@ const products = [
     id: "prod-001",
     product: "Grampeadores e Extratores",
     subcategories: [
-      { id: "1", name: "Grampeador Manual" },
-      { id: "2", name: "Grampeador Elétrico" },
-      { id: "3", name: "Extrator de Grampos" },
+      { id: "subcat-001", name: "Grampeador Manual" },
+      { id: "subcat-002", name: "Grampeador Elétrico" },
+      { id: "subcat-003", name: "Extrator de Grampos" },
     ],
   },
   {
@@ -143,10 +143,20 @@ function renderDesktopHeader() {
      <div class="header__desktop-menu">
        <ul class="header__desktop-menu-list">
             <li id="products-menu" onClick="openLeftMenu()">produtos</li>
-                     <li>marca</li>
-         <li>canais de venda</li>
+                     <li>
+          <a href="./pages/brand.html">Marca</a>
+                     
+                     </li>
+                     
+         <li>
+          <a href="./pages/sales.html"">Canais de Venda</a>
+         
+         </li>
        </ul>
-       <span>acesse o catálogo</span>
+       <div class="header__desktop-link">
+          <a href="./pages/catalog.html">Acesse o Catálogo</a>
+
+       </div>
      </div>
      </div>
 
@@ -202,7 +212,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  const renderProductsMenu = () => {
+  const renderMobileProductsMenu = () => {
     const productsSubmenu = document.querySelector(".header__submenu--products");
 
     products.forEach((productData) => {
@@ -234,6 +244,17 @@ document.addEventListener("DOMContentLoaded", () => {
 
         subSubmenu.appendChild(subcategoryItem);
       });
+
+      // Adiciona a opção "Ver tudo" no final de cada subcategoria
+      const viewAllOption = document.createElement("li");
+      viewAllOption.className = "header__sub-submenu-view-all";
+      viewAllOption.innerHTML = `<span>Ver tudo</span>`;
+      viewAllOption.addEventListener("click", () => {
+        const viewAllUrl = `${window.location.origin}/freelance-go-office/pages/category.html?id=${productData.id}`;
+        window.location.href = viewAllUrl; // Redireciona para a página específica
+      });
+
+      subSubmenu.appendChild(viewAllOption); // Adiciona o "Ver tudo" ao final
 
       productItem.appendChild(subSubmenu);
       productsSubmenu.appendChild(productItem);
@@ -276,7 +297,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   };
 
-  renderProductsMenu();
+  renderMobileProductsMenu();
 
   const subSubmenuItems = document.querySelectorAll(".header__sub-submenu-item");
 
@@ -285,15 +306,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (subcategoryId) {
       const productPageUrl = `${window.location.origin}/freelance-go-office/pages/product.html?id=${subcategoryId}`;
-
       subItem.addEventListener("click", (event) => {
         event.stopPropagation();
 
-        console.log(`Redirecionando para: ${productPageUrl}`);
         window.location.href = productPageUrl;
       });
-    } else {
-      console.error("ID de subcategoria inválido ou não encontrado!");
     }
   });
 
