@@ -91,64 +91,70 @@ const products = [
 
 function renderHeader() {
   const headerHTML = `
-<header class="header">
-  <input type="checkbox" id="menu-toggle" class="header__toggle-checkbox" />
-  <label for="menu-toggle" class="header__toggle-label">
-    <div class="header__icon header__icon--hamburger"></div>
-  </label>
-
-  <ul class="header__menu">
-    <!-- Menu Principal -->
-    <li class="header__menu-item header__menu-item--main" style="display: none;">
-      <svg class="header__arrow header__arrow--left" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M10 7L15 12L10 17" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
-      </svg>
-      Menu Principal
-    </li>
-
-    <!-- Produtos com Submenu -->
-    <li class="header__menu-item header__menu-item--products">
-      <label class="header__submenu-label">
-        Produtos
-        <svg class="header__arrow header__arrow--down" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M10 7L15 12L10 17" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
-        </svg>
+  <header id="header-renderized" class="header">
+    <div class="header__mobile">
+      <input type="checkbox" id="menu-toggle" class="header__toggle-checkbox" />
+      <label for="menu-toggle" class="header__toggle-label">
+        <div class="header__icon header__icon--hamburger"></div>
       </label>
-      <ul class="header__submenu header__submenu--products"></ul>
-    </li>
 
-    <!-- Marca sem Submenu -->
-    <li class="header__menu-item header__menu-item--brand">
-      <a href="./pages/brand.html" class="header__menu-link">Marca</a>
-    </li>
+      <ul class="header__menu">
+        <li class="header__menu-item header__menu-item--main" style="display: none">
+          <svg class="header__arrow header__arrow--left" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M10 7L15 12L10 17" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+          </svg>
+          Menu Principal
+        </li>
+        <li class="header__menu-item header__menu-item--products">
+          <label class="header__submenu-label">
+            Produtos
+            <svg class="header__arrow header__arrow--down" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M10 7L15 12L10 17" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+            </svg>
+          </label>
+          <ul class="header__submenu header__submenu--products"></ul>
+        </li>
+        <li class="header__menu-item header__menu-item--brand">
+          <a href="./pages/brand.html" class="header__menu-link">Marca</a>
+        </li>
+        <li class="header__menu-item header__menu-item--sales-channels">
+          <a href="./pages/sales.html" class="header__menu-link">Canais de Venda</a>
+        </li>
+        <li class="header__menu-item header__menu-item--catalog">
+          <a href="./pages/catalog.html" class="header__menu-link">Acesse o Catálogo</a>
+        </li>
+      </ul>
 
-    <!-- Canais de Venda sem Submenu -->
-    <li class="header__menu-item header__menu-item--sales-channels">
-      <a href="./pages/sales.html" class="header__menu-link">Canais de Venda</a>
-    </li>
+      <div class="header__logo">
+        <img src="../assets/logo-gooffice-header.svg" alt="Logo" onClick="window.location.href='/freelance-go-office/pages/index.html';" />
+      </div>
+    </div>
+    <div class="header__desktop">
 
-    <!-- Acesso ao Catálogo sem Submenu -->
-    <li class="header__menu-item header__menu-item--catalog">
-      <a href="./pages/catalog.html" class="header__menu-link">Acesse o Catálogo</a>
-    </li>
-  </ul>
+        
+        <img width="180px" src="../assets/logo-gooffice-header.svg" alt="Logo" onClick="window.location.href='/freelance-go-office/pages/index.html';" />
 
-  <div class="header__logo">
-  <img 
-  src="../assets/logo-gooffice-header.svg" 
-  alt="Logo" 
-  onClick="window.location.href='/freelance-go-office/pages/index.html';"
-/>
+       <div class="header__desktop-menu">
+        <ul class="header__desktop-menu-list">
+          <li>produtos</li>
+          <li>marca</li>
+          <li>canais de venda</li>
+        </ul>
 
-</div>
+        <span>
+          acesse o catálogo
+        </span>
+       </div>
 
-</header>
+    </div>
+  </header>
+
   `;
   document.getElementById("header").innerHTML = headerHTML;
 }
 
 function handleHeaderTransparency() {
-  const header = document.querySelector(".header");
+  const header = document.getElementById("header-renderized");
 
   const isHomePage = window.location.pathname.endsWith("index.html") || window.location.pathname === "/";
 
@@ -159,6 +165,8 @@ function handleHeaderTransparency() {
   }
 }
 
+window.addEventListener("scroll", handleHeaderTransparency);
+
 document.addEventListener("DOMContentLoaded", () => {
   renderHeader();
   handleHeaderTransparency();
@@ -167,7 +175,6 @@ document.addEventListener("DOMContentLoaded", () => {
   const headerMenu = document.querySelector(".header__menu");
   const menuIcon = document.querySelector(".header__icon");
 
-  // Controle do estado do menu hamburguer
   if (menuToggle && headerMenu && menuIcon) {
     menuToggle.addEventListener("change", () => {
       if (menuToggle.checked) {

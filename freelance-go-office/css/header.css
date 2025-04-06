@@ -4,12 +4,17 @@
   z-index: 10;
   top: 0;
   left: 0;
+  width: 100%;
+  transition: background-color 0.2s ease;
+  background-color: var(--primary);
+}
+
+.header__mobile {
+  display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 32px;
   width: 100%;
-  transition: background-color 0.2s ease;
-  background-color: var(--primary);
 }
 
 .header__logo {
@@ -165,4 +170,59 @@
 .header__arrow--left {
   stroke: var(--primary);
   transform: scaleX(-1);
+}
+
+@media screen and (min-width: 1024px) {
+  .header__mobile {
+    display: none;
+  }
+
+  .header__desktop {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    padding-left: 12rem;
+    padding-right: 12rem;
+    align-items: center;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+  }
+
+  .header__desktop img {
+    height: auto;
+    width: 180px;
+    object-fit: contain; /* Isso garantirá que a proporção seja mantida */
+  }
+
+  .header__desktop-menu {
+    padding-left: 4rem;
+    padding-right: 4rem;
+    color: var(--white);
+
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Define duas colunas iguais */
+    gap: 1rem; /* Espaçamento entre as colunas */
+  }
+
+  .header__desktop-menu-list {
+    display: flex;
+    justify-content: space-between;
+    gap: 80px;
+  }
+
+  .header__desktop-menu li {
+    text-transform: uppercase;
+    cursor: pointer;
+  }
+
+  .header__desktop span {
+    text-align: end;
+    text-transform: uppercase;
+    cursor: pointer;
+  }
+}
+
+.apply__transparency {
+  background-color: transparent; 
+  transition: opacity 0.3s ease; 
 }
