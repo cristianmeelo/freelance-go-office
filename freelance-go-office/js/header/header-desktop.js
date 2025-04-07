@@ -30,6 +30,10 @@ export const renderDesktopHeader = () => {
 
 export const renderDesktopProductsMenu = () => {
   const productsContainer = document.querySelector(".desktop-products-container");
+
+  // Limpa o conteúdo do container para evitar duplicação
+  productsContainer.innerHTML = "";
+
   const header = document.createElement("div");
   header.className = "desktop-products-header";
   header.innerHTML = `
@@ -48,9 +52,9 @@ export const renderDesktopProductsMenu = () => {
     <div class="desktop-category-header">
       <span>${productData.product}</span>
       <svg class="header__desktop__arrow header__desktop__arrow--right" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M10 7L15 12L10 17"  stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+        <path d="M10 7L15 12L10 17" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
       </svg>
-      </div>
+    </div>
     `;
 
     const subSubmenu = document.createElement("ul");
@@ -76,42 +80,42 @@ export const renderDesktopProductsMenu = () => {
     categoryItem.appendChild(subSubmenu);
     productsContainer.appendChild(categoryItem);
 
-    const arrow = categoryItem.querySelector(".desktop-arrow");
-    categoryItem.addEventListener("click", () => {
+    const categoryHeader = categoryItem.querySelector(".desktop-category-header");
+    const arrow = categoryHeader.querySelector(".header__desktop__arrow");
+
+    categoryHeader.addEventListener("click", () => {
       const isOpen = subSubmenu.classList.contains("desktop-sub-submenu--open");
 
       if (isOpen) {
         subSubmenu.classList.remove("desktop-sub-submenu--open");
-        arrow.classList.remove("desktop-arrow--up");
-        arrow.classList.add("desktop-arrow--right");
+        arrow.classList.remove("header__desktop__arrow--up");
+        arrow.classList.add("header__desktop__arrow--right");
       } else {
         subSubmenu.classList.add("desktop-sub-submenu--open");
-        arrow.classList.remove("desktop-arrow--right");
-        arrow.classList.add("desktop-arrow--up");
+        arrow.classList.remove("header__desktop__arrow--right");
+        arrow.classList.add("header__desktop__arrow--up");
       }
     });
   });
 
   const closeButton = document.getElementById("close-products-menu");
   closeButton.addEventListener("click", () => {
-    productsContainer.style.display = "none";
+    // Fecha o menu lateral
+    const leftMenu = document.getElementById("desktop-left-menu");
+    leftMenu.style.left = "-330px";
   });
 };
 
 document.addEventListener("DOMContentLoaded", () => {
   renderDesktopHeader();
-  renderDesktopProductsMenu();
 
   const productsMenuButton = document.getElementById("products-menu");
   const leftMenu = document.getElementById("desktop-left-menu");
-  const closeButton = document.getElementById("close-products-menu");
 
   productsMenuButton.addEventListener("click", () => {
+    // Renderiza o menu de produtos toda vez que o botão "Produtos" é clicado
+    renderDesktopProductsMenu();
     leftMenu.style.left = "0";
-  });
-
-  closeButton.addEventListener("click", () => {
-    leftMenu.style.left = "-330px";
   });
 
   const catalogLink = document.querySelector(".header__desktop-link a");

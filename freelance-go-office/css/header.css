@@ -347,6 +347,7 @@
     font-family: "Proxima Nova Bold", Arial, sans-serif;
     text-transform: capitalize;
     font-size: 18px;
+    padding: 6px 0;
   }
 
   .close-icon {
@@ -368,7 +369,7 @@
     background-color: var(--white);
     padding-top: 16px;
     padding-bottom: 16px;
-    padding-left: 2rem;
+    padding-left: 3rem;
     padding-right: 1.25rem;
     border-bottom: solid 1px #dcdcdc; /* Border cinza */
     font-family: Arial, sans-serif;
