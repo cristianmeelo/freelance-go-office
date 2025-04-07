@@ -21,12 +21,6 @@ export const renderDesktopHeader = () => {
     </div>
   </div>
   <div id="desktop-left-menu" class="desktop-left-menu">
-    <div class="desktop-products-header">
-      <span class="desktop-products-title">Produtos</span>
-      <svg id="close-left-menu" class="close-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M18 6L6 18M6 6L18 18" stroke="#34a853" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-      </svg>
-    </div>
     <div id="desktop-products-container" class="desktop-products-container"></div>
   </div>
 </header>
@@ -103,11 +97,10 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   closeButton.addEventListener("click", () => {
-    leftMenu.style.left = "-400px";
+    leftMenu.style.left = "-330px";
   });
 
   const catalogLink = document.querySelector(".header__desktop-link a");
   catalogLink.addEventListener("click", (event) => {
-    console.log("CATALOG link clicado:", event.target.href);
   });
 });

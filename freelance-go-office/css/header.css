@@ -268,8 +268,8 @@
     display: block;
     position: fixed;
     top: 0;
-    left: -300px; /* Inicialmente fora da tela */
-    width: 300px; /* Largura do menu */
+    left: -330px; /* Inicialmente fora da tela */
+    width: 330px; /* Largura do menu */
     height: 100%; /* Ocupa toda a altura disponível */
     background-color: #f4f4f4; /* Cor de fundo */
     box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
@@ -287,9 +287,8 @@
     cursor: pointer;
   }
 
-  .desktop-left-menu__content {
-    padding: 16px;
-    overflow-y: auto;
+  .desktop-products-header span {
+    padding-left: 2rem;
   }
 
   .apply__transparency {
@@ -359,33 +358,47 @@
     cursor: pointer;
   }
 
-  /* Categorias */
   .desktop-category-item {
     background-color: #ffffff; /* Fundo branco */
-    padding: 10px 15px;
+    padding: 16px 15px;
     border-bottom: solid 1px #dcdcdc; /* Border cinza */
     font-family: Arial, sans-serif;
     cursor: pointer;
+    padding-left: 2rem;
   }
 
   .desktop-sub-submenu {
     list-style: none;
     margin: 0;
-    padding: 0 15px;
+    padding-top: 20px;
+    padding-bottom: 20px;
     display: none;
   }
 
   .desktop-sub-submenu--open {
-    display: block;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
   }
 
   .desktop-sub-submenu-item {
-    padding: 5px 0;
+    padding: 12px 0;
+    padding-left: 20px;
+  }
+
+  .desktop-sub-submenu-item:hover {
+    color: var(--white);
+    background-color: var(--primary);
+    width: 100%;
+  }
+
+  .desktop-sub-submenu-view-all {
+    padding-top: 10px;
   }
 
   .desktop-sub-submenu-view-all span {
     font-family: "Proxima Nova Bold", Arial, sans-serif;
-    color: #34a853; /* Verde */
     cursor: pointer;
+    padding-left: 20px;
   }
 }
