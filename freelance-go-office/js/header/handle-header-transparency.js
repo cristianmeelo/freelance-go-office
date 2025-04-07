@@ -9,13 +9,19 @@ export const handleHeaderTransparency = () => {
 
   const isHomePage = window.location.pathname.endsWith("index.html") || window.location.pathname === "/";
 
-  if (window.scrollY === 0 && isHomePage) {
-    header_mobile.classList.add("apply__transparency");
-    header_desktop.classList.add("apply__transparency");
-  } else {
-    header_mobile.classList.remove("apply__transparency");
-    header_desktop.classList.remove("apply__transparency");
-  }
+    const updateHeaderTransparency = () => {
+    if (window.scrollY === 0 && isHomePage) {
+      header_mobile.classList.add("apply__transparency");
+      header_desktop.classList.add("apply__transparency");
+    } else {
+      header_mobile.classList.remove("apply__transparency");
+      header_desktop.classList.remove("apply__transparency");
+    }
+  };
+
+  updateHeaderTransparency();
+
+  window.addEventListener("scroll", updateHeaderTransparency);
 };
 
 document.addEventListener("DOMContentLoaded", () => {
