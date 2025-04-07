@@ -296,7 +296,6 @@
     transition: opacity 0.3s ease;
   }
 
-  /* Overlay - Efeito esmaecido */
   .overlay {
     position: fixed;
     top: 0;
@@ -308,7 +307,6 @@
     display: none; /* Inicialmente escondido */
   }
 
-  /* Estilo para o menu lateral */
   .desktop-left-menu {
     position: fixed;
     top: 0;
@@ -336,7 +334,6 @@
     overflow-y: auto; /* Permite rolagem se necessário */
   }
 
-  /* Cabeçalho "Produtos" */
   .desktop-products-header {
     display: flex;
     justify-content: space-between;
@@ -356,15 +353,26 @@
     width: 20px;
     height: 20px;
     cursor: pointer;
+    fill: var(--primary);
+    stroke: var(--primary);
+  }
+
+  .desktop-category-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
   }
 
   .desktop-category-item {
-    background-color: #ffffff; /* Fundo branco */
-    padding: 16px 15px;
+    width: 100%;
+    background-color: var(--white);
+    padding-top: 16px;
+    padding-bottom: 16px;
+    padding-left: 2rem;
+    padding-right: 1.25rem;
     border-bottom: solid 1px #dcdcdc; /* Border cinza */
     font-family: Arial, sans-serif;
     cursor: pointer;
-    padding-left: 2rem;
   }
 
   .desktop-sub-submenu {
@@ -400,5 +408,28 @@
     font-family: "Proxima Nova Bold", Arial, sans-serif;
     cursor: pointer;
     padding-left: 20px;
+  }
+
+  .header__desktop__arrow {
+    width: 10px;
+    height: 10px;
+  }
+
+  .header__desktop__arrow--down {
+    stroke: var(--primary);
+  }
+
+  .header__desktop__arrow--right {
+    stroke: var(--primary);
+  }
+
+  .header__desktop__arrow--up {
+    stroke: var(--primary);
+    transform: rotate(-90deg);
+  }
+
+  .header__desktop__arrow--left {
+    stroke: var(--primary);
+    transform: scaleX(-1);
   }
 }

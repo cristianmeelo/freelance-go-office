@@ -35,7 +35,7 @@ export const renderDesktopProductsMenu = () => {
   header.innerHTML = `
     <span class="desktop-products-title">Produtos</span>
     <svg id="close-products-menu" class="close-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M18 6L6 18M6 6L18 18" stroke="#34a853" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M18 6L6 18M6 6L18 18" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
     </svg>
   `;
   productsContainer.appendChild(header);
@@ -43,7 +43,15 @@ export const renderDesktopProductsMenu = () => {
   products.forEach((productData) => {
     const categoryItem = document.createElement("div");
     categoryItem.className = "desktop-category-item";
-    categoryItem.innerHTML = `<span>${productData.product}</span>`;
+
+    categoryItem.innerHTML = `
+    <div class="desktop-category-header">
+      <span>${productData.product}</span>
+      <svg class="header__desktop__arrow header__desktop__arrow--right" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M10 7L15 12L10 17"  stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+      </svg>
+      </div>
+    `;
 
     const subSubmenu = document.createElement("ul");
     subSubmenu.className = "desktop-sub-submenu";
@@ -68,12 +76,18 @@ export const renderDesktopProductsMenu = () => {
     categoryItem.appendChild(subSubmenu);
     productsContainer.appendChild(categoryItem);
 
+    const arrow = categoryItem.querySelector(".desktop-arrow");
     categoryItem.addEventListener("click", () => {
       const isOpen = subSubmenu.classList.contains("desktop-sub-submenu--open");
+
       if (isOpen) {
         subSubmenu.classList.remove("desktop-sub-submenu--open");
+        arrow.classList.remove("desktop-arrow--up");
+        arrow.classList.add("desktop-arrow--right");
       } else {
         subSubmenu.classList.add("desktop-sub-submenu--open");
+        arrow.classList.remove("desktop-arrow--right");
+        arrow.classList.add("desktop-arrow--up");
       }
     });
   });
@@ -101,6 +115,5 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   const catalogLink = document.querySelector(".header__desktop-link a");
-  catalogLink.addEventListener("click", (event) => {
-  });
+  catalogLink.addEventListener("click", (event) => {});
 });
