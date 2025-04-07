@@ -10,14 +10,20 @@ const products = [
           {
             id: 1,
             image: "../img/mock.png",
-            title: "Grampeador Branco Soft Touch - 100 Folhas",
-            description: "Perfeito para escritórios, este grampeador possui capacidade de 100 folhas e um toque macio que garante conforto no uso diário.",
+            title: "Grampeador Manual XPTO 1",
+            description: "Descrição do Grampeador Manual XPTO 1.",
           },
           {
             id: 2,
             image: "../img/mock.png",
-            title: "Grampeador Portátil de Alta Precisão",
-            description: "Compacto e eficiente, este grampeador é ideal para profissionais que precisam de alta precisão e portabilidade.",
+            title: "Grampeador Manual XPTO 2",
+            description: "Descrição do Grampeador Manual XPTO 2.",
+          },
+          {
+            id: 3,
+            image: "../img/mock.png",
+            title: "Grampeador Manual XPTO 3",
+            description: "Descrição do Grampeador Manual XPTO 3.",
           },
         ],
       },
@@ -26,28 +32,22 @@ const products = [
         name: "Grampeador Elétrico",
         details: [
           {
-            id: 3,
-            image: "../img/mock.png",
-            title: "Grampeador Profissional para Grandes Volumes",
-            description: "Produto robusto que combina qualidade e desempenho para grampear grandes volumes de papel com facilidade e rapidez.",
-          },
-          {
             id: 4,
             image: "../img/mock.png",
-            title: "Grampeador Automático - Alta Velocidade",
-            description: "Modernize sua rotina com este grampeador automático que proporciona alta velocidade e eficiência em tarefas repetitivas.",
+            title: "Grampeador Elétrico XPTO 1",
+            description: "Descrição do Grampeador Elétrico XPTO 1.",
           },
         ],
       },
       {
         id: "subcat-003",
-        name: "Extrator de Grampos",
+        name: "Grampeador Grampos",
         details: [
           {
             id: 5,
             image: "../img/mock.png",
-            title: "Grampeador Preto Elegante - 50 Folhas",
-            description: "Um grampeador sofisticado e funcional para uso diário, com capacidade para grampear até 50 folhas de forma simples.",
+            title: "Grampeador Grampos XPTO",
+            description: "Descrição do Grampeador Grampos XPTO.",
           },
         ],
       },

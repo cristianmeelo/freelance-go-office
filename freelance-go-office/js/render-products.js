@@ -158,7 +158,7 @@ const productsWithoutCat = [
   },
 ];
 
-function renderProducts() {
+export const renderProducts = () => {
   const container = document.getElementById("products-list");
   const contentHTML = productsWithoutCat
     .map(
@@ -173,6 +173,6 @@ function renderProducts() {
     )
     .join("");
   container.innerHTML = contentHTML;
-}
+};
 
 document.addEventListener("DOMContentLoaded", renderProducts);
