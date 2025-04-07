@@ -6,80 +6,57 @@
     <title>Detalhes do Produto</title>
     <link rel="stylesheet" href="../css/reset.css" />
     <link rel="stylesheet" href="../css/index.css" />
+    <script type="module" src="../js/header/index.js"></script>
+    <script type="module" src="../js/render-product-details.js"></script>
+    <script type="module" src="../js/footer/index.js"></script>
   </head>
   <body>
-    <div id="header"></div>
+    <div id="header-mobile"></div>
+    <div id="header-desktop"></div>
 
-    <main >
+    <main>
+      <nav id="breadcrumb" class="products__list__breadcrumb"></nav>
+      <!-- Breadcrumb -->
       <section class="product-section">
-
-      <div id="product-details" class="product">
-        <img id="product-image" src="" alt="" />
-
-        <div class="product__container">
-          <h1 id="product-title"></h1>
-
-          <p class="product__code">
-            Código do produto:
-            <span id="product-code"></span>
-
-            <div class="product-code-cta">
-              Para melhor direcioná-lo, <br>indique qual é o seu nível <br>de interesse neste produto:
+        <div id="product-details" class="product">
+          <img id="product-image" src="" alt="" />
+          <div class="product__container">
+            <h1 id="product-title"></h1>
+            <p class="product__code">Código do produto: <span id="product-code"></span></p>
+            <div class="product__content__button">
+              <button class="button button-primary">comprar agora</button>
+              <button class="button button-secondary">fazer cotação</button>
+              <button class="button button-tertiary">revender</button>
             </div>
-          </p>
-
-          <div class="product__content__button">
-            <button class="button button-primary">comprar agora</button>
-            <button class="button button-secondary">fazer cotação</button>
-            <button class="button button-tertiary">revender</button>
           </div>
         </div>
-      </div>
 
-      <div>
-        <h2>Descrição do Produto</h2>
-        <p id="product-description" class="product__description"></p>
-      </div>
+        <div>
+          <h2>Descrição do Produto</h2>
+          <p id="product-description" class="product__description"></p>
+        </div>
 
-      <div id="product-technical-specifications" class="product__table">
-        <h3>Especificações técnicas</h3>
-        <div class="product__row product__row--gray product__row--rounded">
-          <div class="product__key">Segmento</div>
-          <div class="product__value" id="product-segment"></div>
+        <div id="product-technical-specifications" class="product__table">
+          <h3>Especificações técnicas</h3>
+          <div class="product__row product__row--gray product__row--rounded">
+            <div class="product__key">Segmento</div>
+            <div class="product__value" id="product-segment"></div>
+          </div>
+          <div class="product__row product__row--white">
+            <div class="product__key">Família</div>
+            <div class="product__value" id="product-family"></div>
+          </div>
+          <div class="product__row product__row--gray product__row--rounded">
+            <div class="product__key">Subfamília</div>
+            <div class="product__value" id="product-subfamily"></div>
+          </div>
+          <div class="product__row product__row--white">
+            <div class="product__key">Marca</div>
+            <div class="product__value" id="product-brand"></div>
+          </div>
         </div>
-        <div class="product__row product__row--white">
-          <div class="product__key">Família</div>
-          <div class="product__value" id="product-family"></div>
-        </div>
-        <div class="product__row product__row--gray product__row--rounded">
-          <div class="product__key">Subfamília</div>
-          <div class="product__value" id="product-subfamily"></div>
-        </div>
-        <div class="product__row product__row--white">
-          <div class="product__key">Marca</div>
-          <div class="product__value" id="product-brand"></div>
-        </div>
-      </div>
       </section>
-
-
-      <footer class="footer">
-        <div class="footer__logo"></div>
-        <div class="footer__group">
-          <div class="footer__links">
-            <a href="">home</a>
-            <a href="">marca</a>
-            <a href="">canais de venda</a>
-          </div>
-          <div class="footer__container">
-            <div class="footer__icon"></div>
-            <a class="footer__info" href="mailto:sac@brsupply.com.br?subject=Atendimento%20ao%20Cliente&body=Olá, estou entrando em contato para...">sac@brsupply.com.br</a>
-          </div>
-        </div>
-      </footer>
+      <footer id="footer"></footer>
     </main>
-
-    <script type="module" src="../js/product-details.js"></script>
-    <script type="module" src="../js/render-header.js"></script>
   </body>
 </html>
