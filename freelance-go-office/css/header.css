@@ -159,6 +159,11 @@
   transition: background-color 0.3s ease;
 }
 
+.header__sub-submenu-item a {
+  text-decoration: none;
+  color: currentColor;
+}
+
 .header__sub-submenu-item:hover {
   background-color: var(--neutral-medium);
   color: var(--primary-dark);
@@ -399,6 +404,11 @@
     color: var(--white);
     background-color: var(--primary);
     width: 100%;
+  }
+
+  .desktop-sub-submenu-item a {
+    text-decoration: none;
+    color: currentColor;
   }
 
   .desktop-sub-submenu-view-all {

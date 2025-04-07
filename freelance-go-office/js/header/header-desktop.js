@@ -63,7 +63,7 @@ export const renderDesktopProductsMenu = () => {
       const subcategoryItem = document.createElement("li");
       subcategoryItem.className = "desktop-sub-submenu-item";
       subcategoryItem.id = subcategory.id;
-      subcategoryItem.textContent = subcategory.name;
+      subcategoryItem.innerHTML = `<a href="./products.html?subcategoryId=${subcategory.id}">${subcategory.name}</a>`;
       subSubmenu.appendChild(subcategoryItem);
     });
 

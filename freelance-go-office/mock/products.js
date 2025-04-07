@@ -6,31 +6,85 @@ const products = [
       {
         id: "subcat-001",
         name: "Grampeador Manual",
-        details: [
+        itens: [
           {
             id: 1,
             image: "../img/mock.png",
             title: "Grampeador Manual XPTO 1",
-            description: "Descrição do Grampeador Manual XPTO 1.",
+            description: "Compacto e eficiente para uso diário, perfeito para pequenas demandas.",
           },
           {
             id: 2,
             image: "../img/mock.png",
             title: "Grampeador Manual XPTO 2",
-            description: "Descrição do Grampeador Manual XPTO 2.",
+            description: "Design ergonômico com menor esforço ao grampear pilhas de papel.",
           },
           {
             id: 3,
             image: "../img/mock.png",
             title: "Grampeador Manual XPTO 3",
-            description: "Descrição do Grampeador Manual XPTO 3.",
+            description: "Estrutura resistente de aço para durabilidade em uso prolongado.",
+          },
+          {
+            id: 4,
+            image: "../img/mock.png",
+            title: "Grampeador Manual Max Flex",
+            description: "Inclui regulagem de profundidade e grampeia até 40 folhas por vez.",
+          },
+          {
+            id: 5,
+            image: "../img/mock.png",
+            title: "Grampeador Manual Ultra Precision",
+            description: "Ideal para escritórios que buscam eficiência com acabamento premium.",
+          },
+          {
+            id: 6,
+            image: "../img/mock.png",
+            title: "Grampeador Manual ColorLine",
+            description: "Disponível em diversas cores vibrantes para um toque de criatividade.",
+          },
+          {
+            id: 7,
+            image: "../img/mock.png",
+            title: "Grampeador Manual Compact Pro",
+            description: "Leve e portátil, fácil de levar para qualquer lugar.",
+          },
+          {
+            id: 8,
+            image: "../img/mock.png",
+            title: "Grampeador Manual Soft Grip",
+            description: "Pegada macia e confortável, ideal para longas sessões de trabalho.",
+          },
+          {
+            id: 9,
+            image: "../img/mock.png",
+            title: "Grampeador Manual Multi-Angle",
+            description: "Grampeia em diferentes ângulos, proporcionando flexibilidade.",
+          },
+          {
+            id: 10,
+            image: "../img/mock.png",
+            title: "Grampeador Manual Heavy Duty",
+            description: "Capaz de grampear até 80 folhas com facilidade.",
+          },
+          {
+            id: 11,
+            image: "../img/mock.png",
+            title: "Grampeador Manual Eco-Friendly",
+            description: "Produzido com materiais recicláveis para minimizar impacto ambiental.",
+          },
+          {
+            id: 12,
+            image: "../img/mock.png",
+            title: "Grampeador Manual Smart Lock",
+            description: "Sistema de trava inteligente para maior segurança ao armazenar.",
           },
         ],
       },
       {
         id: "subcat-002",
         name: "Grampeador Elétrico",
-        details: [
+        itens: [
           {
             id: 4,
             image: "../img/mock.png",
@@ -42,7 +96,7 @@ const products = [
       {
         id: "subcat-003",
         name: "Grampeador Grampos",
-        details: [
+        itens: [
           {
             id: 5,
             image: "../img/mock.png",
@@ -60,7 +114,7 @@ const products = [
       {
         id: "subcat-004",
         name: "Canetas",
-        details: [
+        itens: [
           {
             id: 6,
             image: "../img/mock.png",
@@ -72,7 +126,7 @@ const products = [
       {
         id: "subcat-005",
         name: "Lápis",
-        details: [
+        itens: [
           {
             id: 7,
             image: "../img/mock.png",
@@ -84,7 +138,7 @@ const products = [
       {
         id: "subcat-006",
         name: "Borracha",
-        details: [
+        itens: [
           {
             id: 8,
             image: "../img/mock.png",
@@ -102,7 +156,7 @@ const products = [
       {
         id: "subcat-007",
         name: "Pastas de Arquivo",
-        details: [
+        itens: [
           {
             id: 9,
             image: "../img/mock.png",
@@ -114,7 +168,7 @@ const products = [
       {
         id: "subcat-008",
         name: "Caixas Organizadoras",
-        details: [
+        itens: [
           {
             id: 10,
             image: "../img/mock.png",
@@ -132,7 +186,7 @@ const products = [
       {
         id: "subcat-009",
         name: "Cadeiras Ergonômicas",
-        details: [
+        itens: [
           {
             id: 11,
             image: "../img/mock.png",
@@ -144,7 +198,7 @@ const products = [
       {
         id: "subcat-010",
         name: "Mesas de Escritório",
-        details: [
+        itens: [
           {
             id: 12,
             image: "../img/mock.png",
@@ -162,7 +216,7 @@ const products = [
       {
         id: "subcat-011",
         name: "Notebooks",
-        details: [
+        itens: [
           {
             id: 13,
             image: "../img/mock.png",
@@ -174,7 +228,7 @@ const products = [
       {
         id: "subcat-012",
         name: "Monitores",
-        details: [
+        itens: [
           {
             id: 14,
             image: "../img/mock.png",
@@ -186,7 +240,7 @@ const products = [
       {
         id: "subcat-013",
         name: "Teclados e Mouses",
-        details: [
+        itens: [
           {
             id: 15,
             image: "../img/mock.png",
@@ -204,7 +258,7 @@ const products = [
       {
         id: "subcat-014",
         name: "Detergentes",
-        details: [
+        itens: [
           {
             id: 16,
             image: "../img/mock.png",
@@ -216,7 +270,7 @@ const products = [
       {
         id: "subcat-015",
         name: "Luvas de Limpeza",
-        details: [
+        itens: [
           {
             id: 17,
             image: "../img/mock.png",
@@ -228,7 +282,7 @@ const products = [
       {
         id: "subcat-016",
         name: "Esponjas",
-        details: [
+        itens: [
           {
             id: 18,
             image: "../img/mock.png",
@@ -246,7 +300,7 @@ const products = [
       {
         id: "subcat-017",
         name: "Utensílios de Cozinha",
-        details: [
+        itens: [
           {
             id: 19,
             image: "../img/mock.png",
@@ -258,7 +312,7 @@ const products = [
       {
         id: "subcat-018",
         name: "Louças",
-        details: [
+        itens: [
           {
             id: 20,
             image: "../img/mock.png",
@@ -270,7 +324,7 @@ const products = [
       {
         id: "subcat-019",
         name: "Talheres",
-        details: [
+        itens: [
           {
             id: 21,
             image: "../img/mock.png",
@@ -288,7 +342,7 @@ const products = [
       {
         id: "subcat-020",
         name: "Celulares",
-        details: [
+        itens: [
           {
             id: 22,
             image: "../img/mock.png",
@@ -300,7 +354,7 @@ const products = [
       {
         id: "subcat-021",
         name: "Tablets",
-        details: [
+        itens: [
           {
             id: 23,
             image: "../img/mock.png",
@@ -312,7 +366,7 @@ const products = [
       {
         id: "subcat-022",
         name: "Fones de Ouvido",
-        details: [
+        itens: [
           {
             id: 24,
             image: "../img/mock.png",
