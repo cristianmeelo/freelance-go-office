@@ -310,8 +310,8 @@
   .desktop-left-menu {
     position: fixed;
     top: 0;
-    left: -300px; /* Fora da tela por padrão */
-    width: 300px; /* Largura do menu */
+    left: -338px; /* Fora da tela por padrão */
+    width: 338px; /* Largura do menu */
     height: 100%; /* Ocupa toda a altura */
     background-color: #ffffff; /* Cor do menu */
     box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);

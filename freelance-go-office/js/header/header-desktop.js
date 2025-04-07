@@ -102,7 +102,7 @@ export const renderDesktopProductsMenu = () => {
   closeButton.addEventListener("click", () => {
     // Fecha o menu lateral
     const leftMenu = document.getElementById("desktop-left-menu");
-    leftMenu.style.left = "-330px";
+    leftMenu.style.left = "-338px";
   });
 };
 
