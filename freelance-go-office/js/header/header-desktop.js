@@ -98,9 +98,12 @@ export const renderDesktopProductsMenu = () => {
   });
 
   const closeButton = document.getElementById("close-products-menu");
-  closeButton.addEventListener("click", () => {
+  closeButton?.addEventListener("click", () => {
     const leftMenu = document.getElementById("desktop-left-menu");
+    const overlay = document.getElementById("menu-overlay");
     leftMenu.style.left = "-338px";
+    overlay.style.display = "none";
+    document.body.classList.remove("body-no-scroll");
   });
 };
 
@@ -117,21 +120,17 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const productsMenuButton = document.getElementById("products-menu");
   const leftMenu = document.getElementById("desktop-left-menu");
-  const closeButton = document.getElementById("close-products-menu");
 
   productsMenuButton.addEventListener("click", () => {
     renderDesktopProductsMenu();
     leftMenu.style.left = "0";
     overlay.style.display = "block";
-  });
-
-  closeButton?.addEventListener("click", () => {
-    leftMenu.style.left = "-338px";
-    overlay.style.display = "none";
+    document.body.classList.add("body-no-scroll");
   });
 
   overlay.addEventListener("click", () => {
     leftMenu.style.left = "-338px";
     overlay.style.display = "none";
+    document.body.classList.remove("body-no-scroll");
   });
 });

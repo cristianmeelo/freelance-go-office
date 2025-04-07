@@ -275,6 +275,7 @@
     box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
     z-index: 100;
     transition: left 0.3s ease;
+    overflow-y: auto;
   }
 
   .desktop-left-menu__close-button {
