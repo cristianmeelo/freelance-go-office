@@ -59,23 +59,8 @@ export const renderDesktopProductsMenu = () => {
     const subSubmenu = document.createElement("ul");
     subSubmenu.className = "desktop-sub-submenu";
 
-    productData.subcategories.forEach((subcategory) => {
-      const subcategoryItem = document.createElement("li");
-      subcategoryItem.className = "desktop-sub-submenu-item";
-      subcategoryItem.id = subcategory.id;
-      subcategoryItem.innerHTML = `<a href="pages/products.html?subcategoryId=${subcategory.id}">${subcategory.name}</a>`;
-      subSubmenu.appendChild(subcategoryItem);
-    });
+    handleDesktopSubcategories(subSubmenu, productData.subcategories);
 
-    const viewAllOption = document.createElement("li");
-    viewAllOption.className = "desktop-sub-submenu-view-all";
-    viewAllOption.innerHTML = `<span>Ver tudo</span>`;
-    viewAllOption.addEventListener("click", () => {
-      const viewAllUrl = `${window.location.origin}/freelance-go-office/pages/category.html?id=${productData.id}`;
-      window.location.href = viewAllUrl;
-    });
-
-    subSubmenu.appendChild(viewAllOption);
     categoryItem.appendChild(subSubmenu);
     productsContainer.appendChild(categoryItem);
 
@@ -104,7 +89,69 @@ export const renderDesktopProductsMenu = () => {
     leftMenu.style.left = "-338px";
     overlay.style.display = "none";
     document.body.classList.remove("body-no-scroll");
+
+    restoreDesktopMenu();
   });
+};
+
+const handleDesktopSubcategories = (subSubmenu, subcategories) => {
+  subSubmenu.innerHTML = ""; 
+
+  subcategories.slice(0, 3).forEach((subcategory) => {
+    const subcategoryItem = document.createElement("li");
+    subcategoryItem.className = "desktop-sub-submenu-item";
+    subcategoryItem.id = subcategory.id;
+    subcategoryItem.innerHTML = `<a href="pages/products.html?subcategoryId=${subcategory.id}">${subcategory.name}</a>`;
+    subSubmenu.appendChild(subcategoryItem);
+  });
+
+  if (subcategories.length > 3) {
+    const viewAllOption = document.createElement("li");
+    viewAllOption.className = "desktop-sub-submenu-view-all";
+    viewAllOption.innerHTML = `<span>Ver tudo</span>`;
+    viewAllOption.addEventListener("click", () => {
+      subcategories.slice(3).forEach((subcategory) => {
+        const subcategoryItem = document.createElement("li");
+        subcategoryItem.className = "desktop-sub-submenu-item";
+        subcategoryItem.id = subcategory.id;
+        subcategoryItem.innerHTML = `<a href="pages/products.html?subcategoryId=${subcategory.id}">${subcategory.name}</a>`;
+        subSubmenu.appendChild(subcategoryItem);
+      });
+
+      viewAllOption.style.display = "none";
+
+    });
+
+    subSubmenu.appendChild(viewAllOption);
+  }
+};
+
+const restoreDesktopMenu = () => {
+  const allSubmenus = document.querySelectorAll(".desktop-sub-submenu");
+  const allViewAllButtons = document.querySelectorAll(".desktop-sub-submenu-view-all");
+  const allSubmenuItems = document.querySelectorAll(".desktop-sub-submenu-item");
+
+  const subSubmenuGroups = [...allSubmenuItems].reduce((groups, item) => {
+    const parent = item.parentElement;
+    groups[parent] = groups[parent] || [];
+    groups[parent].push(item);
+    return groups;
+  }, {});
+
+  Object.values(subSubmenuGroups).forEach((group) => {
+    group.forEach((item, index) => {
+      if (index < 3) {
+        item.classList.remove("hidden"); 
+      } else {
+        item.classList.add("hidden"); 
+      }
+    });
+  });
+
+  allViewAllButtons.forEach((button) => {
+    button.style.display = "block";
+  });
+
 };
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -132,5 +179,7 @@ document.addEventListener("DOMContentLoaded", () => {
     leftMenu.style.left = "-338px";
     overlay.style.display = "none";
     document.body.classList.remove("body-no-scroll");
+
+    restoreDesktopMenu();
   });
 });
