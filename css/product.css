@@ -70,7 +70,7 @@ h3 {
 }
 
 .product__row--gray {
-  background-color: #f0f0f0;
+  background-color: var(--gray);
 }
 
 .product__row--white {

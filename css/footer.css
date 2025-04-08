@@ -42,10 +42,10 @@
   background: url("../assets/email.svg");
   background-size: contain;
   background-repeat: no-repeat;
-  width: 16px;
-  height: 16px;
+  width: 1rem;
+  height: 1rem;
   margin-right: 0.25rem;
-  margin-top: 4px;
+  margin-top: 0.25rem;
 }
 
 .footer__info {
