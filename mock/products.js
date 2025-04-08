@@ -10,9 +10,10 @@ const products = [
           {
             id: 1,
             thumbnail: "../img/mock.png",
-            images: ["../img/mock.png", "../img/mock_2.png", "../img/mock.png", "../img/mock.png", "../img/mock.png", "../img/mock.png", "../img/mock.png", "../img/mock.png"],
+            images: ["../img/mock.png", "../img/mock_2.png", "../img/mock.png", "../img/mock.png", "../img/mock.png", "../img/mock.png", "../img/mock_2.png", "../img/mock.png"],
             title: "Grampeador Manual XPTO 1",
-            description: "Compacto e eficiente para uso diário, perfeito para pequenas demandas.",
+            description:
+              "Os grampeadores da marca Go Oﬃce modelo Soft Touch possuem um sistema mecânico que reduz em até 60% o esforço para grampear. O desing moderno permite o abastecimento frontal do grampo, de forma simples e rápida. Possui ainda um botão para remover facilmente os grampos que ﬁcam presos. A profundidade de utilização é ajustável, podendo atingir 45mm. O corpo é fabricado em metal e suporte em plástico de alta resistência, alinhado a um design moderno. A base de borracha protege a superfície de apoio, evitando assim daniﬁcar a base onde é utilizado. Este modelo de grampeador admite a utlização de dois modelos de grampos; 23/6 ou 23/13 20px Próxima Nova Rg Bold 20pt Próxima Nova Rg 14pt O grampeador modelo GO 5886 é perfeito para utilizar diariamente com capacidade de grampear até 100 folhas. Produtos 10px Alﬁnetes, Clipes e Cochetes Capacidade de carga; Até 100 grampos (tamanhos 23/6 ou 23/13). PRODUTOS MARCA CANAIS DE VENDA ACESSE O CATÁLOGO Tamanho do produto; 310 x 80 x 230mm - Profundidade; 45mm",
             technicalSpecifications: {
               segment: "Escritório",
               family: "Grampeadores",

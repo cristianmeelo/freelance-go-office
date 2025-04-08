@@ -16,11 +16,17 @@
     <section class="product-section">
       <nav id="breadcrumb" class="product-breadcrumb"></nav>
       <div id="product-details" class="product">
-        <img id="product-image" />
+        <div id="product-desktop-carousel" class="product-desktop-carousel"></div>
+        <img id="product-image" class="product-thumbnail" />
         <div id="product-mobile-carousel"></div>
         <div class="product__container">
           <h1 id="product-title"></h1>
           <p class="product__code">Código do produto: <span id="product-code"></span></p>
+          <p class="product-code-cta">
+            Para melhor direcioná-lo, <br />
+            indique qual é o seu nível <br />
+            de interesse neste produto:
+          </p>
           <div class="product__content__button">
             <button class="button button-primary">comprar agora</button>
             <button class="button button-secondary">fazer cotação</button>
@@ -29,28 +35,30 @@
         </div>
       </div>
 
-      <div>
+      <div class="product__description">
         <h2>Descrição do Produto</h2>
-        <p id="product-description" class="product__description"></p>
+        <p id="product-description"></p>
       </div>
 
-      <div id="product-technical-specifications" class="product__table">
+      <div id="product-technical-specifications" class="product-technical-specifications">
         <h3>Especificações técnicas</h3>
-        <div class="product__row product__row--gray product__row--rounded">
-          <div class="product__key">Segmento</div>
-          <div class="product__value" id="product-segment"></div>
-        </div>
-        <div class="product__row product__row--white">
-          <div class="product__key">Família</div>
-          <div class="product__value" id="product-family"></div>
-        </div>
-        <div class="product__row product__row--gray product__row--rounded">
-          <div class="product__key">Subfamília</div>
-          <div class="product__value" id="product-subfamily"></div>
-        </div>
-        <div class="product__row product__row--white">
-          <div class="product__key">Marca</div>
-          <div class="product__value" id="product-brand"></div>
+        <div class="product__table">
+          <div class="product__row product__row--gray product__row--rounded">
+            <div class="product__key">Segmento</div>
+            <div class="product__value" id="product-segment"></div>
+          </div>
+          <div class="product__row product__row--white">
+            <div class="product__key">Família</div>
+            <div class="product__value" id="product-family"></div>
+          </div>
+          <div class="product__row product__row--gray product__row--rounded">
+            <div class="product__key">Subfamília</div>
+            <div class="product__value" id="product-subfamily"></div>
+          </div>
+          <div class="product__row product__row--white">
+            <div class="product__key">Marca</div>
+            <div class="product__value" id="product-brand"></div>
+          </div>
         </div>
       </div>
     </section>
