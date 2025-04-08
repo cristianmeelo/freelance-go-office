@@ -78,7 +78,7 @@ export const renderMobileProductsMenu = () => {
       const subcategoryItem = document.createElement("li");
       subcategoryItem.className = "header__sub-submenu-item";
       subcategoryItem.id = subcategory.id;
-      subcategoryItem.innerHTML = `<a href="./pages/products.html?subcategoryId=${subcategory.id}">${subcategory.name}</a>`;
+      subcategoryItem.innerHTML = `<a href="/pages/products.html?subcategoryId=${subcategory.id}">${subcategory.name}</a>`;
       subSubmenu.appendChild(subcategoryItem);
     });
 

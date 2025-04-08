@@ -95,13 +95,13 @@ export const renderDesktopProductsMenu = () => {
 };
 
 const handleDesktopSubcategories = (subSubmenu, subcategories) => {
-  subSubmenu.innerHTML = ""; 
+  subSubmenu.innerHTML = "";
 
   subcategories.slice(0, 3).forEach((subcategory) => {
     const subcategoryItem = document.createElement("li");
     subcategoryItem.className = "desktop-sub-submenu-item";
     subcategoryItem.id = subcategory.id;
-    subcategoryItem.innerHTML = `<a href="pages/products.html?subcategoryId=${subcategory.id}">${subcategory.name}</a>`;
+    subcategoryItem.innerHTML = `<a href="/pages/products.html?subcategoryId=${subcategory.id}">${subcategory.name}</a>`;
     subSubmenu.appendChild(subcategoryItem);
   });
 
@@ -119,7 +119,6 @@ const handleDesktopSubcategories = (subSubmenu, subcategories) => {
       });
 
       viewAllOption.style.display = "none";
-
     });
 
     subSubmenu.appendChild(viewAllOption);
@@ -141,9 +140,9 @@ const restoreDesktopMenu = () => {
   Object.values(subSubmenuGroups).forEach((group) => {
     group.forEach((item, index) => {
       if (index < 3) {
-        item.classList.remove("hidden"); 
+        item.classList.remove("hidden");
       } else {
-        item.classList.add("hidden"); 
+        item.classList.add("hidden");
       }
     });
   });
@@ -151,7 +150,6 @@ const restoreDesktopMenu = () => {
   allViewAllButtons.forEach((button) => {
     button.style.display = "block";
   });
-
 };
 
 document.addEventListener("DOMContentLoaded", () => {
