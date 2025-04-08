@@ -27,7 +27,7 @@ export const renderProducts = (subcategoryId) => {
       (item) => `
         <div class="product-item">
           <a href="./product.html?id=${item.id}">
-            <img src="${item.image}" alt="${item.title}" />
+            <img src="${item.thumbnail}" alt="${item.title}" />
           </a>
           <h3>${item.title}</h3>
           <p>${item.description}</p>

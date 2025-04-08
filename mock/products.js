@@ -9,7 +9,8 @@ const products = [
         itens: [
           {
             id: 1,
-            image: "../img/mock.png",
+            thumbnail: "../img/mock.png",
+            images: ["../img/mock.png", "../img/mock_2.png", "../img/mock.png", "../img/mock.png", "../img/mock.png", "../img/mock.png", "../img/mock.png", "../img/mock.png"],
             title: "Grampeador Manual XPTO 1",
             description: "Compacto e eficiente para uso diário, perfeito para pequenas demandas.",
             technicalSpecifications: {
@@ -21,7 +22,8 @@ const products = [
           },
           {
             id: 2,
-            image: "../img/mock.png",
+            thumbnail: "../img/mock.png",
+            images: ["../img/mock.png", "../img/mock.png"],
             title: "Grampeador Manual XPTO 2",
             description: "Design ergonômico com menor esforço ao grampear pilhas de papel.",
             technicalSpecifications: {
@@ -33,7 +35,7 @@ const products = [
           },
           {
             id: 3,
-            image: "../img/mock.png",
+            thumbnail: "../img/mock.png",
             title: "Grampeador Manual XPTO 3",
             description: "Estrutura resistente de aço para durabilidade em uso prolongado.",
             technicalSpecifications: {
@@ -45,7 +47,7 @@ const products = [
           },
           {
             id: 4,
-            image: "../img/mock.png",
+            thumbnail: "../img/mock.png",
             title: "Grampeador Manual Max Flex",
             description: "Inclui regulagem de profundidade e grampeia até 40 folhas por vez.",
             technicalSpecifications: {
@@ -57,7 +59,7 @@ const products = [
           },
           {
             id: 5,
-            image: "../img/mock.png",
+            thumbnail: "../img/mock.png",
             title: "Grampeador Manual Ultra Precision",
             description: "Ideal para escritórios que buscam eficiência com acabamento premium.",
             technicalSpecifications: {
@@ -69,7 +71,7 @@ const products = [
           },
           {
             id: 6,
-            image: "../img/mock.png",
+            thumbnail: "../img/mock.png",
             title: "Grampeador Manual ColorLine",
             description: "Disponível em diversas cores vibrantes para um toque de criatividade.",
             technicalSpecifications: {
@@ -87,7 +89,7 @@ const products = [
         itens: [
           {
             id: 4,
-            image: "../img/mock.png",
+            thumbnail: "../img/mock.png",
             title: "Grampeador Elétrico XPTO 1",
             description: "Descrição do Grampeador Elétrico XPTO 1.",
             technicalSpecifications: {
@@ -105,7 +107,7 @@ const products = [
         itens: [
           {
             id: 101,
-            image: "../img/mock.png",
+            thumbnail: "../img/mock.png",
             title: "Grampeador Industrial Heavy Duty",
             description: "Resistente para grandes volumes e demandas industriais.",
           },
@@ -117,7 +119,7 @@ const products = [
         itens: [
           {
             id: 102,
-            image: "../img/mock.png",
+            thumbnail: "../img/mock.png",
             title: "Grampeador Portátil Compacto",
             description: "Leve e prático para transporte fácil.",
           },
@@ -129,7 +131,7 @@ const products = [
         itens: [
           {
             id: 103,
-            image: "../img/mock.png",
+            thumbnail: "../img/mock.png",
             title: "Extrator de Grampos Ergonômico",
             description: "Facilidade ao retirar grampos sem danificar documentos.",
           },
@@ -147,7 +149,7 @@ const products = [
         itens: [
           {
             id: 6,
-            image: "../img/mock.png",
+            thumbnail: "../img/mock.png",
             title: "Caneta Azul de Precisão",
             description: "Ideal para escrita clara e precisa em qualquer superfície.",
           },
@@ -159,7 +161,7 @@ const products = [
         itens: [
           {
             id: 7,
-            image: "../img/mock.png",
+            thumbnail: "../img/mock.png",
             title: "Lápis HB Durável",
             description: "Feito para durar, ótimo para desenho e escrita.",
           },
@@ -171,7 +173,7 @@ const products = [
         itens: [
           {
             id: 8,
-            image: "../img/mock.png",
+            thumbnail: "../img/mock.png",
             title: "Borracha Branca de Alta Precisão",
             description: "Remove traços de grafite com facilidade e precisão.",
           },
@@ -189,7 +191,7 @@ const products = [
         itens: [
           {
             id: 9,
-            image: "../img/mock.png",
+            thumbnail: "../img/mock.png",
             title: "Pasta de Arquivo Transparente",
             description: "Organize seus documentos de forma prática e profissional.",
           },
@@ -201,7 +203,7 @@ const products = [
         itens: [
           {
             id: 10,
-            image: "../img/mock.png",
+            thumbnail: "../img/mock.png",
             title: "Caixa Organizadora Grande",
             description: "Perfeita para guardar itens com segurança e praticidade.",
           },
@@ -219,7 +221,7 @@ const products = [
         itens: [
           {
             id: 11,
-            image: "../img/mock.png",
+            thumbnail: "../img/mock.png",
             title: "Cadeira Ergonômica Confortável",
             description: "Design moderno e apoio lombar para uso prolongado.",
           },
@@ -231,7 +233,7 @@ const products = [
         itens: [
           {
             id: 12,
-            image: "../img/mock.png",
+            thumbnail: "../img/mock.png",
             title: "Mesa de Escritório Ajustável",
             description: "Altura ajustável para maior conforto e praticidade.",
           },
@@ -249,7 +251,7 @@ const products = [
         itens: [
           {
             id: 13,
-            image: "../img/mock.png",
+            thumbnail: "../img/mock.png",
             title: "Notebook Potente",
             description: "Equipado com processador rápido e tela HD.",
           },
@@ -261,7 +263,7 @@ const products = [
         itens: [
           {
             id: 14,
-            image: "../img/mock.png",
+            thumbnail: "../img/mock.png",
             title: "Monitor UltraWide",
             description: "Proporcione melhor produtividade com tela ampla.",
           },
@@ -273,7 +275,7 @@ const products = [
         itens: [
           {
             id: 15,
-            image: "../img/mock.png",
+            thumbnail: "../img/mock.png",
             title: "Teclado Mecânico RGB",
             description: "Desempenho avançado para profissionais e gamers.",
           },
@@ -291,7 +293,7 @@ const products = [
         itens: [
           {
             id: 16,
-            image: "../img/mock.png",
+            thumbnail: "../img/mock.png",
             title: "Detergente Concentrado",
             description: "Remove sujeira difícil com facilidade.",
           },
@@ -303,7 +305,7 @@ const products = [
         itens: [
           {
             id: 17,
-            image: "../img/mock.png",
+            thumbnail: "../img/mock.png",
             title: "Luvas de Borracha Resistente",
             description: "Proteção extra para tarefas de limpeza.",
           },
@@ -315,7 +317,7 @@ const products = [
         itens: [
           {
             id: 18,
-            image: "../img/mock.png",
+            thumbnail: "../img/mock.png",
             title: "Esponja Multiuso",
             description: "Excelente para limpeza de superfícies variadas.",
           },
@@ -333,7 +335,7 @@ const products = [
         itens: [
           {
             id: 19,
-            image: "../img/mock.png",
+            thumbnail: "../img/mock.png",
             title: "Conjunto de Utensílios",
             description: "Completo e durável para sua cozinha.",
           },
@@ -345,7 +347,7 @@ const products = [
         itens: [
           {
             id: 20,
-            image: "../img/mock.png",
+            thumbnail: "../img/mock.png",
             title: "Pratos de Porcelana",
             description: "Design elegante e resistente.",
           },
@@ -357,7 +359,7 @@ const products = [
         itens: [
           {
             id: 21,
-            image: "../img/mock.png",
+            thumbnail: "../img/mock.png",
             title: "Talheres de Inox Premium",
             description: "Alta qualidade e acabamento impecável.",
           },
@@ -375,7 +377,7 @@ const products = [
         itens: [
           {
             id: 22,
-            image: "../img/mock.png",
+            thumbnail: "../img/mock.png",
             title: "Smartphone Avançado",
             description: "Desempenho e tecnologia de ponta.",
           },
@@ -387,7 +389,7 @@ const products = [
         itens: [
           {
             id: 23,
-            image: "../img/mock.png",
+            thumbnail: "../img/mock.png",
             title: "Tablet Compacto",
             description: "Ideal para trabalho e entretenimento.",
           },
@@ -399,7 +401,7 @@ const products = [
         itens: [
           {
             id: 24,
-            image: "../img/mock.png",
+            thumbnail: "../img/mock.png",
             title: "Fones Bluetooth",
             description: "Som de alta qualidade sem fios.",
           },
