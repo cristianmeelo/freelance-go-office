@@ -445,3 +445,7 @@
     transform: scaleX(-1);
   }
 }
+
+.hidden {
+  display: none;
+}

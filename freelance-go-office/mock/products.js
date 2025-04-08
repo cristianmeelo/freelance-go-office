@@ -99,6 +99,42 @@ const products = [
           },
         ],
       },
+      {
+        id: "subcat-003",
+        name: "Grampeador Industrial",
+        itens: [
+          {
+            id: 101,
+            image: "../img/mock.png",
+            title: "Grampeador Industrial Heavy Duty",
+            description: "Resistente para grandes volumes e demandas industriais.",
+          },
+        ],
+      },
+      {
+        id: "subcat-004",
+        name: "Grampeador Portátil",
+        itens: [
+          {
+            id: 102,
+            image: "../img/mock.png",
+            title: "Grampeador Portátil Compacto",
+            description: "Leve e prático para transporte fácil.",
+          },
+        ],
+      },
+      {
+        id: "subcat-005",
+        name: "Extrator de Grampos",
+        itens: [
+          {
+            id: 103,
+            image: "../img/mock.png",
+            title: "Extrator de Grampos Ergonômico",
+            description: "Facilidade ao retirar grampos sem danificar documentos.",
+          },
+        ],
+      },
     ],
   },
   {

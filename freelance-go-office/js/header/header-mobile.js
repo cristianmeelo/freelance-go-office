@@ -51,7 +51,6 @@ export const renderMobileProductsMenu = () => {
   const productsSubmenu = document.getElementById("products-submenu");
 
   if (!productsSubmenu) {
-    console.error("Submenu de produtos não encontrado.");
     return;
   }
 
@@ -65,7 +64,7 @@ export const renderMobileProductsMenu = () => {
 
     const arrow = `
       <svg class="header__arrow header__arrow--right" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M10 7L15 12L10 17"  stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+        <path d="M10 7L15 12L10 17" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
       </svg>
     `;
     label.innerHTML += arrow;
@@ -75,7 +74,7 @@ export const renderMobileProductsMenu = () => {
     const subSubmenu = document.createElement("ul");
     subSubmenu.className = "header__sub-submenu";
 
-    productData.subcategories.forEach((subcategory) => {
+    productData.subcategories.slice(0, 3).forEach((subcategory) => {
       const subcategoryItem = document.createElement("li");
       subcategoryItem.className = "header__sub-submenu-item";
       subcategoryItem.id = subcategory.id;
@@ -83,15 +82,25 @@ export const renderMobileProductsMenu = () => {
       subSubmenu.appendChild(subcategoryItem);
     });
 
-    const viewAllOption = document.createElement("li");
-    viewAllOption.className = "header__sub-submenu-view-all";
-    viewAllOption.innerHTML = `<span>Ver tudo</span>`;
-    viewAllOption.addEventListener("click", () => {
-      const viewAllUrl = `${window.location.origin}/freelance-go-office/pages/category.html?id=${productData.id}`;
-      window.location.href = viewAllUrl;
-    });
+    if (productData.subcategories.length > 3) {
+      const viewAllOption = document.createElement("li");
+      viewAllOption.className = "header__sub-submenu-view-all";
+      viewAllOption.innerHTML = `<span>Ver tudo</span>`;
+      viewAllOption.addEventListener("click", () => {
+        productData.subcategories.slice(3).forEach((subcategory) => {
+          const subcategoryItem = document.createElement("li");
+          subcategoryItem.className = "header__sub-submenu-item";
+          subcategoryItem.id = subcategory.id;
+          subcategoryItem.innerHTML = `<a href="./pages/products.html?subcategoryId=${subcategory.id}">${subcategory.name}</a>`;
+          subSubmenu.appendChild(subcategoryItem);
+        });
 
-    subSubmenu.appendChild(viewAllOption);
+        viewAllOption.style.display = "none";
+      });
+
+      subSubmenu.appendChild(viewAllOption);
+    }
+
     productItem.appendChild(subSubmenu);
     productsSubmenu.appendChild(productItem);
 
@@ -115,6 +124,87 @@ export const renderMobileProductsMenu = () => {
   });
 };
 
+const restoreSubcategories = () => {
+  const allSubmenus = document.querySelectorAll(".header__submenu--open");
+  const allSubSubmenus = document.querySelectorAll(".header__sub-submenu--open");
+  const allSubmenuItems = document.querySelectorAll(".header__sub-submenu-item");
+  const allViewAllButtons = document.querySelectorAll(".header__sub-submenu-view-all");
+  const productsMenuLabel = document.getElementById("products-label");
+  const menuPrincipal = document.getElementById("menu-principal");
+
+  allSubmenus.forEach((submenu) => {
+    submenu.classList.remove("header__submenu--open");
+  });
+
+  allSubSubmenus.forEach((subSubmenu) => {
+    subSubmenu.classList.remove("header__sub-submenu--open");
+  });
+
+  const subSubmenuGroups = [...allSubmenuItems].reduce((groups, item) => {
+    const parent = item.parentElement;
+    groups[parent] = groups[parent] || [];
+    groups[parent].push(item);
+    return groups;
+  }, {});
+
+  Object.values(subSubmenuGroups).forEach((group) => {
+    group.forEach((item, index) => {
+      if (index < 3) {
+        item.classList.remove("hidden");
+      } else {
+        item.classList.add("hidden");
+      }
+    });
+  });
+
+  allViewAllButtons.forEach((button) => {
+    button.style.display = "block";
+  });
+
+  productsMenuLabel.classList.add("header__submenu-label--padding");
+
+  menuPrincipal.style.display = "none";
+};
+
+const openProductsSubmenu = (productsSubmenuToggle, productsMenuLabel, menuPrincipal) => {
+  const isOpen = productsSubmenuToggle.classList.contains("header__submenu--open");
+
+  if (!isOpen) {
+    const allSubmenus = document.querySelectorAll(".header__submenu--open");
+    const allSubSubmenus = document.querySelectorAll(".header__sub-submenu--open");
+
+    allSubmenus.forEach((submenu) => {
+      submenu.classList.remove("header__submenu--open");
+    });
+
+    allSubSubmenus.forEach((subSubmenu) => {
+      subSubmenu.classList.remove("header__sub-submenu--open");
+    });
+
+    productsMenuLabel.classList.remove("header__submenu-label--padding");
+
+    productsSubmenuToggle.classList.add("header__submenu--open");
+
+    menuPrincipal.style.display = "flex";
+  }
+};
+
+const handleMenuToggle = (menuToggle, headerMenu, menuIcon, body, restoreSubcategories) => {
+  if (menuToggle.checked) {
+    headerMenu.classList.add("header__menu--open");
+    menuIcon.classList.add("header__icon--close");
+    menuIcon.classList.remove("header__icon--hamburger");
+    body.classList.add("body-no-scroll");
+  } else {
+    headerMenu.classList.remove("header__menu--open");
+    menuIcon.classList.remove("header__icon--close");
+    menuIcon.classList.add("header__icon--hamburger");
+    body.classList.remove("body-no-scroll");
+
+    restoreSubcategories();
+  }
+};
+
 document.addEventListener("DOMContentLoaded", () => {
   renderMobileHeader();
   renderMobileProductsMenu();
@@ -128,66 +218,15 @@ document.addEventListener("DOMContentLoaded", () => {
   const productsMenuLabel = document.getElementById("products-label");
   const body = document.body;
 
-  if (menuToggle && headerMenu && menuIcon && productsMenuButton && productsSubmenuToggle && menuPrincipal && productsMenuLabel) {
-    menuToggle.addEventListener("change", () => {
-      if (menuToggle.checked) {
-        headerMenu.classList.add("header__menu--open");
-        menuIcon.classList.add("header__icon--close");
-        menuIcon.classList.remove("header__icon--hamburger");
-        body.classList.add("body-no-scroll");
-      } else {
-        headerMenu.classList.remove("header__menu--open");
-        menuIcon.classList.remove("header__icon--close");
-        menuIcon.classList.add("header__icon--hamburger");
-        body.classList.remove("body-no-scroll");
-      }
-    });
+  menuToggle.addEventListener("change", () => {
+    handleMenuToggle(menuToggle, headerMenu, menuIcon, body, restoreSubcategories);
+  });
 
-    productsMenuButton.addEventListener("click", () => {
-      const isOpen = productsSubmenuToggle.classList.contains("header__submenu--open");
+  productsMenuButton.addEventListener("click", () => {
+    openProductsSubmenu(productsSubmenuToggle, productsMenuLabel, menuPrincipal);
+  });
 
-      if (!isOpen) {
-        // Fecha todos os submenus e sub-submenus antes de abrir o de Produtos
-        const allSubmenus = document.querySelectorAll(".header__submenu--open");
-        const allSubSubmenus = document.querySelectorAll(".header__sub-submenu--open");
-
-        allSubmenus.forEach((submenu) => {
-          submenu.classList.remove("header__submenu--open");
-        });
-
-        allSubSubmenus.forEach((subSubmenu) => {
-          subSubmenu.classList.remove("header__sub-submenu--open");
-        });
-
-        // Remove o padding extra da label "Produtos"
-        productsMenuLabel.classList.remove("header__submenu-label--padding");
-
-        productsSubmenuToggle.classList.add("header__submenu--open");
-        menuPrincipal.style.display = "flex";
-        console.log("Submenu Produtos aberto, padding removido, outros submenus fechados.");
-      }
-    });
-
-    menuPrincipal.addEventListener("click", () => {
-      // Fecha todos os submenus e sub-submenus
-      const allSubmenus = document.querySelectorAll(".header__submenu--open");
-      const allSubSubmenus = document.querySelectorAll(".header__sub-submenu--open");
-
-      allSubmenus.forEach((submenu) => {
-        submenu.classList.remove("header__submenu--open");
-      });
-
-      allSubSubmenus.forEach((subSubmenu) => {
-        subSubmenu.classList.remove("header__sub-submenu--open");
-      });
-
-      // Reaplica o padding extra na label "Produtos"
-      productsMenuLabel.classList.add("header__submenu-label--padding");
-
-      menuPrincipal.style.display = "none";
-      console.log("Menu Principal clicado: todos os submenus e sub-submenus foram fechados e padding reaplicado.");
-    });
-  } else {
-    console.error("Erro: Elementos necessários para o funcionamento do menu não encontrados.");
-  }
+  menuPrincipal.addEventListener("click", () => {
+    restoreSubcategories();
+  });
 });
