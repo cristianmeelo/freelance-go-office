@@ -1,4 +1,1 @@
-just start......
-..
-.
-.
+just start.
