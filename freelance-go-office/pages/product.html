@@ -13,50 +13,46 @@
   <body>
     <div id="header-mobile"></div>
     <div id="header-desktop"></div>
-
-    <main>
-      <nav id="breadcrumb" class="products__list__breadcrumb"></nav>
-      <!-- Breadcrumb -->
-      <section class="product-section">
-        <div id="product-details" class="product">
-          <img id="product-image" src="" alt="" />
-          <div class="product__container">
-            <h1 id="product-title"></h1>
-            <p class="product__code">Código do produto: <span id="product-code"></span></p>
-            <div class="product__content__button">
-              <button class="button button-primary">comprar agora</button>
-              <button class="button button-secondary">fazer cotação</button>
-              <button class="button button-tertiary">revender</button>
-            </div>
+    <section class="product-section">
+      <nav id="breadcrumb" class="product-breadcrumb"></nav>
+      <div id="product-details" class="product">
+        <img id="product-image" src="" alt="" />
+        <div class="product__container">
+          <h1 id="product-title"></h1>
+          <p class="product__code">Código do produto: <span id="product-code"></span></p>
+          <div class="product__content__button">
+            <button class="button button-primary">comprar agora</button>
+            <button class="button button-secondary">fazer cotação</button>
+            <button class="button button-tertiary">revender</button>
           </div>
         </div>
+      </div>
 
-        <div>
-          <h2>Descrição do Produto</h2>
-          <p id="product-description" class="product__description"></p>
-        </div>
+      <div>
+        <h2>Descrição do Produto</h2>
+        <p id="product-description" class="product__description"></p>
+      </div>
 
-        <div id="product-technical-specifications" class="product__table">
-          <h3>Especificações técnicas</h3>
-          <div class="product__row product__row--gray product__row--rounded">
-            <div class="product__key">Segmento</div>
-            <div class="product__value" id="product-segment"></div>
-          </div>
-          <div class="product__row product__row--white">
-            <div class="product__key">Família</div>
-            <div class="product__value" id="product-family"></div>
-          </div>
-          <div class="product__row product__row--gray product__row--rounded">
-            <div class="product__key">Subfamília</div>
-            <div class="product__value" id="product-subfamily"></div>
-          </div>
-          <div class="product__row product__row--white">
-            <div class="product__key">Marca</div>
-            <div class="product__value" id="product-brand"></div>
-          </div>
+      <div id="product-technical-specifications" class="product__table">
+        <h3>Especificações técnicas</h3>
+        <div class="product__row product__row--gray product__row--rounded">
+          <div class="product__key">Segmento</div>
+          <div class="product__value" id="product-segment"></div>
         </div>
-      </section>
-      <footer id="footer"></footer>
-    </main>
+        <div class="product__row product__row--white">
+          <div class="product__key">Família</div>
+          <div class="product__value" id="product-family"></div>
+        </div>
+        <div class="product__row product__row--gray product__row--rounded">
+          <div class="product__key">Subfamília</div>
+          <div class="product__value" id="product-subfamily"></div>
+        </div>
+        <div class="product__row product__row--white">
+          <div class="product__key">Marca</div>
+          <div class="product__value" id="product-brand"></div>
+        </div>
+      </div>
+    </section>
+    <footer id="footer"></footer>
   </body>
 </html>
