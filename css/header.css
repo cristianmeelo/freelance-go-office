@@ -211,7 +211,7 @@
   height: 100vh;
 }
 
-@media screen and (min-width: 1020.25rem) {
+@media screen and (min-width: 1024px) {
   .header__mobile {
     display: none;
   }
