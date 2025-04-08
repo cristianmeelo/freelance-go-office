@@ -1,4 +1,4 @@
-import products from "../../mock/products.js";
+import products from "/freelance-go-office/mock/products.js";
 
 export const renderMobileHeader = () => {
   const headerHTML = `
@@ -39,7 +39,7 @@ export const renderMobileHeader = () => {
       </ul>
 
       <div id="header-logo" class="header__logo">
-        <img src="../assets/logo-gooffice-header.svg" alt="Logo" onClick="window.location.href='/freelance-go-office/pages/index.html';" />
+        <img src="/freelance-go-office/public/logo-gooffice-header.svg" alt="Logo" onClick="window.location.href='/freelance-go-office/index.html';" />
       </div>
     </div>
   </header>
@@ -79,7 +79,7 @@ export const renderMobileProductsMenu = () => {
       const subcategoryItem = document.createElement("li");
       subcategoryItem.className = "header__sub-submenu-item";
       subcategoryItem.id = subcategory.id;
-      subcategoryItem.innerHTML = `<a href="./products.html?subcategoryId=${subcategory.id}">${subcategory.name}</a>`;
+      subcategoryItem.innerHTML = `<a href="./pages/products.html?subcategoryId=${subcategory.id}">${subcategory.name}</a>`;
       subSubmenu.appendChild(subcategoryItem);
     });
 

@@ -10,7 +10,7 @@
 
 .footer__logo {
   display: flex;
-  background: url("../assets/logo-gooffice-footer.svg");
+  background: url("/freelance-go-office/public/logo-gooffice-footer.svg");
   background-size: contain;
   background-repeat: no-repeat;
   height: 5rem;
@@ -32,19 +32,26 @@
 
 .footer__container {
   display: flex;
-  text-align: center;
+  justify-content: center;
+  align-items: center;
 }
 
 .footer__icon {
+  display: flex;
+  align-items: center;
   background: url("../assets/email.svg");
   background-size: contain;
   background-repeat: no-repeat;
-  width: 0.875rem;
+  width: 16px;
+  height: 16px;
   margin-right: 0.25rem;
-  padding: 0.125rem;
+  margin-top: 4px;
 }
 
 .footer__info {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   font-size: 0.875rem;
   color: var(--white);
 }
@@ -76,6 +83,7 @@
 
   .footer__container {
     display: flex;
+    align-items: center;
     justify-content: end;
     padding-top: 1.75rem;
   }

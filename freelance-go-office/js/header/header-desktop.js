@@ -1,10 +1,10 @@
-import products from "../../mock/products.js";
+import products from "/freelance-go-office/mock/products.js";
 
 export const renderDesktopHeader = () => {
   const headerHTML = `
 <header id="header-renderized-desktop" class="header">
   <div class="header__desktop">
-    <img width="180px" src="../assets/logo-gooffice-header.svg" alt="Logo" onClick="window.location.href='/freelance-go-office/pages/index.html';" />
+    <img width="180px" src="/freelance-go-office/public/logo-gooffice-header.svg" alt="Logo" onClick="window.location.href='/freelance-go-office/index.html';" />
     <div class="header__desktop-menu">
       <ul class="header__desktop-menu-list">
         <li id="products-menu">Produtos</li>
@@ -63,7 +63,7 @@ export const renderDesktopProductsMenu = () => {
       const subcategoryItem = document.createElement("li");
       subcategoryItem.className = "desktop-sub-submenu-item";
       subcategoryItem.id = subcategory.id;
-      subcategoryItem.innerHTML = `<a href="./products.html?subcategoryId=${subcategory.id}">${subcategory.name}</a>`;
+      subcategoryItem.innerHTML = `<a href="pages/products.html?subcategoryId=${subcategory.id}">${subcategory.name}</a>`;
       subSubmenu.appendChild(subcategoryItem);
     });
 
