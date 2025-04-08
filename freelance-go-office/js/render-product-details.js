@@ -1,4 +1,4 @@
-import products from "../mock/products.js";
+import products from "/freelance-go-office/mock/products.js";
 
 export const renderProductDetails = () => {
   function getProductById(productId) {
@@ -25,18 +25,15 @@ export const renderProductDetails = () => {
   if (productData) {
     const { productCategory, subcategory, item } = productData;
 
-    // Atualiza breadcrumb dinâmico
     const breadcrumb = document.getElementById("breadcrumb");
     breadcrumb.textContent = `Produtos > ${productCategory.product} > ${subcategory.name} > ${item.title}`;
 
-    // Renderiza detalhes do produto
     document.getElementById("product-title").textContent = item.title;
     document.getElementById("product-code").textContent = productId;
     document.getElementById("product-image").src = item.image;
     document.getElementById("product-image").alt = item.title;
     document.getElementById("product-description").innerHTML = formatDescription(item.description);
 
-    // Renderiza especificações técnicas (fallback para "Não informado")
     const technicalSpecs = item.technicalSpecifications || {};
     document.getElementById("product-segment").textContent = technicalSpecs.segment || "Não informado";
     document.getElementById("product-family").textContent = technicalSpecs.family || "Não informado";
