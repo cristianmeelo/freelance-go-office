@@ -1,4 +1,4 @@
-import products from "/freelance-go-office/mock/products.js";
+import products from "/mock/products.js";
 
 export const renderProductDetails = () => {
   function getProductById(productId) {

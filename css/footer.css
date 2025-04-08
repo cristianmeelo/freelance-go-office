@@ -10,7 +10,7 @@
 
 .footer__logo {
   display: flex;
-  background: url("/freelance-go-office/public/logo-gooffice-footer.svg");
+  background: url("/public/logo-gooffice-footer.svg");
   background-size: contain;
   background-repeat: no-repeat;
   height: 5rem;

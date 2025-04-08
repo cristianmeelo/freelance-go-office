@@ -1,4 +1,4 @@
-import products from "/freelance-go-office/mock/products.js";
+import products from "/mock/products.js";
 
 export const renderMobileHeader = () => {
   const headerHTML = `
@@ -39,7 +39,7 @@ export const renderMobileHeader = () => {
       </ul>
 
       <div id="header-logo" class="header__logo">
-        <img src="/freelance-go-office/public/logo-gooffice-header.svg" alt="Logo" onClick="window.location.href='/freelance-go-office/index.html';" />
+        <img src="/public/logo-gooffice-header.svg" alt="Logo" onClick="window.location.href='/index.html';" />
       </div>
     </div>
   </header>

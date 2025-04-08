@@ -1,10 +1,10 @@
-import products from "/freelance-go-office/mock/products.js";
+import products from "/mock/products.js";
 
 export const renderDesktopHeader = () => {
   const headerHTML = `
 <header id="header-renderized-desktop" class="header">
   <div class="header__desktop">
-    <img width="180px" src="/freelance-go-office/public/logo-gooffice-header.svg" alt="Logo" onClick="window.location.href='/freelance-go-office/index.html';" />
+    <img width="180px" src="/public/logo-gooffice-header.svg" alt="Logo" onClick="window.location.href='/index.html';" />
     <div class="header__desktop-menu">
       <ul class="header__desktop-menu-list">
         <li id="products-menu">Produtos</li>
