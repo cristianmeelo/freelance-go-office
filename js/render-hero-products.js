@@ -10,7 +10,7 @@ export const renderHeroCarousel = (images) => {
   const arrowLeftIcon = document.createElement("img");
   arrowLeftIcon.src = "/assets/arrow-outline.svg";
   arrowLeftIcon.alt = "Seta para esquerda";
-  arrowLeftIcon.style.transform = "rotate(180deg)"; // Rotaciona para esquerda
+  arrowLeftIcon.style.transform = "rotate(180deg)";
   arrowLeft.appendChild(arrowLeftIcon);
 
   const arrowRight = document.createElement("button");
