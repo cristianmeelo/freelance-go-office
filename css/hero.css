@@ -29,7 +29,7 @@
 .hero-carousel {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 0.625rem;
   padding-top: 12px;
 }
 
@@ -55,7 +55,7 @@
 
 .hero-carousel-previews {
   display: flex;
-  gap: 10px;
+  gap: 0.625rem;
   overflow: hidden;
 }
 
@@ -71,8 +71,24 @@
 }
 
 .carousel-arrow img {
-  width: 10px;
-  height: 10px;
+  width: 0.625rem;
+  height: 0.625rem;
+}
+
+.hero-indicators {
+  position: absolute;
+  bottom: 1.25rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.hero-indicators img {
+  width: 1.25rem;
+  height: 1.25rem;
+  cursor: pointer;
 }
 
 @media (min-width: 1024px) {

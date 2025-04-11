@@ -17,8 +17,13 @@
   display: flex;
   justify-content: space-evenly;
   width: 300px;
-  gap: 8px;
-  padding-top: 16px;
+  gap: 0.5rem;
+  padding-top: 1rem;
+}
+
+.product-mobile-carousel-indicators img {
+  width: 1.25rem;
+  height: 1.25rem;
 }
 
 .product-desktop-carousel {
