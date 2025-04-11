@@ -10,7 +10,7 @@
   text-align: center;
   font-size: var(--font-extra-small);
   width: 100%;
-  padding: 8rem 2rem 0 2rem;
+  padding: 2rem 2rem 0 2rem;
 }
 
 .product-mobile-carousel-indicators {
@@ -31,8 +31,8 @@
 }
 
 .product-thumbnail {
-  width: 380px;
-  height: 380px;
+  width: 310px;
+  height: 310px;
 }
 
 .product-section h1,
@@ -130,18 +130,15 @@ h3 {
     display: flex;
     flex-direction: row;
     align-items: center;
-    /* justify-content: space-between; */
     gap: 20px;
     padding-top: 4rem;
-    /* padding-left: 15rem;
-    padding-right: 15rem; */
   }
 
   .product-breadcrumb {
     text-align: center;
     font-size: var(--font-extra-small);
     width: 100%;
-    padding: 9rem 2rem 0 2rem;
+    padding: 2rem 2rem 0 2rem;
   }
 
   .product-mobile-carousel-indicators {

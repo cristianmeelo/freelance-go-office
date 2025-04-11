@@ -1,9 +1,7 @@
 .products__list {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 8rem 2rem 0 2rem;
+  padding: 8rem 2rem 2rem 2rem;
 }
 
 .products__list__breadcrumb {
@@ -51,9 +49,7 @@
   .products__list {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 8rem 2rem 8rem 2rem;
+    padding: 8rem 2rem 2rem 2rem;
   }
 
   .products__list__breadcrumb {

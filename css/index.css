@@ -48,12 +48,11 @@ body {
   font-weight: normal;
   background-color: var(--white);
   color: var(--neutral-dark);
-  min-height: 100vh;
-  margin: 0;
 }
 
 main {
-  flex: 1;
+  min-height: 80vh;
+  padding-top: 94px;
 }
 
 * {
