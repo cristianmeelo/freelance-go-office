@@ -65,7 +65,7 @@
     align-items: center;
     justify-content: center;
     grid-template-columns: auto auto;
-    gap: 7.5rem;
+    gap: 17.5rem;
     background-color: var(--neutral-dark);
   }
 
