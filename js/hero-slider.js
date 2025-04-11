@@ -1,6 +1,10 @@
 function createCarousel(sliderId) {
   let currentIndex = 0;
   const slider = document.querySelector(`#${sliderId}`);
+  if (!slider) {
+    return;
+  }
+
   const slides = slider.querySelectorAll(".hero__slide");
   const totalSlides = slides.length;
 
@@ -13,7 +17,9 @@ function createCarousel(sliderId) {
     showSlide(currentIndex);
   }
 
-  setInterval(nextSlide, 3000);
+  setInterval(() => {
+    nextSlide();
+  }, 3000);
 }
 
 createCarousel("slider-mobile");
