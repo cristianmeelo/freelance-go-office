@@ -44,6 +44,11 @@ h3 {
   text-align: center;
 }
 
+.product__description h2 {
+  font-size: var(--font-3xl);
+  font-family: "Proxima Nova Bold", Arial, sans-serif;
+}
+
 .product__code {
   display: flex;
   justify-content: center;
@@ -74,6 +79,7 @@ h3 {
 }
 
 .product-technical-specifications {
+  margin-bottom: 200px;
 }
 
 .product__table {
@@ -120,10 +126,11 @@ h3 {
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: space-between;
+    /* justify-content: space-between; */
+    gap: 20px;
     padding-top: 4rem;
-    padding-left: 12rem;
-    padding-right: 12rem;
+    /* padding-left: 15rem;
+    padding-right: 15rem; */
   }
 
   .product-breadcrumb {
@@ -218,39 +225,45 @@ h3 {
 
   .product__description {
     padding-top: 1rem;
-    padding-left: 12rem;
-    padding-right: 12rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
   }
 
   .product__description h2 {
+    line-height: 1.25rem;
+    width: 950px;
+    padding-left: 0;
+    text-align: start;
     font-size: var(--font-extra-large);
     font-family: "Proxima Nova Bold", Arial, sans-serif;
   }
 
   .product__description p {
     padding-left: 0;
+    text-align: start;
+    width: 950px;
   }
 
-  .product-technical-specifications h3 {
-    padding: 0 12rem;
-  }
-
-  .product__description h2 {
-    line-height: 1.25rem;
-    text-align: justify;
-  }
-
-  .product__table {
+  .product-technical-specifications {
+    width: 100%;
     display: flex;
+    align-items: center;
+    justify-content: center;
     flex-direction: column;
-    padding: 0 11rem;
   }
 
   .product-section h3 {
-    display: flex;
-    padding-top: 4rem;
-    padding-bottom: 1rem;
-    font-size: var(--font-extra-large);
+    width: 950px;
     font-family: "Proxima Nova Bold", Arial, sans-serif;
+    font-size: var(--font-extra-large);
+    text-align: start;
+  }
+  .product__table {
+    display: flex;
+    flex-direction: column;
+    width: 1050px;
   }
 }
