@@ -211,7 +211,6 @@ h3 {
   }
 
   .product-code-cta {
-    display: block;
     display: flex;
     justify-content: flex-start;
     padding-top: 2rem;
