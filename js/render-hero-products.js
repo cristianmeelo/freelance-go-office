@@ -8,7 +8,7 @@ export const renderHeroCarousel = (images) => {
   arrowLeft.classList.add("carousel-arrow", "carousel-arrow-left");
 
   const arrowLeftIcon = document.createElement("img");
-  arrowLeftIcon.src = "/assets/arrow-outline.svg";
+  arrowLeftIcon.src = "assets/arrow-outline.svg";
   arrowLeftIcon.alt = "Seta para esquerda";
   arrowLeftIcon.style.transform = "rotate(180deg)";
   arrowLeft.appendChild(arrowLeftIcon);
@@ -17,7 +17,7 @@ export const renderHeroCarousel = (images) => {
   arrowRight.classList.add("carousel-arrow", "carousel-arrow-right");
 
   const arrowRightIcon = document.createElement("img");
-  arrowRightIcon.src = "/assets/arrow-outline.svg";
+  arrowRightIcon.src = "assets/arrow-outline.svg";
   arrowRightIcon.alt = "Seta para direita";
   arrowRightIcon.style.transform = "rotate(0deg)";
   arrowRight.appendChild(arrowRightIcon);
