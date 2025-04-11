@@ -29,6 +29,7 @@
 .hero-carousel {
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 0.625rem;
   padding-top: 12px;
 }
@@ -89,6 +90,14 @@
   width: 1.25rem;
   height: 1.25rem;
   cursor: pointer;
+}
+
+.carousel-arrow-left {
+  margin-left: 10px;
+}
+
+.carousel-arrow-right {
+  margin-right: 10px;
 }
 
 @media (min-width: 1024px) {

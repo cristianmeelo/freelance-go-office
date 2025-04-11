@@ -26,7 +26,7 @@ export const renderHeroCarousel = (images) => {
   previewsContainer.classList.add("hero-carousel-previews");
   let startIndex = 0;
 
-  const maxVisibleImages = window.innerWidth >= 1024 ? 7 : 3;
+  const maxVisibleImages = window.innerWidth >= 1440 ? 6 : window.innerWidth >= 1024 ? 6 : window.innerWidth >= 768 ? 5 : window.innerWidth >= 425 ? 3 : 2;
 
   const updateCarousel = () => {
     previewsContainer.innerHTML = "";
