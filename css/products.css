@@ -47,17 +47,13 @@
   max-width: 300px;
 }
 
-.footer__desktop {
-  display: none;
-}
-
 @media screen and (min-width: 1024px) {
   .products__list {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 9rem 2rem 0 2rem;
+    padding: 8rem 2rem 0 2rem;
   }
 
   .products__list__breadcrumb {
@@ -70,9 +66,13 @@
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     max-width: 100%;
-    gap: 1rem;
+    gap: 2rem;
     padding: 2rem;
     padding-top: 4rem;
+  }
+
+  .product-item h3 {
+    display: none;
   }
 
   .product-item img {
@@ -82,6 +82,7 @@
 
   .product-item p {
     max-width: 250px;
+    font-size: var(--font-normal);
   }
 
   .footer__desktop {

@@ -82,6 +82,18 @@ const products = [
               brand: "ColorLine",
             },
           },
+          {
+            id: 7,
+            thumbnail: "../img/mock.png",
+            title: "Grampeador Manual ColorLine",
+            description: "Disponível em diversas cores vibrantes para um toque de criatividade.",
+            technicalSpecifications: {
+              segment: "Escritório",
+              family: "Grampeadores",
+              subfamily: "Manuais",
+              brand: "ColorLine",
+            },
+          },
         ],
       },
       {

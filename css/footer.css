@@ -6,6 +6,9 @@
   padding: 3rem 2rem;
   margin-top: 2.5rem;
   background-color: var(--neutral-dark);
+  position: fixed;
+  bottom: 0;
+  width: 100%;
 }
 
 .footer__logo {
