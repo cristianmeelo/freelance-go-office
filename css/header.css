@@ -257,11 +257,13 @@
     cursor: pointer;
     text-decoration: none;
     color: inherit;
+    white-space: nowrap;
   }
 
   .header__desktop-link {
     text-align: end;
     text-transform: uppercase;
+    white-space: nowrap;
   }
 
   .header__desktop-link a {

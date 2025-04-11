@@ -2,28 +2,28 @@ import products from "/mock/products.js";
 
 export const renderDesktopHeader = () => {
   const headerHTML = `
-<header id="header-renderized-desktop" class="header">
-  <div class="header__desktop">
-    <img width="180px" src="/public/logo-gooffice-header.svg" alt="Logo" onClick="window.location.href='/index.html';" />
-    <div class="header__desktop-menu">
-      <ul class="header__desktop-menu-list">
-        <li id="products-menu">Produtos</li>
-        <li>
-          <a href="./pages/brand.html">Marca</a>
-        </li>
-        <li>
-          <a href="./pages/sales.html">Canais de Venda</a>
-        </li>
-      </ul>
-      <div class="header__desktop-link">
-        <a href="./pages/catalog.html">Acesse o Catálogo</a>
+    <header id="header-renderized-desktop" class="header">
+      <div class="header__desktop">
+        <img width="180px" src="/public/logo-gooffice-header.svg" alt="Logo" onClick="window.location.href='/index.html';" />
+        <div class="header__desktop-menu">
+          <ul class="header__desktop-menu-list">
+            <li id="products-menu">Produtos</li>
+            <li>
+              <a href="./pages/brand.html">Marca</a>
+            </li>
+            <li>
+              <a href="./pages/sales.html">Canais de Venda</a>
+            </li>
+          </ul>
+          <div class="header__desktop-link">
+            <a href="./pages/catalog.html">Acesse o Catálogo</a>
+          </div>
+        </div>
       </div>
-    </div>
-  </div>
-  <div id="desktop-left-menu" class="desktop-left-menu">
-    <div id="desktop-products-container" class="desktop-products-container"></div>
-  </div>
-</header>
+      <div id="desktop-left-menu" class="desktop-left-menu">
+        <div id="desktop-products-container" class="desktop-products-container"></div>
+      </div>
+    </header>
   `;
   document.getElementById("header-desktop").innerHTML = headerHTML;
 };

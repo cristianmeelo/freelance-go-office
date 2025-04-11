@@ -10,7 +10,6 @@ export const renderFooter = () => {
         </div>
         <div class="footer__container">
           <div class="footer__icon"></div>
-          
           <a class="footer__info" href="mailto:sac@brsupply.com.br?subject=Atendimento%20ao%20Cliente&body=Olá, estou entrando em contato para...">sac@brsupply.com.br</a>
         </div>
       </div>
